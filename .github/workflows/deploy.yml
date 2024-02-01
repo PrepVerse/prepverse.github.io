@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+    paths: [documentation/**]
 
 permissions:
   contents: write
@@ -18,17 +19,16 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 18.x
           cache: npm
+          cache-dependency-path: documentation/package-lock.json
 
       - name: Install dependencies
-        run: |
-          cd documentation
-          npm ci
+        working-directory: documentation
+        run: npm ci
       - name: Build website
-        run: |
-          cd documentation
-          npm build
+        working-directory: documentation
+        run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
