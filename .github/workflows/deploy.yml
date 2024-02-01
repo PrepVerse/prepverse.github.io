@@ -2,12 +2,8 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - master
+    branches: [master]
     paths: [documentation/**]
-
-permissions:
-  contents: write
 
 jobs:
   deploy:
