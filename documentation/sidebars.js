@@ -20,6 +20,7 @@ module.exports = {
                     },
                 },
                 "getting-started/overview",
+                "getting-started/quickstart",
             ],
             className: "category-as-header",
         },
