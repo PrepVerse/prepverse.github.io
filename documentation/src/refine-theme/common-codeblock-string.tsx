@@ -101,7 +101,7 @@ export const CodeBlockString = ({
                 // "bg-refine-react-light-code",
                 // "dark:bg-refine-react-dark-code",
                 "bg-gray-200",
-                "dark:bg-gray-700",
+                "dark:bg-refine-bg",
                 "border",
                 "border-gray-300",
                 "dark:border-0",
