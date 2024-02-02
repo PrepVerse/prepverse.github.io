@@ -14,7 +14,7 @@ jobs:
         with:
           # Needed for showLastUpdateTime to work
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v2
         with:
           node-version: 16.x
           cache: npm
