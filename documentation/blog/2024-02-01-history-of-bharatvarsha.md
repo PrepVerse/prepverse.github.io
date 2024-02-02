@@ -3,8 +3,8 @@ title: The History of Bharatvarsha
 description: A Journey Through the History of Bharatvarsha from Satyug
 slug: bharatvarsha
 authors: AkashSingh3031
-tags: [Bharatvarsha, Bharat]
-is_featured: false
+tags: [Bharatvarsha, Jambudweep, Bharatkhand, Bharat, Hindustan, Aryavarta, Ajnabhavarsh, Tenjiku, India]
+is_featured: true
 image: https://github.com/AkashSingh3031.png
 hide_table_of_contents: false
 ---

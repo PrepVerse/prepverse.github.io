@@ -58,15 +58,15 @@ function BlogListPageContent(props) {
                 )}
             >
                 <a
-                    href="https://s.refine.dev/hackathon2"
+                    href="https://github.com/AkashSingh3031/The-Complete-FAANG-Preparation"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <img src="https://refine.ams3.cdn.digitaloceanspaces.com/hackathon-2/hackathon_cover.png" />
+                    <img src="https://github.com/AkashSingh3031.png" />
                 </a>
             </div> */}
-            {/* {isFirstPage && <FeaturedBlogPostItems items={featuredPosts} />} */}
-            {/* <div
+            {isFirstPage && <FeaturedBlogPostItems items={featuredPosts} />}
+            <div
                 className={clsx(
                     "px-4",
                     "max-w-[512px]",
@@ -80,7 +80,7 @@ function BlogListPageContent(props) {
                 )}
             >
                 <div className="border-b border-gray-100 dark:border-gray-700"></div>
-            </div> */}
+            </div>
             <BlogPostItems
                 items={paginatedPosts}
                 tags={tags}

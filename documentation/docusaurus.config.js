@@ -182,11 +182,6 @@ const siteConfig = {
                     position: "right",
                     className: "header-icon-link header-github-link",
                 },
-                // {
-                //     href: "https://discord.gg/refine",
-                //     position: "right",
-                //     className: "header-icon-link header-discord-link",
-                // },
                 {
                     href: "https://twitter.com/akashsingh3031",
                     position: "right",
