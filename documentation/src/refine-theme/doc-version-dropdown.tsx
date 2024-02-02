@@ -68,7 +68,7 @@ export const DocVersionDropdown = ({ className, wrapperClassName }: Props) => {
                             >
                                 {docContext.activeVersion.label}
                             </span>
-                            <TriangleDownIcon className="text-gray-500 w-4 h-4" />
+                            <TriangleDownIcon className="text-gray-400 w-4 h-4" />
                         </Menu.Button>
 
                         <Transition
@@ -84,7 +84,7 @@ export const DocVersionDropdown = ({ className, wrapperClassName }: Props) => {
                             <Triangle
                                 className={clsx(
                                     "absolute right-[11px] top-1 origin-bottom-right",
-                                    "bg-white dark:bg-gray-900",
+                                    "text-gray-700 dark:text-white",
                                 )}
                             />
                             <Menu.Items
@@ -94,7 +94,7 @@ export const DocVersionDropdown = ({ className, wrapperClassName }: Props) => {
                                     "flex flex-col gap-2",
                                     "w-[112px]",
                                     "p-2",
-                                    "bg-white dark:bg-gray-700",
+                                    "bg-gray-700 dark:bg-white",
                                     "rounded-lg",
                                 )}
                             >
@@ -118,7 +118,7 @@ export const DocVersionDropdown = ({ className, wrapperClassName }: Props) => {
                                                                     isActive,
                                                                 "bg-refine-blue":
                                                                     isActive,
-                                                                "text-gray-700 dark:text-gray-300":
+                                                                "text-gray-300 dark:text-gray-700":
                                                                     !isActive,
                                                                 "hover:bg-gray-600 hover:dark:bg-gray-100 hover:text-gray-300 dark:hover:text-gray-700":
                                                                     !isActive,

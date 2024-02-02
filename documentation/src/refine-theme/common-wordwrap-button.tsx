@@ -1,7 +1,7 @@
-import React from "react";
 import clsx from "clsx";
-import { AlignLeftIcon } from "./icons/align-left";
+import React from "react";
 import { AlignJustifyIcon } from "./icons/align-justify";
+import { AlignLeftIcon } from "./icons/align-left";
 
 export const CommonWordWrapButton = ({ onClick, isEnabled }) => {
     const Icon = isEnabled ? AlignJustifyIcon : AlignLeftIcon;
@@ -11,13 +11,13 @@ export const CommonWordWrapButton = ({ onClick, isEnabled }) => {
             type="button"
             onClick={() => onClick()}
             className={clsx(
-                "w-8 h-8",
+                "w-6 h-6",
                 "flex justify-center items-center",
-                "!bg-gray-900",
-                "bg-opacity-50",
+                "bg-gray-200",
+                "dark:bg-gray-800",
+                "hover:bg-gray-300",
+                "dark:hover:bg-refine-react-dark-code",
                 "rounded",
-                "hover:!bg-gray-900 hover:bg-opacity-75",
-                isEnabled && "bg-opacity-100",
                 "group",
                 "transition-[background-color] duration-200 ease-in-out",
             )}
@@ -26,11 +26,11 @@ export const CommonWordWrapButton = ({ onClick, isEnabled }) => {
         >
             <Icon
                 className={clsx(
-                    "w-4 h-4",
+                    "w-3 h-3",
                     "text-gray-500",
+                    "dark:text-gray-400",
                     isEnabled && "rotate-[360deg]",
-                    "group-hover:scale-110",
-                    "transition-transform duration-200 ease-in-out",
+                    "transition-all duration-200 ease-in-out",
                 )}
             />
         </button>

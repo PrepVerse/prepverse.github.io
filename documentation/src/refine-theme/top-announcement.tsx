@@ -1,6 +1,5 @@
 import clsx from "clsx";
 import React, { SVGProps } from "react";
-import { RefineLogoShinyCyan } from "./icons/refine-logo-shiny-cyan";
 import { HeartOutlinedIcon } from "./icons/heart-outlined";
 
 export const TopAnnouncement = () => {
@@ -12,12 +11,15 @@ export const TopAnnouncement = () => {
                 "bg-top-announcement",
                 "not-prose",
                 "font-inter",
+                "z-top-announcement",
             )}
         >
             <div
                 className={clsx(
                     "hidden lg:flex",
                     "w-full h-full",
+                    "max-w-screen",
+                    "overflow-hidden",
                     "border-b border-solid border-[#47ebeb26]",
                     "top-announcement-mask",
                 )}
@@ -130,12 +132,11 @@ const Text = () => {
                 "not-prose",
             )}
         >
-            {/* <RefineLogoShinyCyan className="flex-shrink-0" /> */}
             <div className={clsx("ml-2", "not-prose")}>
                 For more updates follow{""}
                 <span className={clsx("text-refine-cyan-alt hover:text-refine-cyan-alt",
-                                      "font-semibold",
-                                      "ml-2",
+                                        "font-semibold",
+                                        "ml-2",
                                 )}>
                                 @AkashSingh3031
                 </span>,

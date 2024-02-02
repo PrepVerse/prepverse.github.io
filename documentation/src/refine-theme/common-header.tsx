@@ -1,30 +1,26 @@
 import Link from "@docusaurus/Link";
-import SearchBar from "@site/src/theme/SearchBar";
 import clsx from "clsx";
 import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useState } from "react";
 
 import { HamburgerIcon } from "./icons/hamburger";
-import { HeaderDiscordIcon } from "./icons/header-discord";
-import { HeaderLinkedInIcon } from "./icons/header-linkedin";
 import { RefineLogoIcon } from "./icons/refine-logo";
 import { PrepVerseLogoIcon } from "./icons/prepverse-logo";
 
 import { openFigma } from "../utils/open-figma";
-import { CommonDocSearchButton } from "./common-doc-search-button";
-import { GitHubStar } from "./common-header/github-star";
-import { LandingGithubStarButton } from "./landing-github-star-button";
 import { Menu } from "./common-header/menu";
 import { MobileMenuModal } from "./common-header/mobile-menu-modal";
 import { CommonThemeToggle } from "./common-theme-toggle";
 import { TopAnnouncement } from "./top-announcement";
+
+import { LandingGithubStarButton } from "./landing-github-star-button";
 
 type Props = {
     hasSticky?: boolean;
     trackProgress?: boolean;
 };
 
-export const CommonHeader = ({ hasSticky, trackProgress }: Props) => {
+export const CommonHeader = ({ trackProgress }: Props) => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const { scrollYProgress } = useScroll();
 
@@ -136,98 +132,6 @@ export const CommonHeader = ({ hasSticky, trackProgress }: Props) => {
                     </div>
                 )}
             </header>
-            {/* <div
-                className={clsx(
-                    "header-sm:h-4 blog-lg:h-6 h-2",
-                    "w-full",
-                    "bg-common-header-bg-light",
-                    "dark:bg-common-header-bg-dark",
-                    "backdrop-blur-header-blur",
-                )}
-            />
-            <div
-                className={clsx(
-                    "bg-common-header-bg-light",
-                    "dark:bg-common-header-bg-dark",
-                    "backdrop-blur-header-blur",
-                    "blog-lg:px-8 px-4",
-                    "py-3",
-                    hasSticky && "sticky top-0 z-10",
-                )}
-            >
-                <div className={clsx("max-w-[1264px]", "mx-auto")}>
-                    <div className="flex items-center">
-                        <div className={clsx("flex items-center", "w-[220px]")}>
-                            <Link to="/">
-                                <RefineLogoIcon
-                                    className="dark:text-gray-0 text-gray-900"
-                                    onContextMenu={openFigma}
-                                />
-                            </Link>
-                        </div>
-                        <div className="blog-lg:justify-between flex grow items-center justify-end">
-                            <div className="blog-lg:flex hidden gap-8">
-                                <Menu />
-                            </div>
-                            <div className="blog-lg:flex hidden items-center justify-end gap-8">
-                                <SearchBar
-                                    CustomButton={CommonDocSearchButton}
-                                />
-                                <div className="flex items-center gap-3">
-                                    <LandingGithubStarButton />
-                                    <CommonThemeToggle />
-                                </div>
-                            </div>
-                            <button
-                                type="button"
-                                className="blog-lg:hidden block"
-                                onClick={() => setIsModalOpen(true)}
-                            >
-                                <HamburgerIcon className="text-gray-500 dark:text-gray-400" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <MobileMenuModal
-                    isModalOpen={isModalOpen}
-                    setIsModalOpen={setIsModalOpen}
-                />
-            </div>
-            <div
-                className={clsx(
-                    "header-sm:h-4 blog-lg:h-6 h-2",
-                    "w-full",
-                    "bg-common-header-bg-light",
-                    "dark:bg-common-header-bg-dark",
-                    "backdrop-blur-header-blur",
-                )}
-            />
-            <div
-                className={clsx(
-                    "w-full",
-                    hasSticky && [
-                        "z-[2]",
-                        "sticky",
-                        "blog-lg:top-[64px] top-[56px]",
-                    ],
-                )}
-            >
-                <div
-                    className={clsx(
-                        "w-full",
-                        "h-px",
-                        "bg-gray-100 dark:bg-gray-700",
-                    )}
-                />
-                {trackProgress && (
-                    <div className={clsx("w-full", "h-0.5")}>
-                        <motion.div
-                            className={clsx("h-full", "bg-refine-blue")}
-                            style={{ width: progressPercentage }}
-                        />
-                    </div>
-                )}
-            </div> */}
         </>
     );
 };

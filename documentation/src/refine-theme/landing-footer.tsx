@@ -3,7 +3,7 @@ import React from "react";
 import { openFigma } from "../utils/open-figma";
 import { footerDescription, menuItems, socialLinks } from "./footer-data";
 import { HeartOutlinedIcon } from "./icons/heart-outlined";
-import { RefineLogoIcon } from "./icons/refine-logo";
+import { PrepVerseLogoIcon } from "./icons/prepverse-logo";
 
 export const LandingFooter = () => {
     const info = (
@@ -135,7 +135,7 @@ export const LandingFooter = () => {
                     )}
                 >
                     <div className={clsx("flex items-center justify-between")}>
-                        <RefineLogoIcon
+                        <PrepVerseLogoIcon
                             className="text-gray-0"
                             onContextMenu={openFigma}
                         />

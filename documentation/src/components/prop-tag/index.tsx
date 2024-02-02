@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import React from "react";
+import { BadgeTooltip } from "../badge-tooltip";
 
 type Props = {
     asterisk?: boolean;
@@ -21,16 +22,18 @@ const PropTag: React.FC<React.PropsWithChildren<Props>> = ({
         return (
             <div
                 className={clsx(
-                    "inline",
-                    "text-gray-0",
-                    "text-xs",
-                    "leading-6",
+                    "inline-flex",
+                    "text-sm",
                     "py-0.5",
                     "px-2",
-                    "rounded",
+                    "rounded-xl",
                     "bg-refine-orange",
+                    "bg-opacity-10",
+                    "text-refine-orange",
                     "tracking-wide",
                     "align-middle",
+                    "font-normal",
+                    "mr-1",
                 )}
                 title={alt}
             >
@@ -43,16 +46,16 @@ const PropTag: React.FC<React.PropsWithChildren<Props>> = ({
         return (
             <div
                 className={clsx(
-                    "flex justify-center items-center",
+                    "inline-flex",
+                    "justify-center items-center",
                     "text-sm",
-                    "text-gray-0",
+                    "text-refine-red",
                     "rounded-full",
-                    "bg-refine-red",
+                    "bg-refine-red bg-opacity-10",
                     "ml-1",
-                    "w-4 h-4",
+                    "w-6 h-6",
                     "align-middle",
                 )}
-                title={alt}
             >
                 {children ?? "﹡"}
             </div>
@@ -63,16 +66,18 @@ const PropTag: React.FC<React.PropsWithChildren<Props>> = ({
         return (
             <div
                 className={clsx(
-                    "inline",
-                    "text-gray-0",
-                    "text-xs",
-                    "leading-6",
+                    "inline-flex",
+                    "text-sm",
                     "py-0.5",
                     "px-2",
-                    "rounded",
+                    "rounded-xl",
                     "bg-refine-red",
+                    "bg-opacity-10",
+                    "text-refine-red",
                     "tracking-wide",
                     "align-middle",
+                    "font-normal",
+                    "mr-1",
                 )}
                 title={alt}
             >
@@ -85,16 +90,18 @@ const PropTag: React.FC<React.PropsWithChildren<Props>> = ({
         return (
             <div
                 className={clsx(
-                    "inline",
-                    "text-gray-0",
-                    "text-xs",
-                    "leading-6",
+                    "inline-flex",
+                    "text-sm",
                     "py-0.5",
                     "px-2",
-                    "rounded",
+                    "rounded-xl",
                     "bg-refine-green",
+                    "bg-opacity-10",
+                    "text-refine-green",
                     "tracking-wide",
                     "align-middle",
+                    "font-normal",
+                    "mr-1",
                 )}
                 title={alt}
             >
@@ -117,6 +124,7 @@ const PropTag: React.FC<React.PropsWithChildren<Props>> = ({
                     "bg-gray-800",
                     "tracking-wide",
                     "align-middle",
+                    "mr-1",
                 )}
                 title={alt}
             >

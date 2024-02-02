@@ -7,7 +7,7 @@ import { RefineLogo } from "./common-refine-logo";
 import { CommonHamburgerIcon } from "./common-hamburger-icon";
 import { useSidebarItems } from "./doc-sidebar";
 import { DocVersionTabs } from "./doc-version-tabs";
-import { DocRefineLogo } from "./doc-refine-logo";
+import { DocPrepVerseLogo } from "./doc-prepverse-logo";
 import { DocVersionDropdown } from "./doc-version-dropdown";
 import { CommonThemeToggleAlt } from "./common-theme-toggle";
 
@@ -25,7 +25,11 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog as="div" className="relative z-modal" onClose={onClose}>
+            <Dialog
+                as="div"
+                className="relative z-mobileNavbar"
+                onClose={onClose}
+            >
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-75"
@@ -35,7 +39,7 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
                     leaveFrom="opacity-100"
                     leaveTo="opacity-0"
                 >
-                    <div className="fixed inset-0 bg-gray-50 dark:bg-gray-900" />
+                    <div className="fixed inset-0 bg-gray-0 dark:bg-gray-800" />
                 </Transition.Child>
 
                 <div className="fixed inset-0 overflow-y-auto">
@@ -51,20 +55,20 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
                         >
                             <Dialog.Panel
                                 className={clsx(
-                                    "w-full h-screen",
+                                    "w-full h-[100dvh]",
                                     "flex flex-col",
-                                    "py-2 sm:py-3",
-                                    "px-2 sm:px-6",
+                                    "px-2",
                                 )}
                             >
                                 <div
                                     className={clsx(
-                                        "w-full h-8 sm:h-10",
-                                        "px-2 sm:px-0",
+                                        "py-4",
+                                        "px-2",
+                                        "w-full h-16",
                                         "flex items-center justify-between",
                                     )}
                                 >
-                                    <DocRefineLogo />
+                                    <DocPrepVerseLogo />
                                     <div
                                         className={clsx(
                                             "flex items-center gap-4",
@@ -80,19 +84,20 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
                                 <div
                                     className={clsx(
                                         "relative",
-                                        "bg-gray-0 dark:bg-gray-800",
-                                        "w-full max-w-[480px] h-full",
-                                        "mx-auto mt-4 mb-4 sm:mt-4 sm:mb-8",
-                                        "overflow-scroll",
+                                        "w-full max-w-[480px]",
+                                        "flex",
+                                        "flex-col",
+                                        "flex-1",
+                                        "mx-auto",
                                         "rounded-lg",
-                                        "border border-gray-200 dark:border-gray-600",
+                                        "border border-gray-300 dark:border-gray-600",
                                     )}
                                 >
                                     <div
                                         className={clsx(
                                             "h-12",
                                             "rounded-tl-lg rounded-tr-lg",
-                                            "bg-gray-100 dark:bg-gray-900",
+                                            "bg-gray-100 dark:bg-gray-700",
                                             "border-b border-gray-300 dark:border-gray-600",
                                             "flex items-center gap-2",
                                             "px-4 py-2",
@@ -108,10 +113,29 @@ export const DocSidebarModal = ({ isOpen, onClose }: Props) => {
                                             Version
                                         </span> */}
                                         <DocVersionDropdown />
+                                        {/* <DocVersionTabs /> */}
                                     </div>
 
-                                    <div className={clsx("px-4", "relative")}>
-                                        {items}
+                                    <div
+                                        className={clsx(
+                                            "flex-1",
+                                            "overflow-hidden",
+                                            "relative",
+                                        )}
+                                    >
+                                        <div
+                                            className={clsx(
+                                                "inset-0",
+                                                "overflow-scroll",
+                                                "h-full",
+                                                "px-8",
+                                                "absolute",
+                                                "flex flex-col gap-6",
+                                                "py-6",
+                                            )}
+                                        >
+                                            {items}
+                                        </div>
                                     </div>
                                 </div>
 

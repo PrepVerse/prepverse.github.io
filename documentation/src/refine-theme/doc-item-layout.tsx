@@ -1,19 +1,20 @@
-import React from "react";
-import clsx from "clsx";
-import { useDoc } from "@docusaurus/theme-common/internal";
+import { useDoc, useDocsVersion } from "@docusaurus/theme-common/internal";
+import DocItemContent from "@theme/DocItem/Content";
+import DocItemFooter from "@theme/DocItem/Footer";
 import DocItemPaginator from "@theme/DocItem/Paginator";
 import DocVersionBanner from "@theme/DocVersionBanner";
-import DocItemFooter from "@theme/DocItem/Footer";
-import DocItemContent from "@theme/DocItem/Content";
+import clsx from "clsx";
+import React from "react";
 import { useDocTOCwithTutorial } from "../components/tutorial-toc/index";
 import { useCurrentTutorial } from "../hooks/use-current-tutorial";
-import { DocTOC } from "./doc-toc";
 import { DocBreadcrumbs } from "./doc-breadcrumbs";
-import { SwizzleBadge } from "./doc-swizzle-badge";
 import { SourceCodeBadge } from "./doc-sourcecode-badge";
-import { useDocsVersion } from "@docusaurus/theme-common/internal";
-import { DocVersionBadge } from "./doc-version-badge";
+import { SwizzleBadge } from "./doc-swizzle-badge";
+import { DocTOC } from "./doc-toc";
 import { DocTOCMobile } from "./doc-toc-mobile";
+import { DocVersionBadge } from "./doc-version-badge";
+import { DocSurveyWidget } from "./doc-survey-widget";
+import { FULL_WIDTH_TABLE_VARIABLE_NAME } from "./common-table";
 
 export const DocItemLayout = ({ children }) => {
     const docTOC = useDocTOCwithTutorial();
@@ -22,21 +23,50 @@ export const DocItemLayout = ({ children }) => {
         frontMatter: { swizzle, source },
     } = useDoc();
     const { badge, label } = useDocsVersion();
+    const containerRef = React.useRef<HTMLDivElement>(null);
+
+    React.useLayoutEffect(() => {
+        const containerElement = containerRef.current;
+        if (containerElement) {
+            const width = containerElement.getBoundingClientRect().width;
+            containerElement.style.setProperty(
+                `--${FULL_WIDTH_TABLE_VARIABLE_NAME}`,
+                `${width}px`,
+            );
+        }
+
+        // on resize, recompute the full width table variable
+        const handleResize = () => {
+            const width = containerElement.getBoundingClientRect().width;
+            containerElement.style.setProperty(
+                `--${FULL_WIDTH_TABLE_VARIABLE_NAME}`,
+                `${width}px`,
+            );
+        };
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, [containerRef]);
 
     return (
         <>
             <div
+                ref={containerRef}
                 className={clsx(
                     "flex-1",
                     "flex flex-col",
                     "items-center justify-start",
                     "px-4 sm:px-0 py-4 sm:py-14",
+                    "relative",
                     "w-full",
                 )}
             >
                 <div className={clsx("max-w-screen-content w-full")}>
                     <DocVersionBanner />
-                    <div className={clsx("flex flex-col", "mb-8")}>
+                    <div className={clsx("flex flex-col", "mb-6 sm:mb-10")}>
                         {tutorial?.isTutorial ? null : <DocBreadcrumbs />}
                         <div
                             className={clsx(
@@ -65,6 +95,7 @@ export const DocItemLayout = ({ children }) => {
                 </div>
                 <div className={clsx("max-w-screen-content", "w-full")}>
                     <DocItemPaginator />
+                    <DocSurveyWidget className={clsx("mx-auto", "mt-10")} />
                 </div>
             </div>
             {tutorial?.isTutorial ? (

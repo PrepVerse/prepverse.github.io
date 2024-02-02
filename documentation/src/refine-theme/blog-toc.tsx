@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { useLocation } from "@docusaurus/router";
+import { useLocation, useHistory } from "@docusaurus/router";
 import { Tags } from "@site/src/components/blog";
 
 export const BlogTOCItem = ({
@@ -24,17 +24,7 @@ export const BlogTOCItem = ({
                 (entries) => {
                     entries.forEach((entry) => {
                         if (entry.isIntersecting) {
-                            const hash = `#${id}`;
-                            if (hash !== window.location.hash) {
-                                onIdChange(id);
-                                if (typeof window !== "undefined") {
-                                    window.history.replaceState(
-                                        undefined,
-                                        undefined,
-                                        hash,
-                                    );
-                                }
-                            }
+                            onIdChange(id);
                         }
                     });
                 },
@@ -79,7 +69,16 @@ export const BlogTOCItem = ({
 };
 
 export const BlogTOC = (props) => {
+    const history = useHistory();
+    const location = useLocation();
     const { toc, hasTOC, activeId, setActiveId } = useTOC(props.toc);
+
+    const onIdChange = (id) => {
+        if (id !== `${location.hash ?? ""}`.replace("#", "")) {
+            setActiveId(id);
+            window.history.replaceState({}, "", `#${id}`);
+        }
+    };
 
     return (
         <div
@@ -106,9 +105,7 @@ export const BlogTOC = (props) => {
                                 value={item.value}
                                 activeId={activeId}
                                 level={item.level}
-                                onIdChange={(id) => {
-                                    setActiveId(id);
-                                }}
+                                onIdChange={onIdChange}
                             />
                         </li>
                     );

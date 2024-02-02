@@ -13,7 +13,7 @@ interface ICommunityStatsContext {
     githubStarCountText: string;
     githubCommitCount: number;
     discordMemberCount: number;
-    linkedinMemberCount: number;
+    discordMemberCountText: string;
     loading: boolean;
     refetch: () => Promise<void>;
 }
@@ -27,9 +27,8 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const [githubStarCount, setGithubStarCount] = useState(0);
     const [githubCommitCount, setGithubCommitCount] = useState(0);
     const [discordMemberCount, setDiscordMemberCount] = useState(0);
-    const [linkedinMemberCount, setLinkedInMemberCount] = useState(0);
 
-    const fetchGithubCount = useCallback(async () => {
+    const fetchGithubCount = useCallback(async (signal: AbortSignal) => {
         try {
             setLoading(true);
 
@@ -40,6 +39,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     headers: {
                         "Content-Type": "application/json",
                     },
+                    signal,
                 },
             );
 
@@ -48,7 +48,6 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             setGithubStarCount(json.stargazers_count);
             setGithubCommitCount(json.githubCommitCount);
             setDiscordMemberCount(json.discordMemberCount);
-            setLinkedInMemberCount(json.linkedinMemberCount);
         } catch (error) {
         } finally {
             setLoading(false);
@@ -56,33 +55,28 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        fetchGithubCount();
+        const abortController = new AbortController();
+        fetchGithubCount(abortController.signal);
+
+        return () => {
+            abortController.abort();
+        };
     }, [fetchGithubCount]);
 
     const githubStarCountText = useMemo(() => {
-        const hasIntlSupport =
-            typeof Intl == "object" &&
-            Intl &&
-            typeof Intl.NumberFormat == "function";
-
-        if (!hasIntlSupport) {
-            return `${(githubStarCount / 1000).toFixed(1)}k`;
-        }
-
-        const formatter = new Intl.NumberFormat("en-US", {
-            notation: "compact",
-            compactDisplay: "short",
-            maximumSignificantDigits: 3,
-        });
-        return formatter.format(githubStarCount);
+        return convertStatToText(githubStarCount);
     }, [githubStarCount]);
+
+    const discordMemberCountText = useMemo(() => {
+        return convertStatToText(discordMemberCount);
+    }, [discordMemberCount]);
 
     const value = {
         githubStarCount,
         githubStarCountText,
         githubCommitCount,
         discordMemberCount,
-        linkedinMemberCount,
+        discordMemberCountText,
         loading,
         refetch: fetchGithubCount,
     };
@@ -102,4 +96,22 @@ export const useCommunityStatsContext = () => {
         );
     }
     return context;
+};
+
+export const convertStatToText = (num: number) => {
+    const hasIntlSupport =
+        typeof Intl == "object" &&
+        Intl &&
+        typeof Intl.NumberFormat == "function";
+
+    if (!hasIntlSupport) {
+        return `${(num / 1000).toFixed(1)}k`;
+    }
+
+    const formatter = new Intl.NumberFormat("en-US", {
+        notation: "compact",
+        compactDisplay: "short",
+        maximumSignificantDigits: 3,
+    });
+    return formatter.format(num);
 };
