@@ -3,7 +3,6 @@ import { FooterGithubIcon } from "./icons/footer-github";
 import { FooterLinkedinIcon } from "./icons/footer-linkedin";
 import { FooterRedditIcon } from "./icons/footer-reddit";
 import { FooterTwitterIcon } from "./icons/footer-twitter";
-import { NewBadgeIcon } from "./icons/popover";
 
 export const menuItems = [
     {
@@ -24,12 +23,10 @@ export const menuItems = [
         items: [
             {
                 label: "CodePoint",
-                icon: <NewBadgeIcon />,
                 href: "https://prepverse.github.io/CodePoint",
             },
             {
                 label: "LeetVerse",
-                icon: <NewBadgeIcon />,
                 href: "https://prepverse.github.io/LeetVerse",
             },
         ],
