@@ -177,7 +177,7 @@ const SidebarCategory = ({
                         {
                             "group-hover:bg-gray-100 dark:group-hover:bg-gray-700":
                                 !isActive && !isSame,
-                            "bg-refine-blue-2-light dark:bg-refine-blue-2 dark:bg-opacity-10":
+                            "bg-refine-blue-2-light dark:bg-gray-700/80 dark:bg-opacity-10":
                                 isActive && isSame,
                             "right-0": variant === "desktop",
                             "-left-2": variant === "mobile",
@@ -385,7 +385,7 @@ const SidebarLink = ({
                     {
                         "group-hover:bg-gray-100 dark:group-hover:bg-gray-700":
                             !isActive && !isSame,
-                        "bg-refine-blue-2-light dark:bg-refine-blue-2 dark:bg-opacity-10":
+                        "bg-refine-blue-2-light dark:bg-gray-700/80 dark:bg-opacity-10":
                             isActive && isSame,
                         "right-0": variant === "desktop",
                         // "-right-2": variant === "mobile",

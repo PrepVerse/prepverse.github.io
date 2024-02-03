@@ -53,7 +53,7 @@ export const TOCItem = ({
                 level === 4 && "pl-8",
                 level === 5 && "pl-8",
                 activeId === id &&
-                    "bg-refine-blue-2-light dark:bg-refine-blue-2 dark:bg-opacity-10",
+                    "bg-refine-blue-2-light dark:bg-gray-700/80 dark:bg-opacity-10",
                 activeId === id &&
                     "text-refine-react-light-link dark:text-refine-react-dark-link",
                 activeId !== id && "text-refine-600 dark:text-refine-300",
