@@ -12,19 +12,11 @@ export const menuItems = [
         items: [
             {
                 label: "Getting Started",
-                href: "/docs/getting-started/quickstart",
-            },
-            {
-                label: "Tutorials",
-                href: "/docs/tutorial/introduction/index/",
+                href: "/docs",
             },
             {
                 label: "Blog",
                 href: "/blog",
-            },
-            {
-                label: "React Admin Panel",
-                href: "https://reactadminpanel.com",
             },
         ],
     },
@@ -32,42 +24,27 @@ export const menuItems = [
         label: "Product",
         items: [
             {
-                label: "Enterprise",
+                label: "CodePoint",
                 icon: <NewBadgeIcon />,
-                href: "/enterprise",
+                href: "https://prepverse.github.io/CodePoint",
             },
             {
-                label: "Templates",
-                href: "/templates",
+                label: "LeetVerse",
+                icon: <NewBadgeIcon />,
+                href: "https://prepverse.github.io/LeetVerse",
             },
-            {
-                label: "Integrations",
-                href: "/integrations",
-            },
-            // {
-            //     label: "Become an Expert",
-            //     href: "/become-an-expert",
-            // },
-            // {
-            //     label: "Cloud",
-            //     href: "/cloud",
-            // },
         ],
     },
     {
-        label: "Company",
+        label: "About",
         items: [
             {
-                label: "About",
+                label: "About Me",
                 href: "/about",
             },
             {
-                label: "Store",
-                href: "https://store.refine.dev",
-            },
-            {
-                label: "Contact Us",
-                href: "https://form.typeform.com/to/H54hLD9r",
+                label: "Portfolio",
+                href: "https://prepverse.github.io/portfolio",
             },
         ],
     },
@@ -88,27 +65,19 @@ export const secondaryMenuItems = [
     },
 ];
 
-export const footerDescription = `Refine is a React-based framework for the rapid development of web applications. It eliminates the repetitive tasks demanded by CRUD operations and provides industry standard solutions.`;
+export const footerDescription = `Thank you for visiting, Connect with me over socials.`;
 
 export const socialLinks = [
     {
         icon: FooterGithubIcon,
-        href: "https://github.com/AkashSingh3031/The-Complete-FAANG-Preparation",
-    },
-    {
-        icon: FooterDiscordIcon,
-        href: "https://discord.gg/refine",
-    },
-    {
-        icon: FooterRedditIcon,
-        href: "https://www.reddit.com/r/refine/",
+        href: "https://github.com/AkashSingh3031",
     },
     {
         icon: FooterTwitterIcon,
-        href: "https://twitter.com/refine_dev",
+        href: "https://twitter.com/akashsingh3031",
     },
     {
         icon: FooterLinkedinIcon,
-        href: "https://www.linkedin.com/company/refine-dev",
+        href: "https://www.linkedin.com/in/akashsingh3031",
     },
 ];
