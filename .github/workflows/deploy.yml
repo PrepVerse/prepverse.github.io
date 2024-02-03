@@ -3,45 +3,32 @@ name: Deploy
 on:
   push:
     branches: [master]
-    paths: [documentation/**]
+  pull_request:
+    branches: [master]
+    # paths: [documentation/**]
 
 jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-        
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
           # Needed for showLastUpdateTime to work
           fetch-depth: 0
-      - name: Set up Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: "12"
           cache: npm
-          
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies & Build website
-        working-directory: documentation
+        # working-directory: documentation
         run: |
+          cd documentation
           npm ci
           npm run build
-
-      # - name: Build website
-      #   working-directory: documentation
-      #   run: npm run build
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
