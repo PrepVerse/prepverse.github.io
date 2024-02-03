@@ -2,7 +2,7 @@ import { useColorMode } from "@docusaurus/theme-common";
 import clsx from "clsx";
 import React from "react";
 import { openFigma } from "../utils/open-figma";
-import { footerDescription, menuItems, socialLinks } from "./footer-data";
+import { footerDescription, menuItems, socialLinks } from "./footer-datas";
 import { HeartOutlinedIcon } from "./icons/heart-outlined";
 import { RefineLogoIcon } from "./icons/refine-logo";
 import { PrepVerseLogoIcon } from "./icons/prepverse-logo";
