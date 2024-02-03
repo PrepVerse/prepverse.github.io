@@ -67,7 +67,7 @@ export const LandingRainbowButton = ({
             </div>
             <div
                 className={clsx(
-                    "bg-gray-0",
+                    "dark:bg-gray-0 bg-green-800",
                     "rounded-lg",
                     "px-10 py-3",
                     buttonClassname,
@@ -85,9 +85,9 @@ export const LandingRainbowButton = ({
                         children
                     ) : (
                         <>
-                            <PlayOutlinedIcon />
-                            <span className="text-base font-semibold">
-                                Try it online!
+                            {/* <PlayOutlinedIcon /> */}
+                            <span className="dark:text-black text-white font-semibold">
+                                About Me
                             </span>
                         </>
                     )}
