@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[9867],{9867:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-prepverse-docgen","id":"default"}')}}]);
