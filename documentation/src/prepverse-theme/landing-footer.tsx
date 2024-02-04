@@ -2,7 +2,7 @@ import clsx from "clsx";
 import React from "react";
 import Link from "@docusaurus/Link";
 import { openFigma } from "../utils/open-figma";
-import { menuItems, secondaryMenuItems, socialLinks } from "./footer-data";
+import { footerDescription, menuItems, secondaryMenuItems, socialLinks } from "./footer-data";
 import { HeartOutlinedIcon } from "./icons/heart-outlined";
 import { PrepVerseLogoIcon } from "./icons/prepverse-logo";
 
@@ -160,6 +160,19 @@ export const LandingFooter = () => {
                         >
                             <iframe src="https://github.com/sponsors/AkashSingh3031/button" title="Sponsor AkashSingh3031" height="32" width="114"></iframe>
                         </a>
+                    </div>
+                    <div
+                        className={clsx(
+                            "px-4 landing-sm:px-8 landing-lg:px-12",
+                            "flex",
+                            "flex-row",
+                            "flex-wrap",
+                            "items-start",
+                            "justify-start",
+                            "text-gray-500 dark:text-gray-500",
+                        )}
+                    >
+                        {footerDescription}
                     </div>
                     <div
                         className={clsx(

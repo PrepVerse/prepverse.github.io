@@ -61,15 +61,20 @@ const siteConfig = {
                 blog: false,
                 theme: {
                     customCss: [
-                        require.resolve("./src/prepverse-theme/css/fonts.css"),
+                        require.resolve("./src/prepverse-theme/css/colors.css"),
                         require.resolve("./src/prepverse-theme/css/custom.css"),
+                        require.resolve("./src/prepverse-theme/css/fonts.css"),
                         require.resolve("./src/css/custom.css"),
-                        require.resolve("./src/css/split-pane.css"),
                         require.resolve("./src/css/demo-page.css"),
+                        require.resolve("./src/css/split-pane.css"),
                     ],
                 },
                 gtag: {
                     trackingID: "G-JF4ZWKWVGC",
+                    anonymizeIP: true,
+                },
+                sitemap: {
+                    ignorePatterns: ["**/_*.md"],
                 },
             },
         ],
@@ -100,9 +105,9 @@ const siteConfig = {
                 },
             };
         },
+        "./plugins/checklist.js",
         "./plugins/docgen.js",
         "./plugins/examples.js",
-        "./plugins/checklist.js",
         ...(process.env.DISABLE_BLOG
             ? []
             : [
@@ -163,7 +168,7 @@ const siteConfig = {
             {
                 name: "keywords",
                 content:
-                    "react-admin, react-framework, internal-tool, admin-panel, ant-design, material ui, mui",
+                    "cse, dsa, cp, os, dbms, sql, mysql, cn, oop, html, css, js, ml, ds",
             },
         ],
         navbar: {
@@ -277,7 +282,7 @@ const siteConfig = {
         footerDescription: '',
         contactTitle: "Contact",
         contactDescription: [
-            "PrepVerse",
+            "+91 9794423031",
         ],
         contactEmail: "codewithsky@gmail.com",
         /** ---- */

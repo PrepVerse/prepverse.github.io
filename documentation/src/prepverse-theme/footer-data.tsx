@@ -62,7 +62,7 @@ export const secondaryMenuItems = [
     // },
     {
         label: "License",
-        href: "https://github.com/AkashSingh3031/The-Complete-FAANG-Preparation/blob/master/LICENSE",
+        href: "https://github.com/PrepVerse/prepverse.github.io/blob/master/LICENSE",
     },
 ];
 
