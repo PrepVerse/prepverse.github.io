@@ -1,1 +1,1 @@
-export { DocFooter as default } from "../../../refine-theme/doc-footer";
+export { DocFooter as default } from "../../../prepverse-theme/doc-footer";

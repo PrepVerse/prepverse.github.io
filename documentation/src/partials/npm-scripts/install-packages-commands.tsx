@@ -1,6 +1,6 @@
 import React, { FC, PropsWithChildren } from "react";
 
-import Tabs from "@site/src/refine-theme/common-tabs";
+import Tabs from "@site/src/prepverse-theme/common-tabs";
 import { CodeBlock } from "@site/src/theme/CodeBlock/base";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore

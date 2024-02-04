@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import { PlayOutlinedIcon } from "@site/src/refine-theme/icons/play-outlined";
+import { PlayOutlinedIcon } from "@site/src/prepverse-theme/icons/play-outlined";
 
 type Props = {
     onClick?: () => void;

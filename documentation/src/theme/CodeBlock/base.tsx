@@ -1,7 +1,7 @@
 import React, { isValidElement } from "react";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import ElementContent from "@theme/CodeBlock/Content/Element";
-import { CodeBlockString } from "../../refine-theme/common-codeblock-string";
+import { CodeBlockString } from "../../prepverse-theme/common-codeblock-string";
 /**
  * Best attempt to make the children a plain string so it is copyable. If there
  * are react elements, we will not be able to copy the content, and it will

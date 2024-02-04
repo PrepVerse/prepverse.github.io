@@ -1,5 +1,5 @@
 import { useHistory, useLocation } from "@docusaurus/router";
-import { CloseIcon } from "@site/src/refine-theme/icons/close";
+import { CloseIcon } from "@site/src/prepverse-theme/icons/close";
 import clsx from "clsx";
 import React from "react";
 import {

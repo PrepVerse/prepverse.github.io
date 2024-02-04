@@ -6,9 +6,9 @@ import { LetsStartButton } from "./lets-start-button";
 import { TwitterButton } from "./twitter-button";
 import { DayIndicator } from "./day-indicator";
 import { CoverBgShadowDesktop } from "./cover-bg-shadow";
-import { ShareIcon } from "@site/src/refine-theme/icons/share";
+import { ShareIcon } from "@site/src/prepverse-theme/icons/share";
 import PublishCountdown from "./publish-countdown";
-import { CalendarIcon } from "@site/src/refine-theme/icons/calendar";
+import { CalendarIcon } from "@site/src/prepverse-theme/icons/calendar";
 
 type Props = {
     variant: WeekVariants;

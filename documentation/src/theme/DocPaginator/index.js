@@ -1,1 +1,1 @@
-export { DocPaginator as default } from "../../refine-theme/doc-paginator";
+export { DocPaginator as default } from "../../prepverse-theme/doc-paginator";

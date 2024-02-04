@@ -1,1 +1,1 @@
-export { DocCard as default } from "../../refine-theme/doc-card";
+export { DocCard as default } from "../../prepverse-theme/doc-card";

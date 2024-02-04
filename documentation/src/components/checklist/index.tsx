@@ -4,7 +4,7 @@ import clsx from "clsx";
 
 import { useCurrentTutorial } from "../../hooks/use-current-tutorial";
 import { useTutorialChecklists } from "../../hooks/use-tutorial-checklists";
-import { CheckListIcon } from "@site/src/refine-theme/icons/check-list";
+import { CheckListIcon } from "@site/src/prepverse-theme/icons/check-list";
 
 type Props = React.PropsWithChildren<{}>;
 

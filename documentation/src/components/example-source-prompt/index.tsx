@@ -1,5 +1,5 @@
 import React from "react";
-import { CommonShowSourcePrompt } from "../../refine-theme/common-show-source-prompt";
+import { CommonShowSourcePrompt } from "../../prepverse-theme/common-show-source-prompt";
 
 type Props = {
     path: string;

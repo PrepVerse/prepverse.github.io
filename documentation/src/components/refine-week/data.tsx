@@ -3,10 +3,10 @@ import {
     StrapiWithText,
     SupabaseWithText,
 } from "@site/src/assets/integration-icons";
-import { FooterDiscordIcon as DiscordIcon } from "../../refine-theme/icons/footer-discord";
-import { FooterGithubIcon as GithubIcon } from "../../refine-theme/icons/footer-github";
-import { FooterRedditIcon as RedditIcon } from "../../refine-theme/icons/footer-reddit";
-import { FooterTwitterIcon as TwitterIcon } from "../../refine-theme/icons/footer-twitter";
+import { FooterDiscordIcon as DiscordIcon } from "../../prepverse-theme/icons/footer-discord";
+import { FooterGithubIcon as GithubIcon } from "../../prepverse-theme/icons/footer-github";
+import { FooterRedditIcon as RedditIcon } from "../../prepverse-theme/icons/footer-reddit";
+import { FooterTwitterIcon as TwitterIcon } from "../../prepverse-theme/icons/footer-twitter";
 
 // The contents added to the timeline are defined day by day in the data.timeline. All contents are not published at the same time.
 // For unpublished contents, the link can be defined as null. If the link is set to null, the timeline item becomes disabled.

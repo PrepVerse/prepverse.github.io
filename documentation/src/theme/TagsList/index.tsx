@@ -3,7 +3,7 @@ import Tag from "@theme/Tag";
 import { titleCase } from "title-case";
 import clsx from "clsx";
 import { Disclosure, Transition } from "@headlessui/react";
-import { TriangleDownIcon } from "@site/src/refine-theme/icons/triangle-down";
+import { TriangleDownIcon } from "@site/src/prepverse-theme/icons/triangle-down";
 
 const ChevronDownIcon = () => (
     <svg

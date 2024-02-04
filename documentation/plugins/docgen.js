@@ -389,7 +389,7 @@ const handleDocgen = async () => {
 
 function plugin() {
     return {
-        name: "docusaurus-plugin-refine-docgen",
+        name: "docusaurus-plugin-prepverse-docgen",
         getPathsToWatch: function () {
             return [packagesDir];
         },
@@ -415,7 +415,7 @@ function plugin() {
                                 "optionalAccess",
                                 (_13) => _13["@generated"],
                             ]),
-                            "docusaurus-plugin-refine-docgen",
+                            "docusaurus-plugin-prepverse-docgen",
                             "default",
                         ),
                     },

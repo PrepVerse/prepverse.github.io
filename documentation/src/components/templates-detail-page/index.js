@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "@docusaurus/Head";
-import { TemplatesDetail } from "../../refine-theme/template-detail";
+import { TemplatesDetail } from "../../prepverse-theme/template-detail";
 
 const TemplatesDetailPage = (props) => {
     const { content } = props;

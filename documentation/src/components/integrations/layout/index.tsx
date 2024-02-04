@@ -1,9 +1,9 @@
 import React from "react";
 import Head from "@docusaurus/Head";
 import clsx from "clsx";
-import { CommonLayout } from "@site/src/refine-theme/common-layout";
-import { CommonHeader } from "@site/src/refine-theme/common-header";
-import { BlogFooter } from "@site/src/refine-theme/blog-footer";
+import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
+import { CommonHeader } from "@site/src/prepverse-theme/common-header";
+import { BlogFooter } from "@site/src/prepverse-theme/blog-footer";
 
 const IntegrationsLayout = ({ children }: React.PropsWithChildren<{}>) => {
     return (

@@ -1,5 +1,5 @@
-import { PageIcon } from "@site/src/refine-theme/icons/page";
-import { ShareIcon } from "@site/src/refine-theme/icons/share";
+import { PageIcon } from "@site/src/prepverse-theme/icons/page";
+import { ShareIcon } from "@site/src/prepverse-theme/icons/share";
 import React from "react";
 import { Examples } from "../types/examples";
 

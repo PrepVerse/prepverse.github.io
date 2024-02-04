@@ -1,1 +1,1 @@
-export { RefineBlogLayout as default } from "@site/src/refine-theme/blog-layout";
+export { RefineBlogLayout as default } from "@site/src/prepverse-theme/blog-layout";

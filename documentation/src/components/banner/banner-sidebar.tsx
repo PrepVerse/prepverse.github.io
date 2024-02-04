@@ -1,6 +1,6 @@
 import Link from "@docusaurus/Link";
-import { ArrowRightIcon } from "@site/src/refine-theme/icons/arrow-right";
-import { LandingRainbowButton } from "@site/src/refine-theme/landing-rainbow-button";
+import { ArrowRightIcon } from "@site/src/prepverse-theme/icons/arrow-right";
+import { LandingRainbowButton } from "@site/src/prepverse-theme/landing-rainbow-button";
 import clsx from "clsx";
 import React from "react";
 

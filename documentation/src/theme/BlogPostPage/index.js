@@ -10,7 +10,7 @@ import {
 } from "@docusaurus/theme-common/internal";
 import BlogLayout from "@theme/BlogLayout";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
-import { BlogTOC } from "../../refine-theme/blog-toc";
+import { BlogTOC } from "../../prepverse-theme/blog-toc";
 
 import { BlogPostPageView, PostPaginator } from "../../components/blog";
 

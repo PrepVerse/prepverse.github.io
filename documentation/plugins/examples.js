@@ -101,7 +101,7 @@ const addColorToTags = (tags) => {
 
 function plugin() {
     return {
-        name: "docusaurus-plugin-refine-examples",
+        name: "docusaurus-plugin-prepverse-examples",
         configureWebpack(config) {
             return {
                 resolve: {
@@ -116,7 +116,7 @@ function plugin() {
                                 "optionalAccess",
                                 (_3) => _3["@generated"],
                             ]),
-                            "docusaurus-plugin-refine-examples",
+                            "docusaurus-plugin-prepverse-examples",
                             "default",
                         ),
                     },
@@ -125,7 +125,7 @@ function plugin() {
         },
         async contentLoaded({ allContent, actions }) {
             if (!process.env.DISABLE_EXAMPLES) {
-                console.log("Composing refine examples...");
+                console.log("Composing prepverse examples...");
 
                 const { createData } = actions;
 

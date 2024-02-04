@@ -334,7 +334,7 @@ const handleDocgen = async () => {
 
 export default function plugin(): Plugin<DocgenContent> {
     return {
-        name: "docusaurus-plugin-refine-docgen",
+        name: "docusaurus-plugin-prepverse-docgen",
         getPathsToWatch: function () {
             return [packagesDir];
         },
@@ -352,7 +352,7 @@ export default function plugin(): Plugin<DocgenContent> {
                     alias: {
                         "@docgen": path.join(
                             config.resolve?.alias?.["@generated"],
-                            "docusaurus-plugin-refine-docgen",
+                            "docusaurus-plugin-prepverse-docgen",
                             "default",
                         ),
                     },

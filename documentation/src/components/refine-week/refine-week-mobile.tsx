@@ -5,9 +5,9 @@ import { RefineWeekLogo } from "@site/src/assets/week-of-refine/icons";
 import { LetsStartButton } from "./lets-start-button";
 import { TwitterButton } from "./twitter-button";
 import { DayIndicator } from "./day-indicator";
-import { ShareIcon } from "@site/src/refine-theme/icons/share";
+import { ShareIcon } from "@site/src/prepverse-theme/icons/share";
 import { CoverBgShadowMobile } from "./cover-bg-shadow";
-import { CalendarIcon } from "@site/src/refine-theme/icons/calendar";
+import { CalendarIcon } from "@site/src/prepverse-theme/icons/calendar";
 
 type Props = {
     variant: WeekVariants;

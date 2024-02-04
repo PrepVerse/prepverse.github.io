@@ -1,1 +1,1 @@
-export { CommonRunLocalPrompt as default } from "../../refine-theme/common-run-local-prompt";
+export { CommonRunLocalPrompt as default } from "../../prepverse-theme/common-run-local-prompt";

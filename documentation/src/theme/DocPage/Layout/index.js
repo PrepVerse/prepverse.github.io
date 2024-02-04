@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@theme/Layout";
-import { DocPageLayout as RefineDocPageLayout } from "@site/src/refine-theme/doc-page-layout";
+import { DocPageLayout as RefineDocPageLayout } from "@site/src/prepverse-theme/doc-page-layout";
 
 export default function DocPageLayout({ children }) {
     return (

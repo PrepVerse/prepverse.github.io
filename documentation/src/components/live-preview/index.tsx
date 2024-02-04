@@ -13,7 +13,7 @@ import { Conditional } from "../conditional";
 import { splitCode } from "../../utils/split-code";
 import { useLivePreviewContext } from "../live-preview-context";
 import Buffer from "buffer";
-import { ArrowUpIcon } from "@site/src/refine-theme/icons/arrow-up";
+import { ArrowUpIcon } from "@site/src/prepverse-theme/icons/arrow-up";
 
 global.Buffer = global.Buffer || Buffer.Buffer;
 

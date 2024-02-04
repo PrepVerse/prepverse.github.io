@@ -77,7 +77,7 @@ const getUnitById = (id) => {
 
 function plugin() {
     return {
-        name: "docusaurus-plugin-refine-checklist",
+        name: "docusaurus-plugin-prepverse-checklist",
         configureWebpack(config) {
             return {
                 resolve: {
@@ -92,7 +92,7 @@ function plugin() {
                                 "optionalAccess",
                                 (_3) => _3["@generated"],
                             ]),
-                            "docusaurus-plugin-refine-checklist",
+                            "docusaurus-plugin-prepverse-checklist",
                             "default",
                         ),
                     },

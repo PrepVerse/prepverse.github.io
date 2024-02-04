@@ -2,16 +2,16 @@ import Head from "@docusaurus/Head";
 import clsx from "clsx";
 import React from "react";
 
-import { CommonLayout } from "../refine-theme/common-layout";
-import { CommonHeader } from "../refine-theme/common-header";
-import { LandingFooter } from "../refine-theme/landing-footer";
-import { LandingHeader } from "../refine-theme/landing-header";
-import { BlogFooter } from "../refine-theme/blog-footer";
-import { LandingHero } from "../refine-theme/landing-hero";
-import { GithubIcon } from "@site/src/refine-theme/icons/github";
-import { OpenSourceIcon } from "@site/src/refine-theme/icons/open-source";
-import { DiscordIcon, TwitterIcon, LinkedInIcon } from "@site/src/refine-theme/icons/popover";
-import { FooterRedditIcon as RedditIcon } from "@site/src/refine-theme/icons/footer-reddit";
+import { CommonLayout } from "../prepverse-theme/common-layout";
+import { CommonHeader } from "../prepverse-theme/common-header";
+import { LandingFooter } from "../prepverse-theme/landing-footer";
+import { LandingHeader } from "../prepverse-theme/landing-header";
+import { BlogFooter } from "../prepverse-theme/blog-footer";
+import { LandingHero } from "../prepverse-theme/landing-hero";
+import { GithubIcon } from "@site/src/prepverse-theme/icons/github";
+import { OpenSourceIcon } from "@site/src/prepverse-theme/icons/open-source";
+import { DiscordIcon, TwitterIcon, LinkedInIcon } from "@site/src/prepverse-theme/icons/popover";
+import { FooterRedditIcon as RedditIcon } from "@site/src/prepverse-theme/icons/footer-reddit";
 import { useColorMode } from "@docusaurus/theme-common";
 
 function Home() {

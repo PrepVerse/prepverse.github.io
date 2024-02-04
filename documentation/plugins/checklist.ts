@@ -76,14 +76,14 @@ const getUnitById = (id: string) => {
 
 export default function plugin(): Plugin {
     return {
-        name: "docusaurus-plugin-refine-checklist",
+        name: "docusaurus-plugin-prepverse-checklist",
         configureWebpack(config) {
             return {
                 resolve: {
                     alias: {
                         "@checklists": path.join(
                             config.resolve?.alias?.["@generated"],
-                            "docusaurus-plugin-refine-checklist",
+                            "docusaurus-plugin-prepverse-checklist",
                             "default",
                         ),
                     },

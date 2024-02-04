@@ -1,9 +1,9 @@
 import React, { FC, PropsWithChildren, SVGProps } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-import { CommonLayout } from "@site/src/refine-theme/common-layout";
-import { CommonHeader } from "@site/src/refine-theme/common-header";
-import { LandingFooter } from "@site/src/refine-theme/landing-footer";
+import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
+import { CommonHeader } from "@site/src/prepverse-theme/common-header";
+import { LandingFooter } from "@site/src/prepverse-theme/landing-footer";
 import { CommonCircleChevronLeft } from "./common-circle-chevron-left";
 import { ShareIcon } from "./icons/share";
 import * as Icons from "@site/src/assets/integration-icons";

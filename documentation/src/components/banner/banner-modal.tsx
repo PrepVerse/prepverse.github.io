@@ -1,10 +1,10 @@
 import React, { FC, Fragment, useEffect, useRef, useState } from "react";
 import clsx from "clsx";
-import { LandingRainbowButton } from "@site/src/refine-theme/landing-rainbow-button";
-import { ArrowRightIcon } from "@site/src/refine-theme/icons/arrow-right";
+import { LandingRainbowButton } from "@site/src/prepverse-theme/landing-rainbow-button";
+import { ArrowRightIcon } from "@site/src/prepverse-theme/icons/arrow-right";
 import Link from "@docusaurus/Link";
 import { Dialog, Transition } from "@headlessui/react";
-import { CloseIcon } from "@site/src/refine-theme/icons/close";
+import { CloseIcon } from "@site/src/prepverse-theme/icons/close";
 import useScrollTracker from "@site/src/hooks/use-scroll-tracker";
 import useLocalStorage from "@site/src/hooks/use-localstorage";
 import { useLocation } from "@docusaurus/router";

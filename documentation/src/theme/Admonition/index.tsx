@@ -1,5 +1,5 @@
 import React from "react";
-import { Admonition as RefineAdmonition } from "@site/src/refine-theme/common-admonition";
+import { Admonition as RefineAdmonition } from "@site/src/prepverse-theme/common-admonition";
 
 function GithubIcon() {
     return (
