@@ -6,12 +6,18 @@ import MDXContent from "@theme/MDXContent";
 import BlogPostItemContainer from "@theme/BlogPostItem/Container";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {
-    LinkedinShareButton,
-    RedditShareButton,
-    TwitterShareButton,
-    TwitterIcon,
-    RedditIcon,
     LinkedinIcon,
+    LinkedinShareButton,
+    TwitterIcon,
+    TwitterShareButton,
+    TelegramIcon,
+    TelegramShareButton,
+    FacebookIcon,
+    FacebookShareButton,
+    InstapaperIcon,
+    InstapaperShareButton,
+    RedditIcon,
+    RedditShareButton,
 } from "react-share";
 import clsx from "clsx";
 
@@ -74,6 +80,7 @@ export const BlogPostPageView = ({ children }) => {
                         title={title}
                         source={url}
                         summary={description}
+                        hashtags={tags.map((tag) => tag.label)}
                         className="flex"
                     >
                         <LinkedinIcon size={26} round />
@@ -82,24 +89,41 @@ export const BlogPostPageView = ({ children }) => {
                         windowWidth={750}
                         windowHeight={800}
                         url={url + permalink}
-                        className="flex"
                         title={title}
                         hashtags={tags.map((tag) => tag.label)}
+                        className="flex"
                     >
                         <Twitter width={26} height={26} />
                     </TwitterShareButton>
+                    <TelegramShareButton
+                        windowWidth={750}
+                        windowHeight={800}
+                        url={url + permalink}
+                        title={title}
+                        hashtags={tags.map((tag) => tag.label)}
+                        className="flex"
+                    >
+                        <TelegramIcon size={26} round />
+                    </TelegramShareButton>
+                    <FacebookShareButton
+                        windowWidth={750}
+                        windowHeight={800}
+                        url={url + permalink}
+                        title={title}
+                        hashtags={tags.map((tag) => tag.label)}
+                        className="flex"
+                    >
+                        <FacebookIcon size={26} round />
+                    </FacebookShareButton>
                 </div>
             </div>
-            {/* <div>
+            <div>
                 <img
                     className="mb-2 w-full rounded-xl"
-                    src={`https://refine-web.imgix.net${frontMatter.image?.replace(
-                        "https://refine.ams3.cdn.digitaloceanspaces.com",
-                        "",
-                    )}?w=800`}
+                    src={`${frontMatter.image}?w=160`}
                     alt={title}
                 />
-            </div> */}
+            </div>
             <div className="blog-sm:px-6">
                 <div className="mb-6 text-sm">
                     <div

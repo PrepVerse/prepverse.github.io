@@ -8,7 +8,6 @@ import { LandingFooter } from "../refine-theme/landing-footer";
 import { LandingHeader } from "../refine-theme/landing-header";
 import { BlogFooter } from "../refine-theme/blog-footer";
 import { LandingHero } from "../refine-theme/landing-hero";
-import { EnterpriseHeroSection } from "@site/src/refine-theme/enterprise-hero-section";
 import { GithubIcon } from "@site/src/refine-theme/icons/github";
 import { OpenSourceIcon } from "@site/src/refine-theme/icons/open-source";
 import { DiscordIcon, TwitterIcon, LinkedInIcon } from "@site/src/refine-theme/icons/popover";
@@ -46,7 +45,7 @@ function Home() {
                     </div>
                     <About />
                     <div className="h-[96px] landing-lg:h-[160px]" />
-                    <BlogFooter />
+                    <LandingFooter />
                 </div>
             </CommonLayout>
         </>

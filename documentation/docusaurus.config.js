@@ -38,7 +38,7 @@ const siteConfig = {
                             process.env.DISABLE_VERSIONING === "true",
                         versions: {
                             current: {
-                                label: "CSE Preparation",
+                                label: "DSA",
                             },
                         },
                         lastVersion: "current",

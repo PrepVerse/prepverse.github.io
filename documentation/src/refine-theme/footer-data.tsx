@@ -44,6 +44,7 @@ export const menuItems = [
             },
             {
                 label: "Portfolio",
+                icon: <NewBadgeIcon />,
                 href: "https://prepverse.github.io/portfolio",
             },
         ],
@@ -55,10 +56,10 @@ export const secondaryMenuItems = [
     //     label: "Terms & Conditions",
     //     href: "#",
     // },
-    {
-        label: "Privacy Policy",
-        href: "/privacy-policy",
-    },
+    // {
+    //     label: "Privacy Policy",
+    //     href: "/privacy-policy",
+    // },
     {
         label: "License",
         href: "https://github.com/AkashSingh3031/The-Complete-FAANG-Preparation/blob/master/LICENSE",
