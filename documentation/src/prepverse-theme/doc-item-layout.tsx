@@ -95,7 +95,7 @@ export const DocItemLayout = ({ children }) => {
                 </div>
                 <div className={clsx("max-w-screen-content", "w-full")}>
                     <DocItemPaginator />
-                    <DocSurveyWidget className={clsx("mx-auto", "mt-10")} />
+                    {/* <DocSurveyWidget className={clsx("mx-auto", "mt-10")} /> */}
                 </div>
             </div>
             {tutorial?.isTutorial ? (
