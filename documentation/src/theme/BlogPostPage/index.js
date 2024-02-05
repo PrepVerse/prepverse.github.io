@@ -11,6 +11,7 @@ import {
 import BlogLayout from "@theme/BlogLayout";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
 import { BlogTOC } from "../../prepverse-theme/blog-toc";
+import Comment from '@site/src/components/blog-comment'
 
 import { BlogPostPageView, PostPaginator } from "../../components/blog";
 
@@ -22,6 +23,7 @@ function BlogPostPageContent({ children }) {
         <BlogLayout toc={<BlogTOC toc={toc} />}>
             <BlogPostPageView>{children}</BlogPostPageView>
             <PostPaginator title="Related Articles" posts={relatedPosts} />
+            <Comment />
         </BlogLayout>
     );
 }

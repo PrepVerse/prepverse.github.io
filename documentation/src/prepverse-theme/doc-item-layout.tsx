@@ -8,6 +8,7 @@ import React from "react";
 import { useDocTOCwithTutorial } from "../components/tutorial-toc/index";
 import { useCurrentTutorial } from "../hooks/use-current-tutorial";
 import { DocBreadcrumbs } from "./doc-breadcrumbs";
+import BackToTopButton from '@theme/BackToTopButton'
 import { SourceCodeBadge } from "./doc-sourcecode-badge";
 import { SwizzleBadge } from "./doc-swizzle-badge";
 import { DocTOC } from "./doc-toc";
@@ -92,6 +93,7 @@ export const DocItemLayout = ({ children }) => {
                         <DocItemContent>{children}</DocItemContent>
                     </div>
                     <DocItemFooter />
+                    <BackToTopButton />
                 </div>
                 <div className={clsx("max-w-screen-content", "w-full")}>
                     <DocItemPaginator />

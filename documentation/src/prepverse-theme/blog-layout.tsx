@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { CommonLayout } from "./common-layout";
 import { CommonHeader } from "./common-header";
 import { BlogFooter } from "./blog-footer";
+import BackToTopButton from '@theme/BackToTopButton'
 import clsx from "clsx";
 import { BannerSidebar } from "../components/banner/banner-sidebar";
 import { BannerModal } from "../components/banner/banner-modal";
@@ -62,7 +63,7 @@ export const RefineBlogLayout = (props: any) => {
                             "left-0",
                         )}
                     >
-                        <BannerSidebar shouldShowBanner={shouldShowBanner} />
+                        {/* <BannerSidebar shouldShowBanner={shouldShowBanner} /> */}
                     </div>
                 </div>
                 <div
@@ -89,6 +90,7 @@ export const RefineBlogLayout = (props: any) => {
             </div>
             <BlogFooter />
             <BannerModal />
+            <BackToTopButton />
         </CommonLayout>
     );
 };
