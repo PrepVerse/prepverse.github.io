@@ -294,7 +294,7 @@ const ExampleList: React.FC = () => {
             <>
                 <div
                     className={clsx(
-                        "grid grid-cols-1 md:grid-cols-3",
+                        "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
                         "gap-4 2xl:gap-8",
                     )}
                 >

@@ -26,7 +26,6 @@ export const EnterpriseHeroSection = ({
                         "text-start",
                         "pl-4 landing-sm:pl-6 landing-md:pl-10",
                         "dark:text-gray-0 text-gray-900",
-                        "landing-lg:pt-8",
                     )}
                 >
                     I am{" "}
@@ -39,7 +38,6 @@ export const EnterpriseHeroSection = ({
                     >
                         Akash Singh
                     </span>
-                    .
                 </h1>
                 <p
                     className={clsx(
@@ -55,11 +53,13 @@ export const EnterpriseHeroSection = ({
                     <br></br>
                     <br></br>
                     "Face the challenge, Fight through the obstacles, Finish what you started."
+                    <br></br>
+                    <br></br>
                 </p>
                 <EnterpriseGetInTouchButton
                     className={clsx(
                         "pl-4 landing-sm:pl-6 landing-md:pl-10",
-                        "mt-6 landing-lg:mt-16",
+                        "mt-6 landing-lg:mt-2",
                     )}
                 />
             </div>
@@ -74,13 +74,11 @@ export const EnterpriseHeroSection = ({
             >
                 <CommonThemedImage
                     className={clsx(
-                        "landing-md:h-[400px] landing-md:w-[400px]",
+                        "landing-md:h-[420px] landing-md:w-[420px]",
                         "rounded-full",
                     )}
-                    // srcDark="https://refine.ams3.cdn.digitaloceanspaces.com/enterprise/enterprise-hero-image-dark.png"
-                    srcDark="https://avatars.githubusercontent.com/u/60146338"
-                    // srcLight="https://refine.ams3.cdn.digitaloceanspaces.com/enterprise/enterprise-hero-image-light.png"
-                    srcLight="https://avatars.githubusercontent.com/u/60146338"
+                    srcDark="https://github.com/AkashSingh3031.png"
+                    srcLight="https://github.com/AkashSingh3031.png"
                     alt="Akash Singh"
                 />
             </div>

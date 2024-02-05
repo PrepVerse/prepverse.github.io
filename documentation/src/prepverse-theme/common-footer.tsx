@@ -45,7 +45,7 @@ export const CommonFooter = () => {
                             "sm:mr-4",
                         )}
                     >
-                        Join us on
+                        Connect with me on
                     </div>
                     <div
                         className={clsx(

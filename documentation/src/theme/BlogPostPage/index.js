@@ -1,19 +1,12 @@
 import React from "react";
 import clsx from "clsx";
-import {
-    HtmlClassNameProvider,
-    ThemeClassNames,
-} from "@docusaurus/theme-common";
-import {
-    BlogPostProvider,
-    useBlogPost,
-} from "@docusaurus/theme-common/internal";
+import { HtmlClassNameProvider, ThemeClassNames } from "@docusaurus/theme-common";
+import { BlogPostProvider, useBlogPost } from "@docusaurus/theme-common/internal";
 import BlogLayout from "@theme/BlogLayout";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
 import { BlogTOC } from "../../prepverse-theme/blog-toc";
-import Comment from '@site/src/components/blog-comment'
-
 import { BlogPostPageView, PostPaginator } from "../../components/blog";
+import Comment from '@site/src/components/blog-comment'
 
 function BlogPostPageContent({ children }) {
     const { metadata, toc } = useBlogPost();

@@ -74,11 +74,11 @@ export const socialLinks = [
         href: "https://github.com/AkashSingh3031",
     },
     {
-        icon: FooterTwitterIcon,
-        href: "https://twitter.com/akashsingh3031",
-    },
-    {
         icon: FooterLinkedinIcon,
         href: "https://www.linkedin.com/in/akashsingh3031",
+    },
+    {
+        icon: FooterTwitterIcon,
+        href: "https://twitter.com/akashsingh3031",
     },
 ];

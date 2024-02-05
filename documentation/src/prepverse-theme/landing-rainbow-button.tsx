@@ -1,8 +1,7 @@
 import React, { AnchorHTMLAttributes, ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
 import Link from "@docusaurus/Link";
-
-import { PlayOutlinedIcon } from "./icons/play-outlined";
+import { AccountPin } from "./icons/account-pin";
 
 type Props = {
     children?: React.ReactNode;
@@ -85,7 +84,7 @@ export const LandingRainbowButton = ({
                         children
                     ) : (
                         <>
-                            {/* <PlayOutlinedIcon /> */}
+                            <AccountPin className="dark:text-black text-white font-semibold" />
                             <span className="dark:text-black text-white font-semibold">
                                 About Me
                             </span>

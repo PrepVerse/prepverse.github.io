@@ -159,10 +159,10 @@ const siteConfig = {
         },
         image: "img/prepverse_favicon.jpg",
         algolia: {
-            appId: "1",
-            apiKey: "2",
-            indexName: "prepverse",
-            contextualSearch: true,
+            appId: "WFEX2734BK",
+            apiKey: "ca4e3acfce16651e728fe959f2502f28",
+            indexName: "prepverseio",
+            // contextualSearch: true,
         },
         metadata: [
             {
