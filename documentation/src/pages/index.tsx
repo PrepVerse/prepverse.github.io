@@ -5,13 +5,9 @@ import React from "react";
 import { CommonLayout } from "../prepverse-theme/common-layout";
 import { CommonHeader } from "../prepverse-theme/common-header";
 import { LandingFooter } from "../prepverse-theme/landing-footer";
-import { LandingHeader } from "../prepverse-theme/landing-header";
-import { BlogFooter } from "../prepverse-theme/blog-footer";
 import { LandingHero } from "../prepverse-theme/landing-hero";
 import { GithubIcon } from "@site/src/prepverse-theme/icons/github";
-import { OpenSourceIcon } from "@site/src/prepverse-theme/icons/open-source";
-import { DiscordIcon, TwitterIcon, LinkedInIcon } from "@site/src/prepverse-theme/icons/popover";
-import { FooterRedditIcon as RedditIcon } from "@site/src/prepverse-theme/icons/footer-reddit";
+import { TwitterIcon, LinkedInIcon, InstagramIcon } from "@site/src/prepverse-theme/icons/popover";
 import { useColorMode } from "@docusaurus/theme-common";
 
 function Home() {
@@ -144,12 +140,11 @@ const About: React.FC = () => {
                         )}
                     >
                         <div>
-                            {/* <RedditIcon
+                            <InstagramIcon
                                 className="text-2xl"
                                 width="24px"
                                 height="24px"
-                                color="#FF4500"
-                            /> */}
+                            />
                         </div>
                         <div className="text-xs md:text-base">
                             <div className="mb-0 text-gray-500 dark:text-gray-400">

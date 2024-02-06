@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import React, { useState } from "react";
 
 import { HamburgerIcon } from "./icons/hamburger";
-import { RefineLogoIcon } from "./icons/refine-logo";
 import { PrepVerseLogoIcon } from "./icons/prepverse-logo";
 
 import { openFigma } from "../utils/open-figma";
@@ -81,7 +80,6 @@ export const CommonHeader = ({ trackProgress }: Props) => {
                         >
                             <Link to="/" onContextMenu={openFigma}>
                                 <PrepVerseLogoIcon className="text-gray-900 dark:text-gray-0" />
-                                {/* <RefineLogoIcon className="text-gray-900 dark:text-gray-0" /> */}
                             </Link>
                         </div>
                         <button

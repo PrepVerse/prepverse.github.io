@@ -349,7 +349,7 @@ export const LandingFooter = () => {
                                 "text-gray-500 dark:text-gray-400",
                             )}
                         >
-                            Copyright © 2024 PrepVerse{" "}
+                            Copyright © {new Date().getFullYear()} PrepVerse{" "}
                             <HeartOutlinedIcon className="text-refine-red ml-2 inline leading-6" /><br></br>
                             Built with Docusaurus & Refine.
                         </div>

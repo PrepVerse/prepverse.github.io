@@ -1,10 +1,14 @@
 import React from "react";
-import { FooterDiscordIcon } from "./icons/footer-discord";
-import { FooterGithubIcon } from "./icons/footer-github";
-import { FooterLinkedinIcon } from "./icons/footer-linkedin";
-import { FooterRedditIcon } from "./icons/footer-reddit";
-import { FooterTwitterIcon } from "./icons/footer-twitter";
+import {
+        FooterGithubIcon,
+        FooterTwitterXIcon,
+        InstagramIconColor,
+        LinkedInIconColor,
+        TelegramIconColor,
+        WhatsAppIconColor
+    } from "./icons/social-tech";
 import { NewBadgeIcon } from "./icons/popover";
+import { ExternalIcon } from "./icons/external";
 
 export const menuItems = [
     {
@@ -44,7 +48,7 @@ export const menuItems = [
             },
             {
                 label: "Portfolio",
-                icon: <NewBadgeIcon />,
+                icon: <ExternalIcon />,
                 href: "https://prepverse.github.io/portfolio",
             },
         ],
@@ -74,11 +78,23 @@ export const socialLinks = [
         href: "https://github.com/AkashSingh3031",
     },
     {
-        icon: FooterLinkedinIcon,
+        icon: LinkedInIconColor,
         href: "https://www.linkedin.com/in/akashsingh3031",
     },
     {
-        icon: FooterTwitterIcon,
+        icon: FooterTwitterXIcon,
         href: "https://twitter.com/akashsingh3031",
+    },
+    {
+        icon: WhatsAppIconColor,
+        href: "https://wa.me/+919794423031",
+    },
+    {
+        icon: TelegramIconColor,
+        href: "https://t.me/akashsingh3031",
+    },
+    {
+        icon: InstagramIconColor,
+        href: "https://www.instagram.com/akash.singh3031",
     },
 ];

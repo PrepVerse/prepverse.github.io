@@ -14,6 +14,7 @@ export * from "./github-star";
 export * from "./github";
 export * from "./discord";
 export * from "./linkedin";
+export * from "./instagram";
 export * from "./twitter";
 export * from "./chevron-right";
 export * from "./chevron-down";

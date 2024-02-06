@@ -7,10 +7,10 @@ import { useColorMode } from "@docusaurus/theme-common";
 import { openFigma } from "@site/src/utils/open-figma";
 import { CloseIcon } from "../icons/close";
 import {
-    DiscordIcon,
     LinkedInIcon,
     GithubIcon,
     GithubStarIcon,
+    InstagramIcon,
     TwitterIcon,
 } from "../icons/popover";
 import { RefineLogoIcon } from "../icons/refine-logo";
@@ -293,6 +293,9 @@ const Social = (props: { id?: string }) => {
                 </Link>
                 <Link to="https://linkedin.com/in/akashsingh3031">
                     <LinkedInIcon className="h-10 w-10" />
+                </Link>
+                <Link to="https://instagram.com/akash.singh3031">
+                    <InstagramIcon className="h-10 w-10" />
                 </Link>
                 <Link to="https://twitter.com/akashsingh3031">
                     <TwitterIcon className="h-10 w-10" />
