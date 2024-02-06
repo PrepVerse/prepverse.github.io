@@ -67,7 +67,7 @@ export const CommonFooter = () => {
                                 >
                                     <Icon
                                         className={clsx(
-                                            "w-9 h-9 sm:w-6 sm:h-6",
+                                            "w-9 h-9 sm:w-8 sm:h-8",
                                         )}
                                     />
                                 </a>

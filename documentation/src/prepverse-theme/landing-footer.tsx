@@ -102,8 +102,8 @@ export const LandingFooter = () => {
                         >
                             <Icon
                                 className={clsx(
-                                    "w-8 h-8",
-                                    "landing-lg:w-6 landing-lg:h-6",
+                                    "w-6 h-6",
+                                    "landing-lg:w-8 landing-lg:h-8",
                                 )}
                             />
                         </a>
