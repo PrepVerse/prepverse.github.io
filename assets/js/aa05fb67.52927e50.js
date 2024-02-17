@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[8856],{1884:(t,e,n)=>{n.r(e),n.d(e,{default:()=>c});var u=n(1504),a=n(640);function c(){return u.createElement(a.YJ,{to:"/tutorial/dsa"})}}}]);

@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[2218],{2159:e=>{e.exports=JSON.parse('{"permalink":"/blog/tags/bharat","page":1,"postsPerPage":12,"totalPages":1,"totalCount":2,"blogDescription":"A Docusaurus powered blog!","blogTitle":"Blog"}')}}]);
