@@ -2,12 +2,28 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://prepverse.github.io/blog</id>
     <title>PrepVerse Blog</title>
-    <updated>2024-02-01T00:00:00.000Z</updated>
+    <updated>2024-02-18T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://prepverse.github.io/blog"/>
     <subtitle>PrepVerse Blog</subtitle>
     <icon>https://prepverse.github.io/img/prepverse_favicon.jpg</icon>
     <rights>Copyright © 2024 Akash Singh.</rights>
+    <entry>
+        <title type="html"><![CDATA[The Complete Life Cycle of Creator God Brahma]]></title>
+        <id>https://prepverse.github.io/blog/god-brahma</id>
+        <link href="https://prepverse.github.io/blog/god-brahma"/>
+        <updated>2024-02-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Exploring the Complete Life Cycle of Brahma & the Age of the Universe According to Vedas]]></summary>
+        <author>
+            <name>Akash Singh</name>
+            <uri>https://github.com/AkashSingh3031</uri>
+        </author>
+        <category label="Creator" term="Creator"/>
+        <category label="God" term="God"/>
+        <category label="Brahma" term="Brahma"/>
+        <category label="Universe" term="Universe"/>
+        <category label="Bharat" term="Bharat"/>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The History of Bharatvarsha]]></title>
         <id>https://prepverse.github.io/blog/bharatvarsha</id>
