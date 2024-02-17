@@ -230,7 +230,7 @@ hide_table_of_contents: false
   - #### **Current Age of Kali Yuga**: 
       - The current age of Kali-Yuga is **5126 years** from **midnight (00:00) on 18 February 3102 BCE to 18th February 2024**.
 
-:::::tip Calculating Brahma's 100 Years into Human Years
+:::::info-tip Calculating Brahma's 100 Years into Human Years
 :::simple
 Let's break down Brahma's 100-year lifespan into human years step by step:
 :::
@@ -284,17 +284,17 @@ This calculation shows that Brahma's 100-year lifespan equates to a staggering 3
 ### Setting the Stage: Current Time
 As per the given parameters:
 
-- **Current Year of 100** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;$$=$$ 50 (Completed) + 1 (current year)
-- **Current month of 12** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=$$ 1
-- **Current day(Kalpa) of 30** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;$$=$$ 1
-- **Current manvantara of 14** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; $$=$$ 6 (Completed) + 1(current)
-- **Current manvantara-sandhya of 15** &emsp;&emsp;&ensp; $$=$$ 7 (Completed)
-- **Current chatur-yuga of 71** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=$$ 27 (Completed) + 1(current)
-- **Current yuga of 4** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;$$=$$ 4 (Kali-yuga)
-- **Current kali-yuga time (in Human years)** $$=$$ 5126 years
+- **Current Year of 100** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;= 50 (Completed) + 1 (current year)
+- **Current month of 12** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= 1
+- **Current day(Kalpa) of 30** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&ensp;= 1
+- **Current manvantara of 14** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; = 6 (Completed) + 1(current)
+- **Current manvantara-sandhya of 15** &emsp;&emsp;&ensp; = 7 (Completed)
+- **Current chatur-yuga of 71** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= 27 (Completed) + 1(current)
+- **Current yuga of 4** &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;= 4 (Kali-yuga)
+- **Current kali-yuga time (in Human years)** = 5126 years
 
 
-Thus, the current date is:--> **DD/MM/YYYY** $$=$$ **01/01/51**.
+Thus, the current date is:--> **DD/MM/YYYY** = **01/01/51**.
 
 ### God Brahma's Time Scale: 
 <table>
