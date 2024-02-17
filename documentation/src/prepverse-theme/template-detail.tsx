@@ -212,7 +212,7 @@ export const TemplatesDetail: FC<Props> = ({ data }) => {
                                         "dark:!text-gray-200 !text-gray-900",
                                         "template-detail-markdown",
                                     )}
-                                    remarkPlugins={[remarkGfm, remarkRehype]}
+                                    // remarkPlugins={[remarkGfm, remarkRehype]}
                                 >
                                     {data.description}
                                 </ReactMarkdown>

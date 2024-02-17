@@ -27,6 +27,8 @@ import { Image } from "@site/src/components/image";
 import { Table, FullTable } from "@site/src/prepverse-theme/common-table";
 import { CreateRefineAppCommand } from "@site/src/partials/npm-scripts/create-refine-app-command.tsx";
 import { InstallPackagesCommand } from "@site/src/partials/npm-scripts/install-packages-commands";
+import { TutorialConditional } from "@site/src/prepverse-theme/tutorial-conditional";
+import { VideoInView } from "@site/src/components/video-in-view";
 
 export default {
     ...MDXComponents,
@@ -58,4 +60,6 @@ export default {
     CreateRefineAppCommand: CreateRefineAppCommand,
     InstallPackagesCommand: InstallPackagesCommand,
     FullTable: FullTable,
+    TutorialConditional,
+    VideoInView: VideoInView,
 };

@@ -4,7 +4,11 @@ const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ["class", '[data-theme="dark"]'],
-    content: ["./src/**/*.{js,jsx,ts,tsx}", "./docs/**/*.{md,mdx,tsx}"],
+    content: [
+        "./src/**/*.{js,jsx,ts,tsx}",
+        "./docs/**/*.{md,mdx,tsx}",
+        "./tutorial/**/*.{md,mdx,tsx}",
+    ],
     jit: true,
     theme: {
         extend: {
@@ -23,6 +27,7 @@ module.exports = {
                     yellow: "#FFBF00",
                     green: "#1FAD66",
                     "green-alt": "#26D97F",
+                    "tutorial-green": "#24A866",
                     cyan: "#0F8A8A",
                     "cyan-alt": "#47EBEB",
                     blue: "#0080FF",
@@ -852,6 +857,9 @@ module.exports = {
             "landing-md": "960px",
             "landing-lg": "1296px",
             "landing-xl": "1440px",
+            "tutorial-sm": "720px",
+            "tutorial-md": "960px",
+            "tutorial-lg": "1440px",
             "landing-footer": "1264px",
             "blog-sm": "688px",
             "blog-md": "1000px",

@@ -4,7 +4,7 @@ description: A Journey Through the History of Bharatvarsha from Satyug
 slug: bharatvarsha
 authors: AkashSingh3031
 tags: [Bharatvarsha, Jambudweep, Bharatkhand, Bharat, Hindustan, Aryavarta, Ajnabhavarsh, Tenjiku, India]
-is_featured: true
+is_featured: false
 image: https://sc0.blr1.digitaloceanspaces.com/large/805990-article-dhyrizbzrt-1459438492.jpeg
 hide_table_of_contents: false
 ---

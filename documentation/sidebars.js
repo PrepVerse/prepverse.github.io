@@ -3,14 +3,22 @@ module.exports = {
     someSidebar: [
         {
             type: "link",
-            href: "https://prepverse.github.io/LeetVerse",
-            label: "LeetVerse",
+            href: "/prepverse-community",
+            label: "Prepverse Community",
             className: "enterprise-badge",
         },
         {
             type: "category",
             label: "Getting Started",
             items: [
+                {
+                    type: "link",
+                    href: "https://prepverse.github.io/LeetVerse",
+                    label: "LeetVerse",
+                    customProps: {
+                        external: true,
+                    },
+                },
                 {
                     type: "link",
                     href: "https://prepverse.github.io/CodePoint",

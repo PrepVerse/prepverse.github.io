@@ -9,7 +9,7 @@ import { BannerModal } from "../components/banner/banner-modal";
 import { useLocation } from "@docusaurus/router";
 import useScrollTracker from "../hooks/use-scroll-tracker";
 
-export const RefineBlogLayout = (props: any) => {
+export const PrepVerseBlogLayout = (props: any) => {
     const [shouldShowBanner, setShouldShowBanner] = useState(false);
     const { children, toc, ...layoutProps } = props;
     const { pathname } = useLocation();

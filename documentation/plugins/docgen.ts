@@ -361,7 +361,7 @@ export default function plugin(): Plugin<DocgenContent> {
         },
         async contentLoaded({ content, actions }): Promise<void> {
             if (!process.env.DISABLE_DOCGEN) {
-                ora("Creating refine declaration files...").succeed();
+                ora("Creating prepverse declaration files...").succeed();
 
                 const { createData } = actions;
 

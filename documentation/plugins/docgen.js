@@ -425,7 +425,7 @@ function plugin() {
         async contentLoaded({ content, actions }) {
             if (!process.env.DISABLE_DOCGEN) {
                 _ora2.default
-                    .call(void 0, "Creating refine declaration files...")
+                    .call(void 0, "Creating prepverse declaration files...")
                     .succeed();
 
                 const { createData } = actions;

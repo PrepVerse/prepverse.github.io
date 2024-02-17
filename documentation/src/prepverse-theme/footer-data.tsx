@@ -22,6 +22,16 @@ export const menuItems = [
                 label: "Blog",
                 href: "/blog",
             },
+            {
+                label: "Project Showcase",
+                icon: <NewBadgeIcon />,
+                href: "/showcase",
+            },
+            {
+                label: "Community",
+                icon: <NewBadgeIcon />,
+                href: "/prepverse-community",
+            },
         ],
     },
     {
@@ -29,12 +39,12 @@ export const menuItems = [
         items: [
             {
                 label: "CodePoint",
-                icon: <NewBadgeIcon />,
+                icon: <ExternalIcon />,
                 href: "https://prepverse.github.io/CodePoint",
             },
             {
                 label: "LeetVerse",
-                icon: <NewBadgeIcon />,
+                icon: <ExternalIcon />,
                 href: "https://prepverse.github.io/LeetVerse",
             },
         ],
@@ -57,12 +67,8 @@ export const menuItems = [
 
 export const secondaryMenuItems = [
     // {
-    //     label: "Terms & Conditions",
-    //     href: "#",
-    // },
-    // {
-    //     label: "Privacy Policy",
-    //     href: "/privacy-policy",
+    //     label: "PrepVerse Community",
+    //     href: "/prepverse-community",
     // },
     {
         label: "License",

@@ -1,0 +1,12 @@
+{
+  "someSidebar": [
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "items": [
+        "getting-started/overview"
+      ],
+      "className": "category-as-header"
+    }
+  ]
+}

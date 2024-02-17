@@ -9,6 +9,8 @@ require("dotenv").config();
 
 const redirectJson = require("./redirects.json");
 const tutorialData = require("./tutorial-units");
+const math = require('remark-math');
+const katex = require('rehype-katex');
 
 /** @type {import('@docusaurus/types/src/index').DocusaurusConfig} */
 const siteConfig = {
@@ -21,6 +23,15 @@ const siteConfig = {
     trailingSlash: true,
     favicon: "img/prepverse_favicon.jpg",
     scripts: ["https://platform.twitter.com/widgets.js"],
+    // stylesheets: [
+    //     {
+    //         href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
+    //         type: 'text/css',
+    //         integrity:
+    //             'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
+    //         crossorigin: 'anonymous',
+    //     },
+    // ],
     presets: [
         [
             "@docusaurus/preset-classic",
@@ -32,16 +43,18 @@ const siteConfig = {
                         sidebarPath: require.resolve("./sidebars.js"),
                         editUrl:
                             "https://github.com/PrepVerse/PrepVerse/tree/master/documentation",
+                        remarkPlugins: [math],
+                        rehypePlugins: [katex, {strict: false}],
                         showLastUpdateAuthor: true,
                         showLastUpdateTime: true,
                         disableVersioning:
                             process.env.DISABLE_VERSIONING === "true",
+                        lastVersion: "current",
                         versions: {
                             current: {
                                 label: "DSA",
                             },
                         },
-                        lastVersion: "current",
                         admonitions: {
                             tag: ":::",
                             keywords: [
@@ -108,6 +121,37 @@ const siteConfig = {
         "./plugins/checklist.js",
         "./plugins/docgen.js",
         "./plugins/examples.js",
+        "./plugins/intercom.js",
+        "./plugins/featureRequests/FeatureRequestsPlugin.js",
+        "./plugins/templates.js",
+        "./plugins/tutorial-navigation.js",
+        [
+            "@docusaurus/plugin-content-docs",
+            {
+                id: "tutorial",
+                path: "tutorial",
+                routeBasePath: "tutorial",
+                sidebarPath: false,
+                docLayoutComponent: "@theme/TutorialPage",
+                docItemComponent: "@theme/TutorialItem",
+                include: ["**/index.md"],
+                admonitions: {
+                    tag: ":::",
+                    keywords: [
+                        "additional",
+                        "note",
+                        "tip",
+                        "info-tip",
+                        "info",
+                        "caution",
+                        "danger",
+                        "sourcecode",
+                        "create-example",
+                        "simple",
+                    ],
+                },
+            },
+        ],
         ...(process.env.DISABLE_BLOG
             ? []
             : [
@@ -117,6 +161,8 @@ const siteConfig = {
                         blogTitle: "Blog",
                         blogDescription: "A Docusaurus powered blog!",
                         routeBasePath: "/blog",
+                        remarkPlugins: [math],
+                        rehypePlugins: [katex, {strict: false}],
                         postsPerPage: 12,
                         blogSidebarTitle: "All posts",
                         blogSidebarCount: 0,
@@ -124,10 +170,25 @@ const siteConfig = {
                             type: "all",
                             copyright: `Copyright © ${new Date().getFullYear()} Akash Singh.`,
                         },
+                        admonitions: {
+                            tag: ":::",
+                            keywords: [
+                                "additional",
+                                "note",
+                                "tip",
+                                "info-tip",
+                                "info",
+                                "caution",
+                                "danger",
+                                "sourcecode",
+                                "create-example",
+                                "simple",
+                            ],
+                        },
                     },
                 ],
-            ]),
-        "./plugins/intercom.js",
+            ]
+        ),
     ],
     themeConfig: {
         prism: {
@@ -162,7 +223,7 @@ const siteConfig = {
             appId: "WFEX2734BK",
             apiKey: "ca4e3acfce16651e728fe959f2502f28",
             indexName: "prepverseio",
-            // contextualSearch: true,
+            contextualSearch: true,
         },
         metadata: [
             {

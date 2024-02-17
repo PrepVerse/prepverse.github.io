@@ -2,6 +2,7 @@
 import { HackathonAltIcon } from "../icons/hackathon-alt";
 import {
     DocumentsIcon,
+    DocsIcon,
     IntegrationsIcon,
     TutorialIcon,
     ExamplesIcon,
@@ -14,6 +15,7 @@ import {
     StoreIcon,
     MeetIcon,
     BlogIcon,
+    CommunityIcon,
     NewBadgeIcon,
     PointIcon,
 } from "../icons/popover";
@@ -44,6 +46,18 @@ export const MENU_ITEMS: MenuItemType[] = [
         label: "Code-Point",
         items: [
             {
+                label: "PrepVerse Docs",
+                description: "Computer science preparations docs",
+                link: "/docs",
+                icon: DocsIcon,
+            },
+            {
+                label: "Project Showcase",
+                description: "PrepVerse open-source projects",
+                link: "/showcase",
+                icon: TutorialIcon,
+            },
+            {
                 label: "Expert Sheet Solutions",
                 description: "Most popular coding questions solutions asked during SDE interviews.",
                 link: "https://prepverse.github.io/CodePoint/preface",
@@ -54,12 +68,6 @@ export const MENU_ITEMS: MenuItemType[] = [
                 description: "Coding Ninjas Studio Guided Path Solutions",
                 link: "https://prepverse.github.io/CodePoint/learning_resources/CN_Series/preface",
                 icon: IntegrationsIcon,
-            },
-            {
-                label: "PrepVerse Docs",
-                description: "Computer science preparations docs",
-                link: "/docs",
-                icon: TutorialIcon,
             },
         ],
     },
@@ -92,5 +100,11 @@ export const MENU_ITEMS: MenuItemType[] = [
         label: "Blog",
         href: "/blog",
         icon: BlogIcon,
+    },
+    {
+        isPopover: false,
+        label: "PrepVerse Community",
+        href: "/prepverse-community",
+        icon: CommunityIcon,
     },
 ];

@@ -1,5 +1,6 @@
 export * from "./awesome";
 export * from "./documents";
+export * from "./doc";
 export * from "./examples";
 export * from "./integrations";
 export * from "./tutorial";
@@ -23,3 +24,4 @@ export * from "./point";
 export * from "./blog";
 export * from "./blog-alt";
 export * from "./new-badge";
+export * from "./community";

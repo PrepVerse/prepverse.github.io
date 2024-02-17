@@ -30,7 +30,7 @@ export const CommonFooter = () => {
                 >
                     Copyright © {new Date().getFullYear()} PrepVerse{" "}
                     <HeartOutlinedIcon className="text-refine-red ml-2 inline leading-6" /> <br></br>
-                    Built with Docusaurus & refine.
+                    Built with Docusaurus & Refine.
                 </div>
 
                 <div

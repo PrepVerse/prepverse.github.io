@@ -92,7 +92,7 @@ export const DocVersionDropdown = ({ className, wrapperClassName }: Props) => {
                                 className={clsx(
                                     "absolute right-0 top-2 origin-bottom-right",
                                     "flex flex-col gap-2",
-                                    "w-[112px]",
+                                    "w-[120px]",
                                     "p-2",
                                     "bg-gray-700 dark:bg-white",
                                     "rounded-lg",

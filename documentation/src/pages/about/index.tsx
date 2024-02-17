@@ -26,7 +26,7 @@ const About: React.FC = () => {
             <Head title="About | AkashSingh3031">
                 <html data-page="about" data-customized="true" />
             </Head>
-            <CommonLayout description="Build React-based internal tools, admin panels, dashboards & B2B apps with unmatched flexibility.">
+            <CommonLayout description="">
                 <div className={clsx()}>
                     <CommonHeader />
                     <div
