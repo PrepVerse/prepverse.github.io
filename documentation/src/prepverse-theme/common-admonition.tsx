@@ -50,13 +50,11 @@ const colorTextClasses = {
 };
 
 const colorWrapperClasses = {
-    caution:
-        "bg-refine-react-light-orange bg-opacity-[0.15] dark:bg-refine-react-dark-orange dark:bg-opacity-[0.15] border-l-refine-react-light-orange dark:border-l-refine-dark-orange",
-    info: "bg-refine-react-light-purple bg-opacity-[0.15] dark:bg-refine-react-dark-purple dark:bg-opacity-[0.15] border-l-refine-react-light-purple dark:border-l-refine-react-dark-purple",
-    tip: "bg-refine-react-light-green-alt/5 bg-opacity-[0.05] dark:bg-refine-react-dark-green-alt/5 dark:bg-opacity-[0.05] border-l-refine-react-light-green-alt dark:border-l-refine-react-dark-green-alt",
-    note: "bg-refine-react-light-green-bg/20 dark:bg-refine-react-light-green/20 dark:bg-opacity-[0.2] border-l-refine-react-light-green dark:border-l-refine-react-dark-green",
-    "info-tip":
-        "bg-refine-blue/10 dark:bg-[#6EB3F7]/10 bg-opacity-10  dark:bg-opacity-10 border-l-refine-blue",
+    caution: "bg-refine-react-light-orange bg-opacity-[0.15] dark:bg-refine-react-dark-orange/15 dark:bg-opacity-[0.15] border-l-refine-react-light-orange dark:border-l-refine-dark-orange",
+    info: "bg-refine-react-light-purple bg-opacity-[0.15] dark:bg-refine-react-dark-purple/15 dark:bg-opacity-[0.15] border-l-refine-react-light-purple dark:border-l-refine-react-dark-purple",
+    tip: "bg-refine-react-light-green-alt bg-opacity-[0.05] dark:bg-refine-react-dark-green-alt/5 dark:bg-opacity-[0.05] border-l-refine-react-light-green-alt dark:border-l-refine-react-dark-green-alt",
+    note: "bg-refine-react-light-green-bg dark:bg-refine-react-light-green/20 dark:bg-opacity-[0.2] border-l-refine-react-light-green dark:border-l-refine-react-dark-green",
+    "info-tip": "bg-refine-blue/10 dark:bg-[#6EB3F7]/10 bg-opacity-10  dark:bg-opacity-10 border-l-refine-blue",
     "command-line": "bg-refine-purple bg-opacity-10 border-l-refine-purple",
     danger: "bg-refine-red bg-opacity-10 border-l-refine-red",
     sourcecode: "bg-refine-pink bg-opacity-10 border-l-refine-pink",

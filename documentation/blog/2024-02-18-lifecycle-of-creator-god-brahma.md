@@ -230,7 +230,7 @@ hide_table_of_contents: false
   - #### **Current Age of Kali Yuga**: 
       - The current age of Kali-Yuga is **5126 years** from **midnight (00:00) on 18 February 3102 BCE to 18th February 2024**.
 
-:::::info-tip Calculating Brahma's 100 Years into Human Years
+:::::tip Calculating Brahma's 100 Years into Human Years
 :::simple
 Let's break down Brahma's 100-year lifespan into human years step by step:
 :::

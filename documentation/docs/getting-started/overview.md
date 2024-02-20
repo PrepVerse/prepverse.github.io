@@ -24,6 +24,6 @@ Unleash your creativity and analytical skills with captivating System Design mat
 :::danger Continuous Learning and Growth:
 At our repository, learning is a never-ending journey fueled by curiosity, exploration, and collaboration. Stay updated with the latest trends, developments, and best practices in the world of technology, and join a vibrant community of learners, educators, and industry professionals dedicated to sharing knowledge, insights, and experiences.
 :::
-:::simple Conclusion
+:::info Conclusion
 Whether you're a seasoned professional seeking to expand your skill set or a budding enthusiast eager to explore the frontiers of technology, our repository offers something for everyone. So, what are you waiting for? Dive into a world of endless possibilities and unlock the treasure trove of knowledge that awaits you. Together, let's embark on a journey of learning, growth, and transformation. 🚀🌐💡
 :::
