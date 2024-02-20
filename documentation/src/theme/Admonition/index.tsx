@@ -1,5 +1,5 @@
 import React from "react";
-import { Admonition as RefineAdmonition } from "@site/src/prepverse-theme/common-admonition";
+import { Admonition as PrepVerseAdmonition } from "@site/src/prepverse-theme/common-admonition";
 
 function GithubIcon() {
     return (
@@ -62,9 +62,9 @@ function processAdmonitionProps(props) {
 const AdmonitionBase = (props) => {
     const { children, type, title } = processAdmonitionProps(props);
     return (
-        <RefineAdmonition type={type} title={title}>
+        <PrepVerseAdmonition type={type} title={title}>
             {children}
-        </RefineAdmonition>
+        </PrepVerseAdmonition>
     );
 };
 

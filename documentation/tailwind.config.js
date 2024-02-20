@@ -61,6 +61,7 @@ module.exports = {
                     "react-light-orange-bg": "#FEF5E7",
                     "react-light-purple-bg": "#F3F4FD",
                     "react-light-green-bg": "#F4FBF9",
+                    "tutorial-dark-bg": "#1D2026",
                     "bg-alt": "#262640",
                     "link-dark": "#6EB3F7",
                     "link-light": "#0080FF",
@@ -88,6 +89,18 @@ module.exports = {
                     800: "#1D1E30",
                     900: "#14141F",
                     1000: "#000000",
+                    // 0: "rgb(var(--color-gray-0) / <alpha-value>)",
+                    // 50: "rgb(var(--color-gray-50) / <alpha-value>)",
+                    // 100: "rgb(var(--color-gray-100) / <alpha-value>)",
+                    // 200: "rgb(var(--color-gray-200) / <alpha-value>)",
+                    // 300: "rgb(var(--color-gray-300) / <alpha-value>)",
+                    // 400: "rgb(var(--color-gray-400) / <alpha-value>)",
+                    // 500: "rgb(var(--color-gray-500) / <alpha-value>)",
+                    // 600: "rgb(var(--color-gray-600) / <alpha-value>)",
+                    // 700: "rgb(var(--color-gray-700) / <alpha-value>)",
+                    // 800: "rgb(var(--color-gray-800) / <alpha-value>)",
+                    // 900: "rgb(var(--color-gray-900) / <alpha-value>)",
+                    // 1000: "rgb(var(--color-gray-1000) / <alpha-value>)",
                 },
                 "refine-week": {
                     supabase: {
@@ -551,8 +564,17 @@ module.exports = {
                     "enterprise-table-right-to-left 0.3s ease-in-out forwards",
                 "new-badge-border": "new-badge-border 4s linear infinite",
                 reveal: "reveal 0.3s ease-in-out forwards",
+                "progress-fill": "progressFill 1s linear 1 forwards",
             },
             keyframes: {
+                progressFill: {
+                    "0%": {
+                        width: "0%",
+                    },
+                    "100%": {
+                        width: "100%",
+                    },
+                },
                 reveal: {
                     "0%": {
                         opacity: 0,

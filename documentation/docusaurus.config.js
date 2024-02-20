@@ -22,16 +22,31 @@ const siteConfig = {
     organizationName: "PrepVerse",
     trailingSlash: true,
     favicon: "img/prepverse_favicon.jpg",
-    scripts: ["https://platform.twitter.com/widgets.js"],
-    // stylesheets: [
-    //     {
-    //         href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-    //         type: 'text/css',
-    //         integrity:
-    //             'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-    //         crossorigin: 'anonymous',
-    //     },
-    // ],
+    scripts: [
+        "https://platform.twitter.com/widgets.js",
+        {
+            src: "https://widget.kapa.ai/kapa-widget.bundle.js",
+            "data-website-id": "",
+            "data-project-name": "PrepVerse",
+            "data-project-color": "#303450",
+            "data-modal-header-bg-color": "#303450",
+            "data-modal-title-color": "#ffffff",
+            "data-button-border-radius": "100%",
+            "data-button-text-font-size": "0px",
+            "data-button-text-color": "#303450",
+            "data-button-bg-color": "transparent",
+            "data-button-text": "",
+            "data-button-box-shadow": "none",
+            "data-button-image-height": "60px",
+            "data-button-image-width": "60px",
+            "data-modal-title": "",
+            "data-modal-image": 
+                "https://github.com/AkashSingh3031.png",
+            "data-project-logo":
+                "https://github.com/AkashSingh3031.png",
+            async: true,
+        },
+    ],
     presets: [
         [
             "@docusaurus/preset-classic",
@@ -132,6 +147,8 @@ const siteConfig = {
                 path: "tutorial",
                 routeBasePath: "tutorial",
                 sidebarPath: false,
+                remarkPlugins: [math],
+                rehypePlugins: [katex, {strict: false}],
                 docLayoutComponent: "@theme/TutorialPage",
                 docItemComponent: "@theme/TutorialItem",
                 include: ["**/index.md"],
