@@ -71,14 +71,14 @@ export const TutorialDocumentLayout = ({ children }) => {
                                 "flex-wrap",
                             )}
                         >
-                            <TutorialParameterDropdown
+                            {/* <TutorialParameterDropdown
                                 label="Routing"
                                 parameter="routerSelection"
                             />
                             <TutorialParameterDropdown
                                 label="UI Framework"
                                 parameter="uiSelection"
-                            />
+                            /> */}
                         </div>
                     </div>
                     <div className={clsx("refine-prose")}>

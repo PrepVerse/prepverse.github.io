@@ -61,6 +61,8 @@ export const TutorialSandpack = ({
     ...sandpackProps
 }: Props) => {
     const { contentPercentage, setContentPercentage } = useTutorialLayout();
+    const [form, setForm] = React.useState({});
+    const [errors, setErrors] = React.useState({});
     const [resizing, setResizing] = React.useState(false);
     const containerRef = React.useRef<HTMLDivElement>(null);
 
@@ -410,24 +412,24 @@ const TutorialSandpackBase = ({
             theme={
                 colorMode === "light"
                     ? {
-                          ...aquaBlue,
-                          colors: {
-                              ...aquaBlue.colors,
-                              accent: "#1D1E30",
-                              surface1: "transparent",
-                              surface2: "transparent",
-                              surface3: "transparent",
-                          },
-                      }
+                        ...aquaBlue,
+                        colors: {
+                            ...aquaBlue.colors,
+                            accent: "#1D1E30",
+                            surface1: "transparent",
+                            surface2: "transparent",
+                            surface3: "transparent",
+                        },
+                    }
                     : {
-                          ...nightOwl,
-                          colors: {
-                              ...nightOwl.colors,
-                              surface1: "transparent",
-                              surface2: "transparent",
-                              surface3: "transparent",
-                          },
-                      }
+                        ...nightOwl,
+                        colors: {
+                            ...nightOwl.colors,
+                            surface1: "transparent",
+                            surface2: "transparent",
+                            surface3: "transparent",
+                        },
+                    }
             }
             className="!w-full"
             {...props}
@@ -635,7 +637,7 @@ const SandpackRightSide = ({
                                 }}
                             >
                                 <div className="sp-custom-loading bg-gray-0 dark:bg-gray-800">
-                                    <Spinner />
+                                    {/* <Spinner /> */}
                                     <LoaderProgress />
                                 </div>
                             </SandpackPreview>

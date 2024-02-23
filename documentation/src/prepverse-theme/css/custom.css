@@ -439,7 +439,7 @@ html[data-active-page="index"] body {
 }
 
 .sp-preview .sp-loading + .sp-custom-loading .sp-loading-progress {
-    /* @apply animate-progress-fill; */
+    @apply animate-progress-fill;
 }
 
 .sp-icon-standalone[title="Open in CodeSandbox"] svg + span {

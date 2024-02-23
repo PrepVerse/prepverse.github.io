@@ -53,11 +53,11 @@ export const CommonLayout = (props: any) => {
             return;
         }
 
-        if (location.pathname.startsWith("/docs")) {
-            kapaAIWidget.style.display = "block";
-        } else {
-            kapaAIWidget.style.display = "none";
-        }
+        // if (location.pathname.startsWith("/docs")) {
+        //     kapaAIWidget.style.display = "block";
+        // } else {
+        //     kapaAIWidget.style.display = "none";
+        // }
     }, [location.pathname]);
 
     return (

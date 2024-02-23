@@ -10,6 +10,7 @@ import { DocSearchButton } from "./doc-search-button";
 import { TutorialParameterDropdown } from "./tutorial-parameter-dropdown";
 import { TutorialNavigation } from "./tutorial-navigation";
 import { Dialog, Transition } from "@headlessui/react";
+import { TopAnnouncement } from "./top-announcement";
 import { socialLinks } from "./footer-data";
 
 import Link from "@docusaurus/Link";
@@ -263,14 +264,14 @@ const Header = () => {
                         "gap-2",
                     )}
                 >
-                    <TutorialParameterDropdown
+                    {/* <TutorialParameterDropdown
                         label="Routing"
                         parameter="routerSelection"
                     />
                     <TutorialParameterDropdown
                         label="UI Framework"
                         parameter="uiSelection"
-                    />
+                    /> */}
                 </div>
                 <div
                     className={clsx(
@@ -336,21 +337,24 @@ export const MobileNavigation = () => {
 
 export const TutorialHeader = React.memo(function TutorialHeaderComponent() {
     return (
-        <div
-            className={clsx(
-                "flex items-center justify-center",
-                "flex-col",
-                // "h-16",
-                "z-10",
-                "sticky",
-                "top-0",
-                "py-4 pb-[15px] tutorial-sm:pt-[15px] tutorial-sm:pb-[16px] px-4 tutorial-md:px-6 tutorial-md:pt-[11px] tutorial-md:pb-[10px]",
-                "bg-gray-0 dark:bg-gray-800",
-                "border-b border-gray-300 dark:border-gray-700",
-            )}
-        >
-            <Header />
-            <MobileNavigation />
-        </div>
+        <>
+            <TopAnnouncement />
+            <div
+                className={clsx(
+                    "flex items-center justify-center",
+                    "flex-col",
+                    // "h-16",
+                    "z-10",
+                    "sticky",
+                    "top-0",
+                    "py-4 pb-[15px] tutorial-sm:pt-[15px] tutorial-sm:pb-[16px] px-4 tutorial-md:px-6 tutorial-md:pt-[11px] tutorial-md:pb-[10px]",
+                    "bg-gray-0 dark:bg-gray-800",
+                    "border-b border-gray-300 dark:border-gray-700",
+                )}
+            >
+                <Header />
+                <MobileNavigation />
+            </div>
+        </>
     );
 });
