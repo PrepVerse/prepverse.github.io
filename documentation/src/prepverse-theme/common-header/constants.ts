@@ -101,10 +101,10 @@ export const MENU_ITEMS: MenuItemType[] = [
         href: "/blog",
         icon: BlogIcon,
     },
-    {
-        isPopover: false,
-        label: "PrepVerse Community",
-        href: "/prepverse-community",
-        icon: CommunityIcon,
-    },
+    // {
+    //     isPopover: false,
+    //     label: "PrepVerse Community",
+    //     href: "/prepverse-community",
+    //     icon: CommunityIcon,
+    // },
 ];

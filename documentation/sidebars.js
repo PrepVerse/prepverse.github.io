@@ -2,14 +2,9 @@
 module.exports = {
     someSidebar: [
         {
-            type: "link",
-            href: "/prepverse-community",
-            label: "Prepverse Community",
-            className: "enterprise-badge",
-        },
-        {
             type: "category",
             label: "Getting Started",
+            className: "category-as-header",
             items: [
                 {
                     type: "link",
@@ -28,9 +23,39 @@ module.exports = {
                     },
                 },
                 "getting-started/overview",
-                "getting-started/quickstart",
             ],
+        },
+        {
+            type: "link",
+            href: "/prepverse-community",
+            label: "Prepverse Community",
+            className: "enterprise-badge",
+        },
+        {
+            type: "category",
+            label: "Basic DSA",
             className: "category-as-header",
+            items: [
+                {
+                    type: "category",
+                    label: "Array",
+                    link: {
+                        type: "generated-index",
+                        title: "Array Tutorials",
+                        slug: "/array",
+                    },
+                    items: [
+                        "array/arrayIntro",
+                        {
+                            type: "category",
+                            label: "Problems",
+                            items: [
+                                "array/quickstart",
+                            ],
+                        },
+                    ],
+                },
+            ],
         },
     ],
 };
