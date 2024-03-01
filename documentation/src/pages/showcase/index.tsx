@@ -8,6 +8,7 @@ import Translate, {translate} from '@docusaurus/Translate';
 import {useHistory, useLocation} from '@docusaurus/router';
 import {usePluralForm} from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
+import BackToTopButton from '@theme/BackToTopButton'
 import Layout from '@theme/Layout';
 import FavoriteIcon from '@site/src/prepverse-theme/icons/FavoriteIcon';
 import {
@@ -396,6 +397,7 @@ export default function Showcase(): JSX.Element {
           {/* <ShowcaseCardsInfo /> */}
       </div>
       <BlogFooter />
+      <BackToTopButton />
     </CommonLayout>
   );
 }
