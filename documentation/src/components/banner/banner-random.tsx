@@ -4,49 +4,62 @@ import { BannerExamples } from "./banner-examples";
 import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const data = [
-    {
-        description:
-            "Refine is a React Framework used by over monthly 15K developers for building enterprise internal tools, dashboards, and B2B apps",
-        image: {
-            src: "https://refine.ams3.cdn.digitaloceanspaces.com/website/static/banners/banner-tweet.jpg",
-            alt: "X tweet about Refine",
-            href: "https://s.refine.dev/blog-twitter?ref=banner-twitter",
-        },
-        button: {
-            text: "Learn more",
-            href: "https://s.refine.dev/blog-twitter?ref=banner-twitter",
-        },
-        bannerName: "banner-twitter",
-    },
-    /*    {
-        title: "Save developer hours!",
-        description:
-            "An open-source, industry-standard codebase designed for building enterprise-grade internal tools, admin panels, and CRUD apps.",
-        image: {
-            src: "https://refine.ams3.cdn.digitaloceanspaces.com/website/static/banners/banner-save-hours.png",
-            alt: "Illustration about time is gold",
-            href: "https://github.com/refinedev/refine?ref=banner-save-hours",
-        },
-        button: {
-            text: "Learn more",
-            href: "https://github.com/refinedev/refine?ref=banner-save-hours",
-        },
-        bannerName: "banner-save-hours",
-    },
-    {
-        description:
-            "refine is ranked among the top 3 rapidly growing React frameworks in the ecosystem.",
-        image: {
-            src: "https://refine.ams3.cdn.digitaloceanspaces.com/website/static/banners/banner-oss-insight.png",
-            alt: "Photo about refine ranking on OSS Insight website",
-            href: "https://github.com/refinedev/refine?ref=banner-oss-insight",
-        },
-        button: {
-            text: "Learn more",
-            href: "https://github.com/refinedev/refine?ref=banner-oss-insight",
-        },
-        bannerName: "banner-oss-insight",
-    }, */
+    // {
+    //     description: "Click here to discover my latest projects, skills, and achievements on my portfolio website. My journey into creativity begins now!",
+    //     image: {
+    //         src: "https://github.com/AkashSingh3031.png",
+    //         alt: "My Portfolio",
+    //         href: "https://prepverse.github.io/portfolio",
+    //     },
+    //     button: {
+    //         text: "Explore Now",
+    //         href: "https://prepverse.github.io/portfolio",
+    //     },
+    //     bannerName: "banner-twitter",
+    // },
+    // {
+    //     description:
+    //         "Refine is a React Framework used by over monthly 15K developers for building enterprise internal tools, dashboards, and B2B apps",
+    //     image: {
+    //         src: "https://refine.ams3.cdn.digitaloceanspaces.com/website/static/banners/banner-tweet.jpg",
+    //         alt: "X tweet about Refine",
+    //         href: "https://s.refine.dev/blog-twitter?ref=banner-twitter",
+    //     },
+    //     button: {
+    //         text: "Learn more",
+    //         href: "https://s.refine.dev/blog-twitter?ref=banner-twitter",
+    //     },
+    //     bannerName: "banner-twitter",
+    // },
+    // {
+    //     title: "Save developer hours!",
+    //     description:
+    //         "An open-source, industry-standard codebase designed for building enterprise-grade internal tools, admin panels, and CRUD apps.",
+    //     image: {
+    //         src: "https://refine.ams3.cdn.digitaloceanspaces.com/website/static/banners/banner-save-hours.png",
+    //         alt: "Illustration about time is gold",
+    //         href: "https://github.com/refinedev/refine?ref=banner-save-hours",
+    //     },
+    //     button: {
+    //         text: "Learn more",
+    //         href: "https://github.com/refinedev/refine?ref=banner-save-hours",
+    //     },
+    //     bannerName: "banner-save-hours",
+    // },
+    // {
+    //     description:
+    //         "refine is ranked among the top 3 rapidly growing React frameworks in the ecosystem.",
+    //     image: {
+    //         src: "https://refine.ams3.cdn.digitaloceanspaces.com/website/static/banners/banner-oss-insight.png",
+    //         alt: "Photo about refine ranking on OSS Insight website",
+    //         href: "https://github.com/refinedev/refine?ref=banner-oss-insight",
+    //     },
+    //     button: {
+    //         text: "Learn more",
+    //         href: "https://github.com/refinedev/refine?ref=banner-oss-insight",
+    //     },
+    //     bannerName: "banner-oss-insight",
+    // },
 ];
 
 // +1 for BannerExamples

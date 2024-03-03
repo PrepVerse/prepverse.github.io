@@ -4,11 +4,11 @@ import { LandingRainbowButton } from "@site/src/prepverse-theme/landing-rainbow-
 import clsx from "clsx";
 import React from "react";
 
-const text = "Struggling with internal tools?";
+const text = "My Portfolio";
 const description =
-    "Explore refine’s limitless possibilities in crafting CRUD apps, CRM solutions, HR dashboards, and more!";
+    "Click here to discover my latest projects, skills, and achievements on my portfolio website. My journey into creativity begins now!";
 const image =
-    "https://refine.ams3.cdn.digitaloceanspaces.com/website/static/banners/app-crm.png";
+    "https://github.com/AkashSingh3031.png";
 
 export const BannerSidebar = ({ shouldShowBanner }) => {
     React.useEffect(() => {
@@ -40,7 +40,7 @@ export const BannerSidebar = ({ shouldShowBanner }) => {
             )}
         >
             <Link
-                to={"https://s.refine.dev/blog-sidebar?ref=banner-sidebar"}
+                to={"https://prepverse.github.io/portfolio?ref=banner-sidebar"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={clsx(
@@ -51,7 +51,7 @@ export const BannerSidebar = ({ shouldShowBanner }) => {
                     "overflow-hidden",
                 )}
             >
-                <img src={image} alt={"refine App screenshot"} loading="lazy" />
+                <img src={image} alt={"portfolio"} loading="lazy" />
             </Link>
 
             <h2 className={clsx("text-2xl font-semibold", "text-gray-0")}>
@@ -62,7 +62,7 @@ export const BannerSidebar = ({ shouldShowBanner }) => {
             <LandingRainbowButton
                 className={clsx("w-max")}
                 buttonClassname={clsx("!px-4", "!py-2")}
-                href={"https://s.refine.dev/blog-sidebar?ref=banner-sidebar"}
+                href={"https://prepverse.github.io/portfolio?ref=banner-sidebar"}
                 target="_blank"
                 rel="noopener noreferrer"
             >

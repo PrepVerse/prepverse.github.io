@@ -28,8 +28,8 @@ export const BannerImageWithText: FC<Props> = ({
     image,
     variant = "purple",
     button = {
-        text: "Learn more",
-        href: "https://refine.dev/",
+        text: "Explore Now",
+        href: "https://prepverse.github.io/portfolio",
         onClick: undefined,
     },
     bannerName,
@@ -128,9 +128,9 @@ export const BannerImageWithText: FC<Props> = ({
                     />
                 </LandingRainbowButton>
             </div>
-            <RefineLogoSeal
+            {/* <RefineLogoSeal
                 className={clsx("absolute", "bottom-2", "right-2")}
-            />
+            /> */}
         </div>
     );
 };

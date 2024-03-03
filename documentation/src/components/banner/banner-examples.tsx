@@ -14,11 +14,11 @@ type Props = {
 };
 
 export const BannerExamples: FC<Props> = ({
-    title = "Open-source Retool alternative for enterprise",
-    description = "Build React-based internal tools, dashboards & B2B apps with unmatched flexibility",
+    title = "My Portfolio",
+    description = "Click here to discover my latest projects, skills, and achievements on my portfolio website. My journey into creativity begins now!",
     button = {
-        text: "Discover Refine",
-        href: "https://s.refine.dev/blog-retool?ref=banner-retool-alternative",
+        text: "Explore Now",
+        href: "https://prepverse.github.io/portfolio?ref=banner-retool-alternative",
         onClick: undefined,
     },
 }) => {
@@ -77,9 +77,9 @@ export const BannerExamples: FC<Props> = ({
                     {button.text}
                 </div>
             </LandingRainbowButton>
-            <RefineLogoSeal
+            {/* <RefineLogoSeal
                 className={clsx("absolute", "bottom-2", "right-2")}
-            />
+            /> */}
         </div>
     );
 };
