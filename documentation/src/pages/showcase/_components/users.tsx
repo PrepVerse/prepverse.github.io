@@ -38,9 +38,9 @@ export type TagType =
   | 'react'
   | 'node'
   | 'php'
-  | 'python'
-  | 'ml'
-  | 'ds'
+  // | 'python'
+  // | 'ml'
+  // | 'ds'
 
 const Users: User[] = [
   {
@@ -961,32 +961,32 @@ export const Tags: {[type in TagType]: Tag} = {
     color: '#1e90fe',
   },
 
-  python: {
-    label: translate({message: 'Python'}),
-    description: translate({
-      message: 'PrepVerse projects using the python feature',
-      id: 'showcase.tag.python.description',
-    }),
-    color: '#ffff00',
-  },
+  // python: {
+  //   label: translate({message: 'Python'}),
+  //   description: translate({
+  //     message: 'PrepVerse projects using the python feature',
+  //     id: 'showcase.tag.python.description',
+  //   }),
+  //   color: '#ffff00',
+  // },
 
-  ml: {
-    label: translate({message: 'Machine Learning'}),
-    description: translate({
-      message: 'PrepVerse projects using the ml feature',
-      id: 'showcase.tag.ml.description',
-    }),
-    color: '#c71585',
-  },
+  // ml: {
+  //   label: translate({message: 'Machine Learning'}),
+  //   description: translate({
+  //     message: 'PrepVerse projects using the ml feature',
+  //     id: 'showcase.tag.ml.description',
+  //   }),
+  //   color: '#c71585',
+  // },
 
-  ds: {
-    label: translate({message: 'Data Science'}),
-    description: translate({
-      message: 'PrepVerse projects using the ds feature',
-      id: 'showcase.tag.ds.description',
-    }),
-    color: '#3cb371',
-  },
+  // ds: {
+  //   label: translate({message: 'Data Science'}),
+  //   description: translate({
+  //     message: 'PrepVerse projects using the ds feature',
+  //     id: 'showcase.tag.ds.description',
+  //   }),
+  //   color: '#3cb371',
+  // },
 };
 
 export const TagList = Object.keys(Tags) as TagType[];

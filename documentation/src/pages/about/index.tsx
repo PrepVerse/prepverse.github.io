@@ -10,7 +10,6 @@ import { useColorMode } from "@docusaurus/theme-common";
 import { CommonThemedImage } from "@site/src/prepverse-theme/common-themed-image";
 import { EnterpriseHeroSection } from "@site/src/prepverse-theme/enterprise-hero-section";
 import { EnterpriseFaq } from "@site/src/prepverse-theme/enterprise-faq";
-import { EnterpriseGetInTouchCta } from "@site/src/prepverse-theme/enterprise-get-in-touch-cta";
 import ProjectList from "@site/src/components/project-list";
 
 const About: React.FC = () => {
