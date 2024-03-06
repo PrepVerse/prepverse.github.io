@@ -54,7 +54,7 @@ export const menuItems = [
         items: [
             {
                 label: "About Me",
-                href: "/about",
+                href: "/AkashSingh3031",
             },
             {
                 label: "Portfolio",

@@ -103,7 +103,7 @@ export const POPOVERMENUS: NavMenu[] = [
             {
                 label: "About Us",
                 description: "My information",
-                link: "/about",
+                link: "/AkashSingh3031",
                 icon: AboutUsIcon,
             },
             // {

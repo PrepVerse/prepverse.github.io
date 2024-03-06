@@ -84,7 +84,7 @@ export const MENU_ITEMS: MenuItemType[] = [
             {
                 label: "About Me",
                 description: "My information.",
-                link: "/about",
+                link: "/AkashSingh3031",
                 icon: ContributeIcon,
             },
             {

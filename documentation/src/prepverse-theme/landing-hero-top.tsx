@@ -83,7 +83,7 @@ export const LandingHeroTop = () => {
                 )}
             >
                 <LandingGhostButton />
-                <LandingRainbowButton href="/about" />
+                <LandingRainbowButton href="/AkashSingh3031" />
                 {/* <EnterpriseGetInTouchButton /> */}
             </div>
         </div>

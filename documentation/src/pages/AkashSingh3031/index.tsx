@@ -9,6 +9,8 @@ import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
 import { useColorMode } from "@docusaurus/theme-common";
 import { CommonThemedImage } from "@site/src/prepverse-theme/common-themed-image";
 import { EnterpriseHeroSection } from "@site/src/prepverse-theme/enterprise-hero-section";
+import { AboutMeProfile } from "@site/src/prepverse-theme/about-me-profile";
+import BackToTopButton from '@theme/BackToTopButton';
 import { EnterpriseFaq } from "@site/src/prepverse-theme/enterprise-faq";
 import ProjectList from "@site/src/components/project-list";
 
@@ -31,7 +33,7 @@ const About: React.FC = () => {
                             "mx-auto",
                         )}
                     >
-                        <EnterpriseHeroSection
+                        <AboutMeProfile
                             className={clsx(
                                 "h-auto landing-md:h-[432px]",
                                 "mt-4 landing-sm:mt-8 landing-lg:mt-8",
@@ -105,6 +107,7 @@ export default function AboutPage() {
                 transition: "opacity 500ms ease-in-out",
                 }}
             />
+            <BackToTopButton />
         </CommonLayout>
     );
 }
