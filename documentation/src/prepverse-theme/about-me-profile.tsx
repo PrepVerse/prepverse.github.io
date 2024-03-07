@@ -41,7 +41,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             "bg-blend-overlay",
                             "bg-no-repeat",
                             "rounded-2xl landing-sm:rounded-3xl",
-                            // "border dark:border-gray-700 border-gray-200",
                             // "not-prose",
 
                             // "flex h-max flex-row justify-start gap-3",

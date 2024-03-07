@@ -45,7 +45,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "token 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",
+                        "Authorization": "token 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",
                     },
                     signal,
                 },
@@ -57,7 +57,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "token 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",
+                        "Authorization": "token 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",
                     },
                     signal,
                 },
@@ -74,7 +74,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": "token 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",
+                            "Authorization": "token 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",
                         },
                         signal,
                     },
@@ -99,7 +99,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": "token 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",
+                            "Authorization": "token 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",
                         },
                     });
                     const profileData = await profileResponse.json();
