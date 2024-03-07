@@ -5,7 +5,6 @@ on:
     branches: [master]
   pull_request:
     branches: [master]
-    # paths: [documentation/**]
 
 jobs:
   deploy:
@@ -22,6 +21,10 @@ jobs:
         with:
           node-version: 18.x
           # cache: npm
+
+      - name: Followers Data Fetch
+        run: |
+          ACCESS_TOKEN=${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
       - name: Install dependencies & Build website
         # working-directory: documentation
