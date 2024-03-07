@@ -45,7 +45,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "token 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",
+                        "Authorization": "token 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",
                     },
                     signal,
                 },
@@ -57,7 +57,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": "token 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",
+                        "Authorization": "token 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",
                     },
                     signal,
                 },
@@ -74,7 +74,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": "token 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",
+                            "Authorization": "token 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",
                         },
                         signal,
                     },
@@ -99,7 +99,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": "token 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",
+                            "Authorization": "token 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",
                         },
                     });
                     const profileData = await profileResponse.json();
