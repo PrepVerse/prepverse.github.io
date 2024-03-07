@@ -17,8 +17,6 @@ interface ICommunityStatsContext {
     githubAvatarPageUrl: string;
     githubAvatarName: string;
     githubCommitCount: number;
-    discordMemberCount: number;
-    discordMemberCountText: string;
     loading: boolean;
     refetch: () => Promise<void>;
 }
@@ -26,6 +24,8 @@ interface ICommunityStatsContext {
 export const CommunityStatsContext = createContext<
     ICommunityStatsContext | undefined
 >(undefined);
+
+const ACCESS_TOKEN = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
 
 export const CommunityStatsProvider: FC = ({ children }) => {
     const [loading, setLoading] = useState(true);
@@ -45,7 +45,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": "token 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",
+                        "Authorization": `token ${ACCESS_TOKEN}`,
                     },
                     signal,
                 },
@@ -57,7 +57,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": "token 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",
+                        "Authorization": `token ${ACCESS_TOKEN}`,
                     },
                     signal,
                 },
@@ -74,7 +74,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            // "Authorization": "token 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",
+                            "Authorization": `token ${ACCESS_TOKEN}`,
                         },
                         signal,
                     },
@@ -99,7 +99,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            // "Authorization": "token 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",
+                            "Authorization": `token ${ACCESS_TOKEN}`,
                         },
                     });
                     const profileData = await profileResponse.json();
