@@ -45,6 +45,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
+                        "Authorization": "token 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",
                     },
                     signal,
                 },
@@ -56,6 +57,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
+                        "Authorization": "token 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",
                     },
                     signal,
                 },
@@ -72,6 +74,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
+                            "Authorization": "token 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",
                         },
                         signal,
                     },
@@ -90,32 +93,34 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                 page++;
             }
 
-            const starCount = await response.json();
-            const followersCount = await response2.json();
+            const followersWithFullNames = await Promise.all(
+                allFollowers.map(async (follower) => {
+                    const profileResponse = await fetch(follower.url, {
+                        method: "GET",
+                        headers: {
+                            "Content-Type": "application/json",
+                            "Authorization": "token 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",
+                        },
+                    });
+                    const profileData = await profileResponse.json();
+                    return {
+                        name: profileData.name || follower.login, // Use login if name is not available
+                        avatarUrl: follower.avatar_url,
+                        pageUrl: follower.html_url,
+                    };
+                })
+            );
 
+            const starCount = await response.json();
             setGithubStarCount(starCount.stargazers_count);
+
+            const followersCount = await response2.json();
             setGithubFollowersCount(followersCount.followers);
             
-            const avatarNames = allFollowers.map(follower => follower.login);
-            const avatarUrls = allFollowers.map(follower => follower.avatar_url);
-            const avatarPageUrls = allFollowers.map(follower => follower.html_url);
-
-            // Create an array of objects where each object represents a follower
-            const followers = avatarNames.map((name, index) => ({
-                name,
-                avatarUrl: avatarUrls[index],
-                pageUrl: avatarPageUrls[index],
-            }));
-            
-            // Sort the followers array by name
-            followers.sort((a, b) => a.name.localeCompare(b.name));
-            
-            // Separate the sorted data back into individual arrays
-            const sortedAvatarNames = followers.map((follower) => follower.name);
-            const sortedAvatarUrls = followers.map((follower) => follower.avatarUrl);
-            const sortedAvatarPageUrls = followers.map((follower) => follower.pageUrl);
-            
-            // Set the sorted arrays to state
+            followersWithFullNames.sort((a, b) => a.name.localeCompare(b.name));
+            const sortedAvatarNames = followersWithFullNames.map((follower) => follower.name);
+            const sortedAvatarUrls = followersWithFullNames.map((follower) => follower.avatarUrl);
+            const sortedAvatarPageUrls = followersWithFullNames.map((follower) => follower.pageUrl);
             setGithubAvatarName(sortedAvatarNames);
             setGithubAvatarUrl(sortedAvatarUrls);
             setGithubAvatarPageUrl(sortedAvatarPageUrls);

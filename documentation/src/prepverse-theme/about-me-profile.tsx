@@ -14,7 +14,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
             <div
                 className={clsx(
                     "landing-lg:w-[435px]",
-                    "landing-lg:h-[500px] landing-md:h-[525px]",
+                    "landing-lg:h-[500px] landing-md:h-[545px]",
                     "flex flex-wrap",
                     "p-5",
                     "mt-6 lg:mt-10",
@@ -58,7 +58,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                         >
                             <CommonThemedImage
                                 className={clsx(
-                                    "landing-md:h-[100px] landing-md:w-[100px]",
+                                    "h-[100px] w-[100px]",
                                     "rounded-full",
                                 )}
                                 srcDark="https://github.com/AkashSingh3031.png"
@@ -244,7 +244,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             "border-b border-gray-200 dark:border-gray-700",
                         )}
                     />
-                        <GithubFollowersAvatar />
+                    <GithubFollowersAvatar />
                 </div>
             </div>
         </div>
