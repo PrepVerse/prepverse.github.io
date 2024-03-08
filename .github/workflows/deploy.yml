@@ -23,9 +23,7 @@ jobs:
           # cache: npm
 
       - name: Set Variables Data
-        run: |
-          touch .env
-          echo REACT_APP_FOLLOWERS_ACCESS_KEY=${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }} >> .env
+        run: echo "REACT_APP_FOLLOWERS_ACCESS_KEY=${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}" | base64 --decode
         env:
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
