@@ -59,7 +59,15 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             href="https://github.com/AkashSingh3031"
                             rel="noreferrer"
                         >
-                            <CommonThemedImage
+                            <img
+                                className={clsx(
+                                    "h-[100px] w-[100px]",
+                                    "rounded-full",
+                                )}
+                                src="https://github.com/AkashSingh3031.png"
+                                alt="Akash Singh"
+                            />
+                            {/* <CommonThemedImage
                                 className={clsx(
                                     "h-[100px] w-[100px]",
                                     "rounded-full",
@@ -67,7 +75,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                 srcDark="https://github.com/AkashSingh3031.png"
                                 srcLight="https://github.com/AkashSingh3031.png"
                                 alt="Akash Singh"
-                            />
+                            /> */}
                         </a>
                         <div className="text-xs md:text-base">
                             <h2
