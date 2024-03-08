@@ -24,9 +24,9 @@ jobs:
 
       - name: Set Variables Data
         run: |
-          echo "REACT_APP_FOLLOWERS_ACCESS_KEY=${REACT_APP_FOLLOWERS_ACCESS_KEY}" >> $GITHUB_ENV
+          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
         env:
-            REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
       - name: Install dependencies & Build website
         run: |
