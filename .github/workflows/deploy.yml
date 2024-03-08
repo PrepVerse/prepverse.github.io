@@ -22,16 +22,14 @@ jobs:
           node-version: 18.x
           # cache: npm
 
-      - name: Fetch GitHub Followers data
+      - name: Set Variables Data
         run: |
           npm install dotenv
           echo "REACT_APP_FOLLOWERS_ACCESS_KEY=${REACT_APP_FOLLOWERS_ACCESS_KEY}" > .env
-          # npm run fetch-github-data
         env:
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
       - name: Install dependencies & Build website
-        # working-directory: documentation
         run: |
           cd documentation
           npm ci

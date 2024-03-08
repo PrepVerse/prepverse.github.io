@@ -10,7 +10,11 @@ import {GithubFollowersAvatar} from "./common-header/github-followers-avatar";
 
 export const AboutMeProfile = ({ className }: { className?: string }) => {
     return (
-        <div className={clsx("flex flex-col justify-center landing-md:flex-row gap-2 landing-lg:max-w-[1200px] w-full mx-auto")}>
+        <div 
+            className={clsx(
+                "flex flex-col justify-center landing-md:flex-row gap-2 landing-lg:max-w-[1200px] w-full mx-auto"
+            )}
+        >
             <div
                 className={clsx(
                     "landing-lg:w-[435px]",
@@ -125,7 +129,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             <div>
                                 <GithubIcon
                                     className="text-2xl text-gray-900 dark:text-gray-0"
-                                    // className="text-2xl text-gray-0 dark:text-gray-0"
                                     width="20px"
                                     height="20px"
                                 />
@@ -212,38 +215,78 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                 </div>
             </div>
             
-            <div
+            <div 
                 className={clsx(
-                    "landing-lg:min-w-[735px]",
-                    "flex flex-wrap",
-                    "p-4 landing-sm:p-8",
-                    "mt-6 lg:mt-10",
-                    "dark:bg-enterprise-data-source-dark dark:bg-gray-900 bg-gray-0",
-                    "bg-blend-overlay",
-                    "bg-no-repeat",
-                    "rounded-2xl landing-sm:rounded-3xl",
-                    "border dark:border-gray-700 border-gray-200",
-                    "not-prose",
+                    "flex flex-col landing-md:flex-col gap-1 landing-lg:max-w-[800px] w-full mx-auto"
                 )}
             >
-                <div className="text-xs md:text-base">
-                    <h2
-                        className={clsx(
-                            "text-base landing-sm:text-2xl",
-                            "dark:text-gray-300 text-gray-900",
-                            "font-semibold",
-                            "flex items-center",
-                        )}
-                    >
-                        <GitHubFollowers />
-                    </h2>
-                    <div
-                        className={clsx(
-                            "my-4",
-                            "border-b border-gray-200 dark:border-gray-700",
-                        )}
-                    />
-                    <GithubFollowersAvatar />
+                {/* <div
+                    className={clsx(
+                        "landing-lg:min-w-[735px]",
+                        "flex flex-wrap",
+                        "p-4 landing-sm:p-8",
+                        "mt-6 lg:mt-10",
+                        "dark:bg-enterprise-data-source-dark dark:bg-gray-900 bg-gray-0",
+                        "bg-blend-overlay",
+                        "bg-no-repeat",
+                        "rounded-2xl landing-sm:rounded-3xl",
+                        "border dark:border-gray-700 border-gray-200",
+                    )}
+                >
+                    <div className="text-xs md:text-base">
+                        <h2
+                            className={clsx(
+                                "text-base landing-sm:text-2xl",
+                                "dark:text-gray-300 text-gray-900",
+                                "rounded-full",
+                                "border dark:border-gray-700 border-gray-200",
+                                "font-semibold",
+                                "flex items-center",
+                                "p-2"
+                            )}
+                        >
+                            LeetCode Badges
+                        </h2>
+                        <div
+                            className={clsx(
+                                "my-4",
+                                "border-b border-gray-200 dark:border-gray-700",
+                            )}
+                        />
+                    </div>
+                </div> */}
+                <div
+                    className={clsx(
+                        "landing-lg:min-w-[735px]",
+                        "flex flex-wrap",
+                        "p-4 landing-sm:p-8",
+                        "mt-6 lg:mt-10",
+                        "dark:bg-enterprise-data-source-dark dark:bg-gray-900 bg-gray-0",
+                        "bg-blend-overlay",
+                        "bg-no-repeat",
+                        "rounded-2xl landing-sm:rounded-3xl",
+                        "border dark:border-gray-700 border-gray-200",
+                    )}
+                >
+                    <div className="text-xs md:text-base">
+                        <h2
+                            className={clsx(
+                                "text-base landing-sm:text-2xl",
+                                "dark:text-gray-300 text-gray-900",
+                                "font-semibold",
+                                "flex items-center",
+                            )}
+                        >
+                            <GitHubFollowers />
+                        </h2>
+                        <div
+                            className={clsx(
+                                "my-4",
+                                "border-b border-gray-200 dark:border-gray-700",
+                            )}
+                        />
+                        <GithubFollowersAvatar />
+                    </div>
                 </div>
             </div>
         </div>
