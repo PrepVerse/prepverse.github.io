@@ -23,9 +23,10 @@ jobs:
           # cache: npm
 
       - name: Set Variables Data
-        run: echo "REACT_APP_FOLLOWERS_ACCESS_KEY=${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}" | base64 --decode
         env:
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+        run: |
+          echo $REACT_APP_FOLLOWERS_ACCESS_KEY >> secrets.txt
 
       - name: Install dependencies & Build website
         run: |
