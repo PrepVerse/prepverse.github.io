@@ -6,6 +6,9 @@ on:
   pull_request:
     branches: [master]
 
+env:
+  REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+
 jobs:
   deploy:
     name: Deploy to GitHub Pages
@@ -21,12 +24,6 @@ jobs:
         with:
           node-version: 18.x
           # cache: npm
-
-      - name: Set Variables Data
-        run: |
-          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
-        env:
-          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
       - name: Install dependencies & Build website
         run: |
