@@ -111,7 +111,7 @@ export const TopAnnouncement = () => {
 const Text = () => {
     return (
         <a
-            href="https://github.com/AkashSingh3031/The-Complete-FAANG-Preparation"
+            href="https://github.com/AkashSingh3031"
             target="_blank"
             rel="noreferrer"
             className={clsx(
@@ -121,7 +121,7 @@ const Text = () => {
                 "left-[50%]",
                 "translate-x-[-50%]",
                 "bg-top-announcement-text",
-                "h-full w-full lg:w-[780px]",
+                "h-full w-full lg:w-[450px]",
                 "flex items-center justify-center",
                 "text-white",
                 "text-xs sm:text-sm",
@@ -132,49 +132,16 @@ const Text = () => {
                 "not-prose",
             )}
         >
-            <div className={clsx("ml-2", "not-prose")}>
-                For more updates follow{""}
-                <span className={clsx("text-refine-cyan-alt hover:text-refine-cyan-alt",
-                                        "font-semibold",
-                                        "ml-2",
-                                )}>
-                                @AkashSingh3031
-                </span>,
-                on <a
-                    href="https://github.com/AkashSingh3031"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className={clsx(
-                        "text-refine-link-light dark:text-refine-link-dark",
-                        "text-xs content-4xl:text-sm",
-                    )}
-                > <b>GitHub</b> </a>
-                and 
-                <a
-                    href="https://linkedin.com/in/akashsingh3031"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className={clsx(
-                        "text-refine-link-light dark:text-refine-link-dark",
-                        "text-xs content-4xl:text-sm",
-                    )}
-                > <b>LinkedIn</b> </a>. <br></br> <HeartOutlinedIcon className="text-refine-red ml-2 inline leading-6" />
-                <span
-                    className={clsx(
-                        "text-refine-cyan-alt hover:text-refine-cyan-alt",
-                        "font-semibold",
-                        "ml-2",
-                    )}
-                > <a
-                    href="https://github.com/sponsors/AkashSingh3031"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className={clsx(
-                        "text-refine-link-light dark:text-refine-link-dark",
-                        "text-xs content-4xl:text-sm",
-                    )}
-                > <b>Sponsorship</b> </a>
-                </span> is now available.
+            <div 
+                className={clsx("ml-2", "not-prose")}>
+                    For more updates follow{""}
+                    <span 
+                        className={clsx("text-refine-cyan-alt hover:text-refine-cyan-alt",
+                            "font-semibold",
+                            "ml-2",
+                        )}>
+                        @AkashSingh3031
+                    </span>.
             </div>
         </a>
     );
