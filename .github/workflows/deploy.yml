@@ -24,9 +24,9 @@ jobs:
 
       - name: Fetch GitHub Followers data
         run: |
-          npm install dotenv fetch-github-data
+          npm install dotenv
           echo "REACT_APP_FOLLOWERS_ACCESS_KEY=${REACT_APP_FOLLOWERS_ACCESS_KEY}" > .env
-          npm run fetch-github-data
+          # npm run fetch-github-data
         env:
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
