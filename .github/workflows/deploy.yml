@@ -26,7 +26,7 @@ jobs:
         env:
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
         run: |
-          echo $REACT_APP_FOLLOWERS_ACCESS_KEY >> secrets.txt
+          echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }} | sed 's/./& /g'
 
       - name: Install dependencies & Build website
         run: |
