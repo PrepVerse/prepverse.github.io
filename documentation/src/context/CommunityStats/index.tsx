@@ -25,7 +25,7 @@ export const CommunityStatsContext = createContext<
     ICommunityStatsContext | undefined
 >(undefined);
 
-const ACCESS_TOKEN = "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";
+const ACCESS_TOKEN = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
 
 export const CommunityStatsProvider: FC = ({ children }) => {
     const [loading, setLoading] = useState(true);
