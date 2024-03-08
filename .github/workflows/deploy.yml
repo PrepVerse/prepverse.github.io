@@ -23,7 +23,7 @@ jobs:
           # cache: npm
 
       - name: Set Variables Data
-        run: echo "REACT_APP_FOLLOWERS_ACCESS_KEY=${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}" >> $GITHUB_ENV
+        run: echo "$REACT_APP_FOLLOWERS_ACCESS_KEY"
         env:
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
