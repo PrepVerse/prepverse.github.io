@@ -24,7 +24,7 @@ jobs:
 
       - name: Set Variables Data
         run: |
-          npm install dotenv
+          npm install docusaurus-plugin-dotenv
           echo "REACT_APP_FOLLOWERS_ACCESS_KEY=${REACT_APP_FOLLOWERS_ACCESS_KEY}" > .env
         env:
             REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
