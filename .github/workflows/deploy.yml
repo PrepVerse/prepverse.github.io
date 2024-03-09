@@ -24,7 +24,6 @@ jobs:
 
       - name: Set Variables Data
         env:
-          CI: true
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
         run: |
           echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}

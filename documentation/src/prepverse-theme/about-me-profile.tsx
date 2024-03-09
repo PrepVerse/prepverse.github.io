@@ -4,13 +4,56 @@ import { useInView } from "framer-motion";
 import { CommonThemedImage } from "./common-themed-image";
 import { GithubIcon } from "@site/src/prepverse-theme/icons/github";
 import { TwitterIcon, LinkedInIcon, InstagramIcon } from "@site/src/prepverse-theme/icons/popover";
-import { LandingSectionCtaButton  } from "./landing-section-cta-button";
-import {GitHubFollowers} from "./common-header/github-followers";
-import {GithubFollowersAvatar} from "./common-header/github-followers-avatar";
+import { LandingSectionCtaButton } from "./landing-section-cta-button";
+import { GitHubFollowers } from "./common-header/github-followers";
+import { GithubFollowersAvatar } from "./common-header/github-followers-avatar";
+
+const GithubFollowers = ({ className }: { className?: string }) => {
+    return (
+        <div className="text-xs md:text-base">
+            <h2
+                className={clsx(
+                    "text-base landing-sm:text-2xl",
+                    "dark:text-gray-300 text-gray-900",
+                    "font-semibold",
+                    "flex items-center",
+                )}
+            >
+                <GitHubFollowers />
+            </h2>
+            <div
+                className={clsx(
+                    "my-4",
+                    "border-b border-gray-200 dark:border-gray-700",
+                )}
+            />
+            <GithubFollowersAvatar />
+        </div>
+    );
+};
+
+const LeetCodeBadges = ({ className }: { className?: string }) => {
+    return (
+        <GitHubFollowers />
+    );
+};
+
+const apps = [
+    {
+        name: "GitHub Followers",
+        showcase: GithubFollowers,
+    },
+];
 
 export const AboutMeProfile = ({ className }: { className?: string }) => {
+    const [activeApp, setActiveApp] = React.useState(apps[0]);
+
+    const ShowcaseComponent = React.useMemo(() => {
+        return activeApp.showcase;
+    }, [activeApp.name]);
+
     return (
-        <div 
+        <div
             className={clsx(
                 "flex flex-col justify-center landing-md:flex-row gap-2 landing-lg:max-w-[1200px] w-full mx-auto"
             )}
@@ -27,31 +70,22 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                     "bg-no-repeat",
                     "rounded-2xl landing-sm:rounded-3xl",
                     "border dark:border-gray-700 border-gray-200",
-                    "not-prose",
                 )}
             >
 
                 <div className={clsx(
-                    "no-prose",
                     "flex flex-col gap-4",
-                    // "mt-6 lg:mt-10",
                 )}>
                     <div
                         className={clsx(
                             "landing-lg:min-w-[400px]",
                             "flex flex-ṛow gap-5",
-                            // "p-4 landing-sm:p-10",
                             "dark:bg-enterprise-data-source-dark dark:bg-gray-900 bg-gray-0",
                             "bg-blend-overlay",
                             "bg-no-repeat",
                             "rounded-2xl landing-sm:rounded-3xl",
-                            // "not-prose",
-
-                            // "flex h-max flex-row justify-start gap-3",
                             "dark:bg-gray-900",
-                            // "border border-gray-200 dark:border-gray-700",
                             "rounded-xl p-4",
-                            // "no-underline hover:no-underline",
                         )}
                     >
                         <a
@@ -59,14 +93,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             href="https://github.com/AkashSingh3031"
                             rel="noreferrer"
                         >
-                            {/* <img
-                                className={clsx(
-                                    "h-[100px] w-[100px]",
-                                    "rounded-2xl landing-sm:rounded-3xl",
-                                )}
-                                src="https://github.com/AkashSingh3031.png"
-                                alt="Akash Singh"
-                            /> */}
                             <CommonThemedImage
                                 className={clsx(
                                     "h-[100px] w-[100px]",
@@ -100,8 +126,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                     <div
                         className={clsx(
                             "flex flex-col",
-                            // "p-4 landing-sm:p-10",
-                            // "mt-6 lg:mt-10",
                         )}
                     >
                         <p
@@ -114,9 +138,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                         </p>
                         <LandingSectionCtaButton to="https://github.com/AkashSingh3031"
                             className={clsx(
-                                // "flex flex-col",
-                                // "p-4 landing-sm:p-10",
-                                // "mt-6 lg:mt-10",
                                 "mt-4",
                                 "mb-4",
                             )}
@@ -222,48 +243,13 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                     </div>
                 </div>
             </div>
-            
-            <div 
+
+            <div
                 className={clsx(
                     "flex flex-col landing-md:flex-col gap-1 landing-lg:max-w-[800px] w-full mx-auto"
                 )}
             >
                 {/* <div
-                    className={clsx(
-                        "landing-lg:min-w-[735px]",
-                        "flex flex-wrap",
-                        "p-4 landing-sm:p-8",
-                        "mt-6 lg:mt-10",
-                        "dark:bg-enterprise-data-source-dark dark:bg-gray-900 bg-gray-0",
-                        "bg-blend-overlay",
-                        "bg-no-repeat",
-                        "rounded-2xl landing-sm:rounded-3xl",
-                        "border dark:border-gray-700 border-gray-200",
-                    )}
-                >
-                    <div className="text-xs md:text-base">
-                        <h2
-                            className={clsx(
-                                "text-base landing-sm:text-2xl",
-                                "dark:text-gray-300 text-gray-900",
-                                "rounded-full",
-                                "border dark:border-gray-700 border-gray-200",
-                                "font-semibold",
-                                "flex items-center",
-                                "p-2"
-                            )}
-                        >
-                            LeetCode Badges
-                        </h2>
-                        <div
-                            className={clsx(
-                                "my-4",
-                                "border-b border-gray-200 dark:border-gray-700",
-                            )}
-                        />
-                    </div>
-                </div> */}
-                <div
                     className={clsx(
                         "landing-lg:min-w-[735px]",
                         "flex flex-wrap",
@@ -295,7 +281,189 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                         />
                         <GithubFollowersAvatar />
                     </div>
+                </div> */}
+
+
+                <div
+                    className={clsx(
+                        "landing-lg:min-w-[735px]",
+                        "flex flex-wrap",
+                        "mt-6 lg:mt-10",
+                        "border dark:border-gray-700 border-gray-200",
+                        "bg-gray-50 dark:bg-gray-800",
+                        "w-full",
+                        "rounded-2xl landing-sm:rounded-[32px]",
+                        "gap-2 landing-sm:gap-4",
+                        "p-2 landing-sm:p-4",
+                        "relative",
+                        "group/showcase",
+                        "landing-lg:overflow-hidden",
+                    )}
+                >
+                    <div className={clsx("flex", "w-full", "gap-2")}>
+                        <div
+                            className={clsx(
+                                "rounded-3xl",
+                                "overflow-y-auto",
+                                "flex",
+                                "w-full",
+                                "gap-2",
+                                "scrollbar-hidden",
+                                "snap snap-x snap-mandatory",
+                                "snap-mandatory",
+                            )}
+                        >
+                            <div
+                                className={clsx(
+                                    "rounded-3xl",
+                                    "flex",
+                                    "w-auto",
+                                    "landing-lg:w-full",
+                                    "items-center",
+                                    "justify-start",
+                                    "gap-2",
+                                    "relative",
+                                    "bg-gray-0 dark:bg-gray-900",
+                                )}
+                            >
+                                <div
+                                    className={clsx(
+                                        "hidden landing-sm:block",
+                                        "flex-1",
+                                        "rounded-3xl",
+                                        "h-full",
+                                        "bg-gray-200 dark:bg-gray-700",
+                                        "absolute",
+                                        "left-0",
+                                        "top-0",
+                                        "transition-transform",
+                                        "duration-150",
+                                        "ease-out",
+                                    )}
+                                    style={{
+                                        width: `calc((100% - (${apps.length-1} * 8px)) / ${apps.length})`,
+                                        minWidth: "244px",
+                                        transform: `translateX(calc((100% + 8px) * ${apps.findIndex(
+                                            (f) => f.name === activeApp.name,
+                                        )})) translateZ(0px)`,
+                                    }}
+                                />
+                                {apps.map((app, index) => (
+                                    <button
+                                        key={app.name}
+                                        type="button"
+                                        onClick={(event) => {
+                                            setActiveApp(app);
+                                            // if index i >= 2
+                                            // then scroll to the right
+                                            event.currentTarget.parentElement?.parentElement?.scrollTo({
+                                                left: index >= 2 ? index * (244 + 8) : 0,
+                                                behavior: "smooth",
+                                            });
+                                        }}
+                                        className={clsx(
+                                            "z-[1]",
+                                            "snap-start",
+                                            "appearance-none",
+                                            "focus:outline-none",
+                                            "border-none",
+                                            "flex-1",
+                                            "break-keep",
+                                            "whitespace-nowrap",
+                                            "landing-sm:min-w-[244px]",
+                                            "py-2",
+                                            "landing-sm:py-3.5",
+                                            "px-4",
+                                            "rounded-3xl",
+                                            "transition-colors",
+                                            "ease-in-out",
+                                            "duration-150",
+                                            activeApp.name !== app.name && "bg-transparent",
+                                            activeApp.name === app.name && "bg-gray-200 dark:bg-gray-700",
+                                            activeApp.name !== app.name &&
+                                            "text-gray-600 dark:text-gray-400",
+                                            activeApp.name === app.name &&
+                                            "text-gray-900 dark:text-gray-0",
+                                            "landing-sm:bg-transparent",
+                                            "dark:landing-sm:bg-transparent",
+                                            "transition-colors",
+                                            "duration-150",
+                                            "ease-out",
+                                            "text-xs",
+                                            "landing-sm:text-sm",
+                                        )}
+                                    >
+                                        {app.name}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        className={clsx(
+                            "rounded-lg",
+                            "landing-md:rounded-xl",
+                            "landing-lg:rounded-2xl",
+                            "overflow-hidden",
+                            "shadow-sm shadow-gray-200 dark:shadow-none",
+                            "relative",
+                            "group/showcase-inner",
+                        )}
+                    >
+                        <div
+                            className={clsx(
+                                "w-full",
+                                "h-auto",
+                                // "aspect-[1168/736]",
+                                "transition-colors",
+                                "duration-150",
+                                "ease-in-out",
+                                // activeApp.dark ? "bg-gray-900" : "bg-gray-0",
+                            )}
+                        />
+                        <ShowcaseComponent
+                            className={clsx(
+                                "animate-showcase-reveal",
+                                "absolute",
+                                "left-0",
+                                "top-0",
+                                "w-full",
+                                "rounded-lg",
+                                "landing-md:rounded-xl",
+                                "landing-lg:rounded-2xl",
+                                "overflow-hidden",
+                            )}
+                        />
+                        <div
+                            key={activeApp.name}
+                            className={clsx(
+                                "hidden",
+                                "landing-lg:block",
+                                "landing-lg:opacity-0",
+                                "landing-lg:translate-y-24",
+                                "landing-lg:group-hover/showcase-inner:opacity-100 landing-lg:group-hover/showcase-inner:translate-y-0",
+                                "duration-300",
+                                "ease-in-out",
+                                "transition-[opacity,transform,background-color,color]",
+                                "absolute",
+                                "left-0",
+                                "bottom-0",
+                                "right-0",
+                                "w-full",
+                                "h-24",
+                                "opacity-0",
+                                activeApp.dark &&
+                                "bg-[linear-gradient(0deg,_#14141F_30%,_transparent_90%,_transparent_100%)]",
+                                !activeApp.dark &&
+                                "bg-[linear-gradient(0deg,_#FFFFFF_30%,_transparent_90%,_transparent_100%)]",
+                                "rounded-bl-lg rounded-br-lg",
+                                "landing-md:rounded-bl-xl landing-md:rounded-br-xl",
+                                "landing-lg:rounded-bl-2xl landing-lg:rounded-br-2xl",
+                            )}
+                        />
+                    </div>
                 </div>
+
             </div>
         </div>
     );
