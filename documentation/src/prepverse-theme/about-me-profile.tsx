@@ -410,17 +410,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             "group/showcase-inner",
                         )}
                     >
-                        <div
-                            className={clsx(
-                                "w-full",
-                                "h-auto",
-                                // "aspect-[1168/736]",
-                                "transition-colors",
-                                "duration-150",
-                                "ease-in-out",
-                                // activeApp.dark ? "bg-gray-900" : "bg-gray-0",
-                            )}
-                        />
                         <ShowcaseComponent
                             className={clsx(
                                 "animate-showcase-reveal",
@@ -432,33 +421,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                 "landing-md:rounded-xl",
                                 "landing-lg:rounded-2xl",
                                 "overflow-hidden",
-                            )}
-                        />
-                        <div
-                            key={activeApp.name}
-                            className={clsx(
-                                "hidden",
-                                "landing-lg:block",
-                                "landing-lg:opacity-0",
-                                "landing-lg:translate-y-24",
-                                "landing-lg:group-hover/showcase-inner:opacity-100 landing-lg:group-hover/showcase-inner:translate-y-0",
-                                "duration-300",
-                                "ease-in-out",
-                                "transition-[opacity,transform,background-color,color]",
-                                "absolute",
-                                "left-0",
-                                "bottom-0",
-                                "right-0",
-                                "w-full",
-                                "h-24",
-                                "opacity-0",
-                                activeApp.dark &&
-                                "bg-[linear-gradient(0deg,_#14141F_30%,_transparent_90%,_transparent_100%)]",
-                                !activeApp.dark &&
-                                "bg-[linear-gradient(0deg,_#FFFFFF_30%,_transparent_90%,_transparent_100%)]",
-                                "rounded-bl-lg rounded-br-lg",
-                                "landing-md:rounded-bl-xl landing-md:rounded-br-xl",
-                                "landing-lg:rounded-bl-2xl landing-lg:rounded-br-2xl",
                             )}
                         />
                     </div>
