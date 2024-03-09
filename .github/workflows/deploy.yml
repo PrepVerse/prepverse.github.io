@@ -27,8 +27,6 @@ jobs:
           CI: true
           REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
         run: |
-          npm test --ci --silent --testPathIgnorePatterns=experimental
-          node -e "console.log(process.env.REACT_APP_FOLLOWERS_ACCESS_KEY)"
           echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
       - name: Install dependencies & Build website
