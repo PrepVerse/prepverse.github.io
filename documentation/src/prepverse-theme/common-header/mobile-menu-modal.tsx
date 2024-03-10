@@ -295,7 +295,7 @@ const Social = (props: { id?: string }) => {
                     <LinkedInIcon className="h-10 w-10" />
                 </Link>
                 <Link to="https://instagram.com/akash.singh3031">
-                    <InstagramIcon className="h-10 w-10" />
+                    <InstagramIcon className="h-10 w-10" id={props?.id || ""} />
                 </Link>
                 <Link to="https://twitter.com/akashsingh3031">
                     <TwitterIcon className="h-10 w-10" />

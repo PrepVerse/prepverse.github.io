@@ -9,6 +9,7 @@ require("dotenv").config();
 
 const redirectJson = require("./redirects.json");
 const tutorialData = require("./tutorial-units");
+const thumbsUpDownFeedbackWidget = require("./plugins/thumbs-up-down-feedback-widget");
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -85,6 +86,8 @@ const siteConfig = {
                                 "simple",
                             ],
                         },
+                        exclude: ["**/**/_*.md"],
+                        // remarkPlugins: [thumbsUpDownFeedbackWidget.plugin],
                     },
                 blog: false,
                 theme: {

@@ -22,6 +22,7 @@
     "@docusaurus/plugin-client-redirects": "2.4.0",
     "@docusaurus/preset-classic": "2.4.0",
     "@docusaurus/utils": "^3.1.1",
+    "@floating-ui/react": "^0.26.9",
     "@giscus/react": "^2.4.0",
     "@headlessui/react": "^1.7.15",
     "@iconify/react": "^4.1.1",

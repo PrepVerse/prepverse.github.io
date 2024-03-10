@@ -36,7 +36,7 @@ function EditMetaRow({
                 "gap-4",
             )}
         >
-            <div className={clsx()}>
+            <div className={clsx("rounded-2xl border dark:border-gray-700 border-gray-300 p-2")}>
                 <a
                     href={editUrl}
                     target="_blank"
@@ -45,7 +45,7 @@ function EditMetaRow({
                         "text-refine-link-light dark:text-refine-link-dark",
                         "text-xs content-4xl:text-sm",
                         "flex gap-2 items-center",
-                        "underline",
+                        // "underline",
                     )}
                 >
                     <GithubIcon className="w-4 h-4"/> Edit this page
