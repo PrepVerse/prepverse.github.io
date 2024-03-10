@@ -51,7 +51,7 @@ export const MobileNavItem: React.FC<MobileNavItemProps> = ({
             <div
                 className={clsx("text-gray-800 dark:text-white font-semibold")}
             >
-                {label === "Hackathon" && (
+                {label === "LeetVerse" && (
                     <HackathonAltIcon className="inline text-[#F93] -mt-1 mr-1.5" />
                 )}
 

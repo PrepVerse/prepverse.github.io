@@ -9,7 +9,6 @@ export const UseCasesIcon = (props: React.SVGProps<SVGSVGElement>) => (
         xmlns="http://www.w3.org/2000/svg"
         {...props}
     >
-        <rect width="40" height="40" rx="20" fill="white" />
         <rect width="40" height="40" rx="20" fill="#0080FF" fillOpacity="0.1" />
         <path
             fillRule="evenodd"

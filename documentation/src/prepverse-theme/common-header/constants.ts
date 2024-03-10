@@ -41,27 +41,38 @@ export type NavbarItemType = {
 export type MenuItemType = NavbarPopoverItemType | NavbarItemType;
 
 export const MENU_ITEMS: MenuItemType[] = [
+    // {
+    //     label: "PrepVerse Docs",
+    //     href: "/docs",
+    //     icon: DocsIcon,
+    // },
     {
         isPopover: true,
-        label: "Code-Point",
+        label: "Docs",
         items: [
             {
-                label: "PrepVerse Docs",
-                description: "Computer science preparations docs",
+                label: "DSA Docs",
+                description: "Learning DSA in C++, Python & Java",
                 link: "/docs",
-                icon: DocsIcon,
+                icon: DocumentsIcon,
             },
             {
-                label: "Project Showcase",
-                description: "PrepVerse open-source projects",
-                link: "/showcase",
-                icon: TutorialIcon,
+                label: "Web Tech Docs",
+                description: "Learn HTML, CSS, JavaScript",
+                link: "/docs/2.Web.Dev",
+                icon: ExamplesIcon,
             },
+        ],
+    },
+    {
+        isPopover: true,
+        label: "CodePoint",
+        items: [
             {
                 label: "Expert Sheet Solutions",
                 description: "Most popular coding questions solutions asked during SDE interviews.",
                 link: "https://prepverse.github.io/CodePoint/preface",
-                icon: DocumentsIcon,
+                icon: UseCasesIcon,
             },
             {
                 label: "Coding Ninjas Series",
@@ -69,13 +80,13 @@ export const MENU_ITEMS: MenuItemType[] = [
                 link: "https://prepverse.github.io/CodePoint/learning_resources/CN_Series/preface",
                 icon: IntegrationsIcon,
             },
+            {
+                label: "LeetVerse",
+                description: "Leetcode problem solutions with full probelm statements in C++, Python & Java",
+                link: "https://prepverse.github.io/LeetVerse",
+                icon: HackathonsIcon,
+            },
         ],
-    },
-    {
-        isPopover: false,
-        label: "LeetVerse",
-        icon: HackathonAltIcon,
-        href: "https://prepverse.github.io/LeetVerse",
     },
     {
         isPopover: true,
@@ -86,6 +97,12 @@ export const MENU_ITEMS: MenuItemType[] = [
                 description: "My information.",
                 link: "/AkashSingh3031",
                 icon: ContributeIcon,
+            },
+            {
+                label: "Project Showcase",
+                description: "PrepVerse open-source projects",
+                link: "/showcase",
+                icon: TutorialIcon,
             },
             {
                 label: "My Portfolio",

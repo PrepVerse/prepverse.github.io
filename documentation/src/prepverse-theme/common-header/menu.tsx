@@ -14,11 +14,7 @@ import { MenuItem } from "./menu-item";
 import { NavbarItem } from "./navbar-item";
 import { NavbarPopoverItem } from "./navbar-popover-item";
 
-type MenuProps = {
-    isPermanentDark?: boolean;
-};
-
-export const Menu: React.FC<MenuProps> = ({ isPermanentDark }) => {
+export const Menu: React.FC = () => {
     return (
         <>
             {MENU_ITEMS.map((item) => {
@@ -26,10 +22,9 @@ export const Menu: React.FC<MenuProps> = ({ isPermanentDark }) => {
                     return (
                         <NavbarPopoverItem
                             key={`navbar-${item.label}`}
-                            // isPermanentDark={isPermanentDark}
                             item={item}
                         >
-                            {item.label === "Code-Point" && (
+                            {item.label === "CodePoint" && (
                                 <>
                                     <div
                                         className={clsx(
@@ -42,7 +37,6 @@ export const Menu: React.FC<MenuProps> = ({ isPermanentDark }) => {
                                         {item.items.map((subItem) => (
                                             <MenuItem
                                                 key={subItem.label}
-                                                // isPermanentLight
                                                 item={subItem}
                                             />
                                         ))}
@@ -87,7 +81,6 @@ export const Menu: React.FC<MenuProps> = ({ isPermanentDark }) => {
                                         {item.items.map((subItem) => (
                                             <MenuItem
                                                 key={subItem.label}
-                                                // isPermanentLight
                                                 item={subItem}
                                             />
                                         ))}
@@ -126,6 +119,21 @@ export const Menu: React.FC<MenuProps> = ({ isPermanentDark }) => {
                                     </div>
                                 </>
                             )}
+
+                            {item.label === "Docs" && (
+                                <div
+                                    className={clsx(
+                                    "grid gap-4",
+                                    "p-4",
+                                    "w-[336px]",
+                                    "dark:bg-gray-900 bg-white",
+                                    )}
+                                >
+                                    {item.items.map((subItem) => (
+                                    <MenuItem key={subItem.label} item={subItem} />
+                                    ))}
+                                </div>
+                            )}
                         </NavbarPopoverItem>
                     );
                 }
@@ -134,7 +142,6 @@ export const Menu: React.FC<MenuProps> = ({ isPermanentDark }) => {
                     <NavbarItem
                         key={`navbar-${item.label}`}
                         item={item as NavbarItemType}
-                        isPermanentDark={isPermanentDark}
                     />
                 );
             })}

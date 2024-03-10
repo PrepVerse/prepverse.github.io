@@ -9,12 +9,10 @@ import { PointIcon } from "../icons/popover";
 
 type NavbarPopoverItemProps = {
     item: NavbarPopoverItemType;
-    // isPermanentDark?: boolean;
 };
 
 export const NavbarPopoverItem: React.FC<NavbarPopoverItemProps> = ({
     item,
-    // isPermanentDark,
     children,
 }) => {
     const [isShowing, setIsShowing] = useState(false);
@@ -56,7 +54,6 @@ export const NavbarPopoverItem: React.FC<NavbarPopoverItemProps> = ({
                             className={clsx(
                                 "text-gray-900 dark:text-gray-300",
                                 "transition-colors duration-150 ease-in-out inline-block",
-                                // isPermanentDark && "!text-gray-300",
                             )}
                         >
                             {item.label}
@@ -84,15 +81,14 @@ export const NavbarPopoverItem: React.FC<NavbarPopoverItemProps> = ({
                         <Popover.Panel
                             className={clsx("absolute", "z-50", "top-12", {
                                 "-left-32 center-point":
-                                    // item.label === "Community" ||
-                                    item.label === "About",
-                                "left-point": item.label === "Code-Point",
+                                    item.label === "Docs" || item.label === "About",
+                                "left-point": item.label === "CodePoint",
                             })}
                         >
                             <PointIcon
                                 className={clsx("absolute", "top-[-9px]", {
-                                    "left-1/2": item.label !== "Code-Point",
-                                    "left-12": item.label === "Code-Point",
+                                    "left-1/2": item.label !== "CodePoint",
+                                    "left-12": item.label === "CodePoint",
                                 })}
                                 style={{ transform: "translateX(-50%)" }}
                             />
