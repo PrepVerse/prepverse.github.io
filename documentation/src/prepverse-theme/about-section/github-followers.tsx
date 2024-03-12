@@ -5,12 +5,8 @@ import { useCommunityStatsContext } from "@site/src/context/CommunityStats";
 import { HeaderGithubIcon } from "../icons/header-github";
 import { Spinner } from "../spinner";
 
-type GitHubFollowersProps = {
-    isPermanentDark?: boolean;
-};
-
-export const GitHubFollowers: React.FC<GitHubFollowersProps> = ({ isPermanentDark }) => {
-    const { githubFollowersCount, githubAvatarUrl, loading } = useCommunityStatsContext();
+export const GitHubFollowers: React.FC = () => {
+    const { githubFollowersCount, loading } = useCommunityStatsContext();
 
     return (
         <a

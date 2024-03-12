@@ -3,17 +3,16 @@ import React, { useState, useEffect } from "react";
 import { useCommunityStatsContext } from "@site/src/context/CommunityStats";
 import { CommonThemedImage } from "../common-themed-image";
 
-type GithubFollowersAvatarProps = {
-    isPermanentDark?: boolean;
-};
-
-export const GithubFollowersAvatar: React.FC<GithubFollowersAvatarProps> = ({ isPermanentDark }) => {
+export const GithubFollowersAvatar: React.FC = () => {
     const { githubAvatarUrl, githubAvatarName, githubAvatarPageUrl,  loading } = useCommunityStatsContext();
     const [borderColors, setBorderColors] = useState<string[]>([]);
+    const [backgroundColors, setBackgroundColors] = useState<string[]>([]);
 
     useEffect(() => {
         const colors = githubAvatarUrl.map(() => getRandomColor());
         setBorderColors(colors);
+        const backgroundColorsWithOpacity = colors.map(color => `${color.slice(0, -1)},0.2)`);
+        setBackgroundColors(backgroundColorsWithOpacity);
     }, [githubAvatarUrl]);
 
     function getRandomColor() {
@@ -51,7 +50,7 @@ export const GithubFollowersAvatar: React.FC<GithubFollowersAvatarProps> = ({ is
                     srcDark={url}
                     srcLight={url}
                     alt={githubAvatarName[index]}
-                    style={{ borderColor: borderColors[index] }}
+                    style={{ borderColor: borderColors[index], backgroundColor: backgroundColors[index] }}
                 />
                 {index+1}
                 <a
@@ -61,14 +60,14 @@ export const GithubFollowersAvatar: React.FC<GithubFollowersAvatarProps> = ({ is
                         "text-sm",
                         "no-underline",
                         "rounded-lg m-2 p-1",
-                        "border-2 dark:border-gray-500 border-gray-300",
+                        "border-2",
                         "transition ease-in-out delay-50 hover:-translate-y-1 hover:scale-110 duration-300",
-                        "text-gray-500 dark:text-gray-400",
-                        "dark:text-gray-300 text-gray-900",
+                        "dark:text-gray-400 text-gray-600",
                         "font-semibold",
                         "flex flex-row",
                         "text-center",
                     )}
+                    style={{ borderColor: borderColors[index], backgroundColor: backgroundColors[index] }}
                     rel="noreferrer"
                 >
                     {githubAvatarName[index]}

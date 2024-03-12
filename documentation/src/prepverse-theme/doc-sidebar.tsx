@@ -68,6 +68,7 @@ const SidebarCategory = ({
     onLinkClick?: () => void;
     deferred?: boolean;
 }) => {
+    const location = useLocation();
     const isHeader = item.className?.includes("category-as-header");
     const isActive = isActiveSidebarItem(item, path);
 
@@ -100,6 +101,25 @@ const SidebarCategory = ({
         }
     };
 
+    // biome-ignore lint/correctness/useExhaustiveDependencies: we don't want to re-run this effect when the location changes
+    React.useEffect(() => {
+        // find <a> elements with href attribute value equal to the current path
+        const activeLink = document.querySelector(
+        `#prepverse-docs-sidebar a[href="${location.pathname}"]`,
+        );
+        if (!activeLink) return;
+
+        // get sidebar
+        const sidebar = document.querySelector("#prepverse-docs-sidebar");
+        if (!sidebar) return;
+
+        // scroll to active link in the sidebar
+        sidebar.scrollTo({
+        top: activeLink.getBoundingClientRect().top - 200,
+        behavior: "smooth",
+        });
+    }, []);
+
     const Comp = !isHeader && item.href && !isSame ? Link : "button";
 
     return (
@@ -119,8 +139,8 @@ const SidebarCategory = ({
                 {...(Comp === "button"
                     ? {}
                     : {
-                          isNavLink: true,
-                      })}
+                        isNavLink: true,
+                    })}
                 href={item.href}
                 className={clsx(
                     // isHeader && item.label !== "Getting Started" && "mt-6",
@@ -303,7 +323,7 @@ const SidebarLink = ({
     React.useEffect(() => {
         if (isActive && !once.current) {
             const sidebarParent = document.querySelector(
-                "#refine-docs-sidebar",
+                "#prepverse-docs-sidebar",
             );
             if (sidebarParent && ref.current) {
                 sidebarParent.scrollTop =
@@ -536,7 +556,7 @@ export const DocSidebar = () => {
 
     return (
         <div
-            id="refine-docs-sidebar"
+            id="prepverse-docs-sidebar"
             className={clsx(
                 "hidden lg:block",
                 "sticky",

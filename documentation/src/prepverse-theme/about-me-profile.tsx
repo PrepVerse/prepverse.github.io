@@ -3,10 +3,12 @@ import clsx from "clsx";
 import { useInView } from "framer-motion";
 import { CommonThemedImage } from "./common-themed-image";
 import { GithubIcon } from "@site/src/prepverse-theme/icons/github";
+import { BlueTickIcon } from "@site/src/prepverse-theme/icons/blue-tick";
 import { TwitterIcon, LinkedInIcon, InstagramIcon } from "@site/src/prepverse-theme/icons/popover";
 import { LandingSectionCtaButton } from "./landing-section-cta-button";
-import { GitHubFollowers } from "./common-header/github-followers";
-import { GithubFollowersAvatar } from "./common-header/github-followers-avatar";
+import { GitHubFollowers } from "./about-section/github-followers";
+import { GithubFollowersAvatar } from "./about-section/github-followers-avatar";
+import { EduExpJourney } from "./about-section/edu-exp";
 
 const GithubFollowers = ({ className }: { className?: string }) => {
     return (
@@ -32,13 +34,17 @@ const GithubFollowers = ({ className }: { className?: string }) => {
     );
 };
 
-const LeetCodeBadges = ({ className }: { className?: string }) => {
+const Journey = ({ className }: { className?: string }) => {
     return (
-        <GitHubFollowers />
+        <EduExpJourney />
     );
 };
 
 const apps = [
+    {
+        name: "My Journey",
+        showcase: Journey,
+    },
     {
         name: "GitHub Followers",
         showcase: GithubFollowers,
@@ -111,7 +117,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                     "font-semibold",
                                 )}
                             >
-                                Akash Singh
+                                Akash Singh <BlueTickIcon className="inline" />
                             </h2>
                             <p
                                 className={clsx(
@@ -134,7 +140,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                 "dark:text-gray-400 text-gray-600",
                             )}
                         >
-                            Software Developer Engineer🔸||🔸TA at Coding Ninjas🔸||🔸6133 Rating 📈 Points on Coding Ninjas Studio
+                            Software Developer Engineer🔸||🔸TA at Coding Ninjas🔸||🔸6243 Rating 📈 Points on Coding Ninjas Studio
                         </p>
                         <LandingSectionCtaButton to="https://github.com/AkashSingh3031"
                             className={clsx(
@@ -317,7 +323,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                 className={clsx(
                                     "rounded-3xl",
                                     "flex",
-                                    "w-auto",
+                                    "w-full",
                                     "landing-lg:w-full",
                                     "items-center",
                                     "justify-start",
@@ -408,6 +414,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             "shadow-sm shadow-gray-200 dark:shadow-none",
                             "relative",
                             "group/showcase-inner",
+                            "w-full",
                         )}
                     >
                         <ShowcaseComponent

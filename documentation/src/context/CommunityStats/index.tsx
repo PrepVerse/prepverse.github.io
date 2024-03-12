@@ -40,7 +40,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
         try {
             setLoading(true);
 
-            const response = await fetch(
+            const fetchStarCounts = await fetch(
                 `https://api.github.com/repos/AkashSingh3031/The-Complete-FAANG-Preparation`,
                 {
                     method: "GET",
@@ -52,7 +52,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                 },
             );
 
-            const response2 = await fetch(
+            const fetchFollowerCounts = await fetch(
                 `https://api.github.com/users/AkashSingh3031`,
                 {
                     method: "GET",
@@ -67,9 +67,8 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             let allFollowers = [];
             let page = 1;
             let totalPages = 1;
-
             while (page <= totalPages) {
-                const response3 = await fetch(
+                const fetchFollowerDetails = await fetch(
                     `https://api.github.com/users/AkashSingh3031/followers?per_page=100&page=${page}`,
                     {
                         method: "GET",
@@ -81,41 +80,40 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     },
                 );
 
-                const followers = await response3.json();
+                const followers = await fetchFollowerDetails.json();
                 allFollowers = [...allFollowers, ...followers];
 
                 // Check if there are more pages
-                const linkHeader = response3.headers.get("Link");
+                const linkHeader = fetchFollowerDetails.headers.get("Link");
                 const hasNextPage = linkHeader && linkHeader.includes('rel="next"');
                 if (hasNextPage) {
                     totalPages++;
                 }
-
                 page++;
             }
 
             const followersWithFullNames = await Promise.all(
                 allFollowers.map(async (follower) => {
-                    const profileResponse = await fetch(follower.url, {
+                    const fetchFollowersFullDetails = await fetch(follower.url, {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
                             // "Authorization": `token ${ACCESS_TOKEN}`,
                         },
                     });
-                    const profileData = await profileResponse.json();
+                    const FollowersFullDetails = await fetchFollowersFullDetails.json();
                     return {
-                        name: profileData.name || follower.login, // Use login if name is not available
+                        name: FollowersFullDetails.name || follower.login, // Use login if name is not available
                         avatarUrl: follower.avatar_url,
                         pageUrl: follower.html_url,
                     };
                 })
             );
 
-            const starCount = await response.json();
+            const starCount = await fetchStarCounts.json();
             setGithubStarCount(starCount.stargazers_count);
 
-            const followersCount = await response2.json();
+            const followersCount = await fetchFollowerCounts.json();
             setGithubFollowersCount(followersCount.followers);
             
             followersWithFullNames.sort((a, b) => a.name.localeCompare(b.name));
