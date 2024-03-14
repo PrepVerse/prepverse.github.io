@@ -16,7 +16,13 @@ interface ICommunityStatsContext {
     githubAvatarUrl: string;
     githubAvatarPageUrl: string;
     githubAvatarName: string;
-    githubCommitCount: number;
+    leetcodeBadgeImg: string;
+    leetcodeBadgeCount: number;
+    solvedProblem: number;
+    easySolved: number;
+    mediumSolved: number;
+    hardSolved: number;
+    totalLCProblem: number;
     loading: boolean;
     refetch: () => Promise<void>;
 }
@@ -26,7 +32,6 @@ export const CommunityStatsContext = createContext<
 >(undefined);
 
 const ACCESS_TOKEN = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
-console.log(ACCESS_TOKEN);
 
 export const CommunityStatsProvider: FC = ({ children }) => {
     const [loading, setLoading] = useState(true);
@@ -35,6 +40,13 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const [githubAvatarUrl, setGithubAvatarUrl] = useState<String[]>([]);
     const [githubAvatarPageUrl, setGithubAvatarPageUrl] = useState<String[]>([]);
     const [githubAvatarName, setGithubAvatarName] = useState<String[]>([]);
+    const [leetcodeBadgeImg, setLeetcodeBadgeImg] = useState<String[]>([]);
+    const [leetcodeBadgeCount, setLeetcodeBadgesCount] = useState(0);
+    const [solvedProblem, setSolvedProblem] = useState(0);
+    const [easySolved, setEasySolved] = useState(0);
+    const [mediumSolved, setMediumSolved] = useState(0);
+    const [hardSolved, setHardSolved] = useState(0);
+    const [totalLCProblem, setTotalLCProblem] = useState(0);
 
     const fetchGithubCount = useCallback(async (signal: AbortSignal) => {
         try {
@@ -74,15 +86,13 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            // "Authorization": `token ${ACCESS_TOKEN}`,
+                            "Authorization": `token ${ACCESS_TOKEN}`,
                         },
                         signal,
                     },
                 );
-
                 const followers = await fetchFollowerDetails.json();
                 allFollowers = [...allFollowers, ...followers];
-
                 // Check if there are more pages
                 const linkHeader = fetchFollowerDetails.headers.get("Link");
                 const hasNextPage = linkHeader && linkHeader.includes('rel="next"');
@@ -109,6 +119,43 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     };
                 })
             );
+            
+            let allBadges = [];
+            const fetchBadgeDetails = await fetch(
+                `https://alfa-leetcode-api.onrender.com/akashsingh3031/badges`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                    },
+                    signal,
+                },
+            );
+            
+            const fetchSolvedProblemsDetails = await fetch(
+                `https://alfa-leetcode-api.onrender.com/akashsingh3031/solved`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                    },
+                    signal,
+                },
+            );
+            
+            const fetchTotalLCProblem = await fetch(
+                `https://alfa-leetcode-api.onrender.com/problems`,
+                {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                    },
+                    signal,
+                },
+            );
 
             const starCount = await fetchStarCounts.json();
             setGithubStarCount(starCount.stargazers_count);
@@ -123,6 +170,30 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             setGithubAvatarName(sortedAvatarNames);
             setGithubAvatarUrl(sortedAvatarUrls);
             setGithubAvatarPageUrl(sortedAvatarPageUrls);
+
+            const badgeDetails = await fetchBadgeDetails.json();
+            const badgesCount = badgeDetails.badgesCount;
+            const badges = badgeDetails.badges.map(badge => {
+                const iconUrl = badge.icon.startsWith('https://') ? badge.icon : `https://leetcode.com${badge.icon}`;
+                return {
+                    id: badge.id,
+                    displayName: badge.displayName,
+                    icon: iconUrl,
+                    creationDate: badge.creationDate
+                };
+            });
+            allBadges = [...allBadges, ...badges];
+            setLeetcodeBadgeImg(allBadges);
+            setLeetcodeBadgesCount(badgesCount);
+            
+            const solvedProblemsDetails = await fetchSolvedProblemsDetails.json();
+            setSolvedProblem(solvedProblemsDetails.solvedProblem);
+            setEasySolved(solvedProblemsDetails.easySolved);
+            setMediumSolved(solvedProblemsDetails.mediumSolved);
+            setHardSolved(solvedProblemsDetails.hardSolved);
+
+            const totalLCProblem = await fetchTotalLCProblem.json();
+            setTotalLCProblem(totalLCProblem.totalQuestions);
         } catch (error) {
         } finally {
             setLoading(false);
@@ -154,6 +225,13 @@ export const CommunityStatsProvider: FC = ({ children }) => {
         githubAvatarUrl,
         githubAvatarPageUrl,
         githubAvatarName,
+        leetcodeBadgeImg,
+        leetcodeBadgeCount,
+        solvedProblem,
+        easySolved,
+        mediumSolved,
+        hardSolved,
+        totalLCProblem,
         loading,
         refetch: fetchGithubCount,
     };

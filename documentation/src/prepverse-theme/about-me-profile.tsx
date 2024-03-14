@@ -9,6 +9,7 @@ import { LandingSectionCtaButton } from "./landing-section-cta-button";
 import { GitHubFollowers } from "./about-section/github-followers";
 import { GithubFollowersAvatar } from "./about-section/github-followers-avatar";
 import { EduExpJourney } from "./about-section/edu-exp";
+import { LeetCodeSection } from "./about-section/leetcode-section";
 
 const GithubFollowers = ({ className }: { className?: string }) => {
     return (
@@ -40,14 +41,24 @@ const Journey = ({ className }: { className?: string }) => {
     );
 };
 
+const LeetCodeStats = ({ className }: { className?: string }) => {
+    return (
+        <LeetCodeSection />
+    );
+};
+
 const apps = [
     {
-        name: "My Journey",
-        showcase: Journey,
+        name: "LeetCode Stats",
+        showcase: LeetCodeStats,
     },
     {
         name: "GitHub Followers",
         showcase: GithubFollowers,
+    },
+    {
+        name: "My Journey",
+        showcase: Journey,
     },
 ];
 
@@ -117,7 +128,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                     "font-semibold",
                                 )}
                             >
-                                Akash Singh <BlueTickIcon className="inline" />
+                                Akash Singh&nbsp;<BlueTickIcon className="inline" />
                             </h2>
                             <p
                                 className={clsx(
@@ -323,7 +334,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                 className={clsx(
                                     "rounded-3xl",
                                     "flex",
-                                    "w-full",
+                                    "w-auto",
                                     "landing-lg:w-full",
                                     "items-center",
                                     "justify-start",
