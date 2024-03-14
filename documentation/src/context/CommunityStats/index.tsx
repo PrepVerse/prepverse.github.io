@@ -86,7 +86,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": `token ${ACCESS_TOKEN}`,
+                            // "Authorization": `token ${ACCESS_TOKEN}`,
                         },
                         signal,
                     },
