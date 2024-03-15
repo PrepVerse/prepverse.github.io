@@ -7,6 +7,7 @@ import React, {
     useMemo,
     useState,
 } from "react";
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 interface ICommunityStatsContext {
     githubStarCount: number;
@@ -33,9 +34,10 @@ interface ICommunityStatsContext {
 export const CommunityStatsContext = createContext<
     ICommunityStatsContext | undefined
 >(undefined);
-const followersAccessKey = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY || 'default_key';
 
 export const CommunityStatsProvider: FC = ({ children }) => {
+    const { siteConfig } = useDocusaurusContext();
+    const followersAccessKey = siteConfig.customFields.AccessKey;
     const [loading, setLoading] = useState(true);
     const [githubStarCount, setGithubStarCount] = useState(0);
     const [githubFollowersCount, setGithubFollowersCount] = useState(0);
@@ -151,7 +153,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             );
             
             const fetchTotalLCProblem = await fetch(
-                `https://alfa-leetcode-api.onrender.com/problems?limit=3100`,
+                `https://alfa-leetcode-api.onrender.com/problems?limit=4000`,
                 {
                     method: "GET",
                     headers: {

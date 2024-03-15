@@ -126,17 +126,6 @@ const siteConfig = {
                 include: ["**/*.{js}"],
             },
         ],
-        [
-            'docusaurus-plugin-dotenv',
-            {
-                safe: false, // If false ignore safe-mode, if true load './.env.example', if a string load that file as the sample
-                systemvars: false, // Set to true if you would rather load all system variables as well (useful for CI purposes)
-                silent: false, //  If true, all warnings will be suppressed
-                expand: false, // Allows your variables to be "expanded" for reusability within your .env file
-                defaults: false, //  Adds support for dotenv-defaults. If set to true, uses ./.env.defaults
-                ignoreStub: false
-            }
-        ],
         async function tailwindcss() {
             return {
                 name: "docusaurus-tailwindcss",
@@ -221,14 +210,6 @@ const siteConfig = {
             ]
         ),
     ],
-    webpack(config, { isServer, webpack }) {
-        config.plugins.push(
-            new webpack.DefinePlugin({
-                'process.env.REACT_APP_FOLLOWERS_ACCESS_KEY': JSON.stringify(process.env.REACT_APP_FOLLOWERS_ACCESS_KEY),
-            })
-        );
-        return config;
-    },
     themeConfig: {
         prism: {
             theme: require("prism-react-renderer/themes/github"),
@@ -378,6 +359,8 @@ const siteConfig = {
         },
     },
     customFields: {
+        // Put your custom environment here
+        AccessKey: process.env.REACT_APP_FOLLOWERS_ACCESS_KEY,
         /** Footer Fields */
         footerDescription: '',
         contactTitle: "Contact",

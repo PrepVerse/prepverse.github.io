@@ -147,11 +147,20 @@ const LeecodeBadges = ({ className }: { className?: string }) => {
                     )}
                 </div>
             </a>
-            <div>
-                {renderBadgesByCategory("Competition Medals", leetcodeBadgeImg.filter(badge => badge.displayName.includes("Annual Badge") || badge.displayName.includes("Days Badge")))}
-                {renderBadgesByCategory("Daily Medals", leetcodeBadgeImg.filter(badge => badge.displayName.includes("LeetCoding Challenge")))}
-                {renderBadgesByCategory("Study Plan Medals", leetcodeBadgeImg.filter(badge => !badge.displayName.includes("Annual Badge") && !badge.displayName.includes("LeetCoding Challenge") && !badge.displayName.includes("Days Badge")))}
-            </div>
+            {loading ? (
+                <Spinner
+                    className={clsx("w-20 h-20")}
+                    wrapperProps={{
+                        className: clsx("flex justify-center items-center h-full mt-4"),
+                    }}
+                />
+            ) : (
+                <div>
+                    {renderBadgesByCategory("Competition Medals", leetcodeBadgeImg.filter(badge => badge.displayName.includes("Annual Badge") || badge.displayName.includes("Days Badge")))}
+                    {renderBadgesByCategory("Daily Medals", leetcodeBadgeImg.filter(badge => badge.displayName.includes("LeetCoding Challenge")))}
+                    {renderBadgesByCategory("Study Plan Medals", leetcodeBadgeImg.filter(badge => !badge.displayName.includes("Annual Badge") && !badge.displayName.includes("LeetCoding Challenge") && !badge.displayName.includes("Days Badge")))}
+                </div>
+            )}
         </div>
     );
 };
@@ -196,82 +205,91 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                     )}
                 </div>
             </a>
-            <div className="flex lg:flex-row sm:flex-col flex-col w-[calc(100%-8px)] mx-auto justify-between">
-                <div className="lg:w-[calc(100%)] sm:w-full sm:h-[240px] h-[450px]mt-[8px] rounded-lg relative">
-                    <div className="flex sm:flex-row flex-col justify-between">
-                        <div>
-                            <div className="text-[22px] font-bold mt-[40px] dark:text-green-600 text-red-600 ml-[50px]">
-                                Solved Problems
-                            </div>
-                            <div className="text-[60px] font-bold mt-[32px] dark:text-yellow-400 text-orange-600 ml-[50px]">
-                                {solvedProblem}{" "}
-                                <span className="text-gray-500 text-[14px]">
-                                    {"/ "}
-                                    {totalLCProblem}
-                                </span>
-                            </div>
-                        </div>
-                        <div className="flex flex-col relative mr-[50px] mt-[40px] w-[200px] sm:w-[280px] ml-[50px] sm:ml-0">
-                            <div className="text-[14px] relative">
-                                <div className="flex flex-row justify-between">
-                                    <div className="mb-[8px] text-green-500">
-                                        Easy
-                                    </div>
-                                    <div className="mb-[8px] text-green-500">
-                                        {easySolved}
-                                        {" / "}
-                                        {totalLCEasy}
-                                    </div>
+            {loading ? (
+                <Spinner
+                    className={clsx("w-20 h-20")}
+                    wrapperProps={{
+                        className: clsx("flex justify-center items-center h-full mt-4"),
+                    }}
+                />
+            ) : (
+                <div className="flex lg:flex-row sm:flex-col flex-col w-[calc(100%-8px)] mx-auto justify-between">
+                    <div className="lg:w-[calc(100%)] sm:w-full sm:h-[240px] h-[450px]mt-[8px] rounded-lg relative">
+                        <div className="flex sm:flex-row flex-col justify-between">
+                            <div>
+                                <div className="text-[22px] font-bold mt-[40px] dark:text-green-600 text-red-600 ml-[50px]">
+                                    Solved Problems
                                 </div>
-                                <div
-                                    className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute easy-line after:h-[8px] after:rounded rounded  after:bg-green-500`} style={{ backgroundColor: 'rgba(52, 211, 153, 0.2)' }}
-                                ></div>
-                            </div>
-                            <div className="text-[14px] relative">
-                                <div className="flex flex-row justify-between">
-                                    <div className="mb-[8px] text-orange-500">
-                                        Medium
-                                    </div>
-                                    <div className="mb-[8px] text-orange-500">
-                                        {mediumSolved}
-                                        {" / "}
-                                        {totalLCMedium}
-                                    </div>
+                                <div className="text-[60px] font-bold mt-[32px] dark:text-yellow-400 text-orange-600 ml-[50px]">
+                                    {solvedProblem}{" "}
+                                    <span className="text-gray-500 text-[14px]">
+                                        {"/ "}
+                                        {totalLCProblem}
+                                    </span>
                                 </div>
-                                <div
-                                    className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute medium-line after:h-[8px] after:rounded rounded after:bg-orange-500`} style={{ backgroundColor: 'rgba(255, 159, 64, 0.2)' }}
-                                ></div>
                             </div>
-                            <div className="text-[14px] relative">
-                                <div className="flex flex-row justify-between">
-                                    <div className="mb-[8px] text-red-500">
-                                        Hard
+                            <div className="flex flex-col relative mr-[50px] mt-[40px] w-[200px] sm:w-[280px] ml-[50px] sm:ml-0">
+                                <div className="text-[14px] relative">
+                                    <div className="flex flex-row justify-between">
+                                        <div className="mb-[8px] text-green-500">
+                                            Easy
+                                        </div>
+                                        <div className="mb-[8px] text-green-500">
+                                            {easySolved}
+                                            {" / "}
+                                            {totalLCEasy}
+                                        </div>
                                     </div>
-                                    <div className="mb-[8px] text-red-500">
-                                        {hardSolved}
-                                        {" / "}
-                                        {totalLCHard}
-                                    </div>
+                                    <div
+                                        className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute easy-line after:h-[8px] after:rounded rounded  after:bg-green-500`} style={{ backgroundColor: 'rgba(52, 211, 153, 0.2)' }}
+                                    ></div>
                                 </div>
-                                <div
-                                    className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute hard-line after:h-[8px] after:rounded rounded after:bg-red-500`} style={{ backgroundColor: 'rgba(239, 68, 68, 0.2)' }}
-                                ></div>
-                                <style>
-                                    {`.easy-line::after { width: ${((easySolved) / (totalLCEasy)) *
-                                        100
-                                        }%; }`}
-                                    {`.medium-line::after { width: ${((mediumSolved) / (totalLCMedium)) *
-                                        100
-                                        }%; }`}
-                                    {`.hard-line::after { width: ${((hardSolved) / (totalLCHard)) *
-                                        100
-                                        }%; }`}
-                                </style>
+                                <div className="text-[14px] relative">
+                                    <div className="flex flex-row justify-between">
+                                        <div className="mb-[8px] text-orange-500">
+                                            Medium
+                                        </div>
+                                        <div className="mb-[8px] text-orange-500">
+                                            {mediumSolved}
+                                            {" / "}
+                                            {totalLCMedium}
+                                        </div>
+                                    </div>
+                                    <div
+                                        className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute medium-line after:h-[8px] after:rounded rounded after:bg-orange-500`} style={{ backgroundColor: 'rgba(255, 159, 64, 0.2)' }}
+                                    ></div>
+                                </div>
+                                <div className="text-[14px] relative">
+                                    <div className="flex flex-row justify-between">
+                                        <div className="mb-[8px] text-red-500">
+                                            Hard
+                                        </div>
+                                        <div className="mb-[8px] text-red-500">
+                                            {hardSolved}
+                                            {" / "}
+                                            {totalLCHard}
+                                        </div>
+                                    </div>
+                                    <div
+                                        className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute hard-line after:h-[8px] after:rounded rounded after:bg-red-500`} style={{ backgroundColor: 'rgba(239, 68, 68, 0.2)' }}
+                                    ></div>
+                                    <style>
+                                        {`.easy-line::after { width: ${((easySolved) / (totalLCEasy)) *
+                                            100
+                                            }%; }`}
+                                        {`.medium-line::after { width: ${((mediumSolved) / (totalLCMedium)) *
+                                            100
+                                            }%; }`}
+                                        {`.hard-line::after { width: ${((hardSolved) / (totalLCHard)) *
+                                            100
+                                            }%; }`}
+                                    </style>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            )}
         </div>
     );
 };
