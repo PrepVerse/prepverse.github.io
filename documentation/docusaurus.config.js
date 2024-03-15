@@ -360,7 +360,7 @@ const siteConfig = {
     },
     customFields: {
         // Put your custom environment here
-        AccessKey: process.env.REACT_APP_FOLLOWERS_ACCESS_KEY,
+        REACT_APP_FOLLOWERS_ACCESS_KEY: process.env.REACT_APP_FOLLOWERS_ACCESS_KEY,
         /** Footer Fields */
         footerDescription: '',
         contactTitle: "Contact",
