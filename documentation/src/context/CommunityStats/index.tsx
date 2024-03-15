@@ -38,6 +38,7 @@ export const CommunityStatsContext = createContext<
 export const CommunityStatsProvider: FC = ({ children }) => {
     const { siteConfig } = useDocusaurusContext();
     const followersAccessKey = siteConfig.customFields.AccessKey;
+    console.log('AccessKey:', followersAccessKey); 
     const [loading, setLoading] = useState(true);
     const [githubStarCount, setGithubStarCount] = useState(0);
     const [githubFollowersCount, setGithubFollowersCount] = useState(0);
