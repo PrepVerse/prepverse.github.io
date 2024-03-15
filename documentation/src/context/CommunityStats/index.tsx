@@ -33,6 +33,7 @@ interface ICommunityStatsContext {
 export const CommunityStatsContext = createContext<
     ICommunityStatsContext | undefined
 >(undefined);
+const followersAccessKey = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY || 'default_key';
 
 export const CommunityStatsProvider: FC = ({ children }) => {
     const [loading, setLoading] = useState(true);
@@ -62,7 +63,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
+                        "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -74,7 +75,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
+                        "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -90,7 +91,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
+                            "Authorization": `token ${followersAccessKey}`,
                         },
                         signal,
                     },
@@ -112,7 +113,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
+                            "Authorization": `token ${followersAccessKey}`,
                         },
                     });
                     const FollowersFullDetails = await fetchFollowersFullDetails.json();
@@ -131,7 +132,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
+                        "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -143,7 +144,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
+                        "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -155,7 +156,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
+                        "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },

@@ -221,6 +221,14 @@ const siteConfig = {
             ]
         ),
     ],
+    webpack(config, { isServer, webpack }) {
+        config.plugins.push(
+            new webpack.DefinePlugin({
+                'process.env.REACT_APP_FOLLOWERS_ACCESS_KEY': JSON.stringify(process.env.REACT_APP_FOLLOWERS_ACCESS_KEY),
+            })
+        );
+        return config;
+    },
     themeConfig: {
         prism: {
             theme: require("prism-react-renderer/themes/github"),
