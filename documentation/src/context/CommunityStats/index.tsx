@@ -23,6 +23,9 @@ interface ICommunityStatsContext {
     mediumSolved: number;
     hardSolved: number;
     totalLCProblem: number;
+    totalLCEasy: number;
+    totalLCMedium: number;
+    totalLCHard: number;
     loading: boolean;
     refetch: () => Promise<void>;
 }
@@ -30,8 +33,6 @@ interface ICommunityStatsContext {
 export const CommunityStatsContext = createContext<
     ICommunityStatsContext | undefined
 >(undefined);
-
-const ACCESS_TOKEN = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
 
 export const CommunityStatsProvider: FC = ({ children }) => {
     const [loading, setLoading] = useState(true);
@@ -47,6 +48,9 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const [mediumSolved, setMediumSolved] = useState(0);
     const [hardSolved, setHardSolved] = useState(0);
     const [totalLCProblem, setTotalLCProblem] = useState(0);
+    const [totalLCEasy, setTotalLCEasy] = useState(0);
+    const [totalLCMedium, setTotalLCMedium] = useState(0);
+    const [totalLCHard, setTotalLCHard] = useState(0);
 
     const fetchGithubCount = useCallback(async (signal: AbortSignal) => {
         try {
@@ -58,7 +62,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
                     },
                     signal,
                 },
@@ -70,7 +74,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
                     },
                     signal,
                 },
@@ -86,7 +90,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            // "Authorization": `token ${ACCESS_TOKEN}`,
+                            "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
                         },
                         signal,
                     },
@@ -108,7 +112,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            // "Authorization": `token ${ACCESS_TOKEN}`,
+                            "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
                         },
                     });
                     const FollowersFullDetails = await fetchFollowersFullDetails.json();
@@ -127,7 +131,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
                     },
                     signal,
                 },
@@ -139,19 +143,19 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
                     },
                     signal,
                 },
             );
             
             const fetchTotalLCProblem = await fetch(
-                `https://alfa-leetcode-api.onrender.com/problems`,
+                `https://alfa-leetcode-api.onrender.com/problems?limit=3100`,
                 {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        // "Authorization": `token ${ACCESS_TOKEN}`,
+                        "Authorization": `token ${process.env.REACT_APP_FOLLOWERS_ACCESS_KEY}`,
                     },
                     signal,
                 },
@@ -194,6 +198,22 @@ export const CommunityStatsProvider: FC = ({ children }) => {
 
             const totalLCProblem = await fetchTotalLCProblem.json();
             setTotalLCProblem(totalLCProblem.totalQuestions);
+            // Count easy, medium, and hard problems
+            let easyCount = 0;
+            let mediumCount = 0;
+            let hardCount = 0;
+            totalLCProblem.problemsetQuestionList.forEach((problem) => {
+            if (problem.difficulty === 'Easy') {
+                easyCount++;
+            } else if (problem.difficulty === 'Medium') {
+                mediumCount++;
+            } else if (problem.difficulty === 'Hard') {
+                hardCount++;
+            }
+            });
+            setTotalLCEasy(easyCount);
+            setTotalLCMedium(mediumCount);
+            setTotalLCHard(hardCount);
         } catch (error) {
         } finally {
             setLoading(false);
@@ -232,6 +252,9 @@ export const CommunityStatsProvider: FC = ({ children }) => {
         mediumSolved,
         hardSolved,
         totalLCProblem,
+        totalLCEasy,
+        totalLCMedium,
+        totalLCHard,
         loading,
         refetch: fetchGithubCount,
     };

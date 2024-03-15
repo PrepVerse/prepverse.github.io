@@ -5,7 +5,7 @@ import { CommonThemedImage } from "../common-themed-image";
 import { Spinner } from "../spinner";
 
 const LeecodeBadges = ({ className }: { className?: string }) => {
-    const { leetcodeBadgeImg, leetcodeBadgeCount,  loading } = useCommunityStatsContext();
+    const { leetcodeBadgeImg, leetcodeBadgeCount, loading } = useCommunityStatsContext();
     const [borderColors, setBorderColors] = useState<string[]>([]);
     const [backgroundColors, setBackgroundColors] = useState<string[]>([]);
 
@@ -26,7 +26,7 @@ const LeecodeBadges = ({ className }: { className?: string }) => {
     const renderBadgesByCategory = (category: string, badges: any[]) => {
         return (
             <div key={category}>
-                <div 
+                <div
                     className={clsx(
                         "text-xl",
                         "no-underline",
@@ -69,8 +69,8 @@ const LeecodeBadges = ({ className }: { className?: string }) => {
                                 alt={badge.displayName}
                                 style={{ borderColor: borderColors[index], backgroundColor: backgroundColors[index] }}
                             />
-                            {index+1}
-                            <div 
+                            {index + 1}
+                            <div
                                 className={clsx(
                                     "text-sm",
                                     "no-underline",
@@ -86,7 +86,7 @@ const LeecodeBadges = ({ className }: { className?: string }) => {
                             >
                                 {badge.displayName}
                             </div>
-                            <div 
+                            <div
                                 className={clsx(
                                     "text-sm",
                                     "no-underline",
@@ -156,7 +156,131 @@ const LeecodeBadges = ({ className }: { className?: string }) => {
     );
 };
 
+const LeecodeSolved = ({ className }: { className?: string }) => {
+    const { totalLCProblem, totalLCEasy, totalLCMedium, totalLCHard, solvedProblem, easySolved, mediumSolved, hardSolved, loading } = useCommunityStatsContext();
+    return (
+        <div>
+            <a
+                href="https://leetcode.com/akashsingh3031"
+                target="_blank"
+                rel="noreferrer"
+                className={clsx(
+                    "text-sm",
+                    "text-gray-500 dark:text-gray-400",
+                    "rounded-[32px]",
+                    "border-2 border-solid border-gray-300 dark:border-gray-700",
+                    "flex gap-2 items-center justify-center",
+                    "py-2 pl-2.5 pr-4",
+                    "w-72",
+                    "font-semibold",
+                    "no-underline",
+                )}
+            >
+                <div className={clsx("flex flex-row items-center")}>
+                    Total Solved Leetcode Problem:&nbsp;
+                    {loading ? (
+                        <Spinner
+                            className={clsx("w-5 h-5")}
+                            wrapperProps={{
+                                className: clsx("mx-auto"),
+                            }}
+                        />
+                    ) : (
+                        <span
+                            className={clsx(
+                                "tabular-nums text-gray-800 dark:text-gray-100",
+                            )}
+                        >
+                            {solvedProblem}
+                        </span>
+                    )}
+                </div>
+            </a>
+            <div className="flex lg:flex-row sm:flex-col flex-col w-[calc(100%-8px)] mx-auto justify-between">
+                <div className="lg:w-[calc(100%)] sm:w-full sm:h-[240px] h-[450px]mt-[8px] rounded-lg relative">
+                    <div className="flex sm:flex-row flex-col justify-between">
+                        <div>
+                            <div className="text-[22px] font-bold mt-[40px] dark:text-green-600 text-red-600 ml-[50px]">
+                                Solved Problems
+                            </div>
+                            <div className="text-[60px] font-bold mt-[32px] dark:text-yellow-400 text-orange-600 ml-[50px]">
+                                {solvedProblem}{" "}
+                                <span className="text-gray-500 text-[14px]">
+                                    {"/ "}
+                                    {totalLCProblem}
+                                </span>
+                            </div>
+                        </div>
+                        <div className="flex flex-col relative mr-[50px] mt-[40px] w-[200px] sm:w-[280px] ml-[50px] sm:ml-0">
+                            <div className="text-[14px] relative">
+                                <div className="flex flex-row justify-between">
+                                    <div className="mb-[8px] text-green-500">
+                                        Easy
+                                    </div>
+                                    <div className="mb-[8px] text-green-500">
+                                        {easySolved}
+                                        {" / "}
+                                        {totalLCEasy}
+                                    </div>
+                                </div>
+                                <div
+                                    className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute easy-line after:h-[8px] after:rounded rounded  after:bg-green-500`} style={{ backgroundColor: 'rgba(52, 211, 153, 0.2)' }}
+                                ></div>
+                            </div>
+                            <div className="text-[14px] relative">
+                                <div className="flex flex-row justify-between">
+                                    <div className="mb-[8px] text-orange-500">
+                                        Medium
+                                    </div>
+                                    <div className="mb-[8px] text-orange-500">
+                                        {mediumSolved}
+                                        {" / "}
+                                        {totalLCMedium}
+                                    </div>
+                                </div>
+                                <div
+                                    className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute medium-line after:h-[8px] after:rounded rounded after:bg-orange-500`} style={{ backgroundColor: 'rgba(255, 159, 64, 0.2)' }}
+                                ></div>
+                            </div>
+                            <div className="text-[14px] relative">
+                                <div className="flex flex-row justify-between">
+                                    <div className="mb-[8px] text-red-500">
+                                        Hard
+                                    </div>
+                                    <div className="mb-[8px] text-red-500">
+                                        {hardSolved}
+                                        {" / "}
+                                        {totalLCHard}
+                                    </div>
+                                </div>
+                                <div
+                                    className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute hard-line after:h-[8px] after:rounded rounded after:bg-red-500`} style={{ backgroundColor: 'rgba(239, 68, 68, 0.2)' }}
+                                ></div>
+                                <style>
+                                    {`.easy-line::after { width: ${((easySolved) / (totalLCEasy)) *
+                                        100
+                                        }%; }`}
+                                    {`.medium-line::after { width: ${((mediumSolved) / (totalLCMedium)) *
+                                        100
+                                        }%; }`}
+                                    {`.hard-line::after { width: ${((hardSolved) / (totalLCHard)) *
+                                        100
+                                        }%; }`}
+                                </style>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 const journey = [
+    {
+        name: "Leecode Solved",
+        showcase: LeecodeSolved,
+    },
     {
         name: "Leecode Badges",
         showcase: LeecodeBadges,
@@ -227,7 +351,7 @@ export const LeetCodeSection: React.FC = () => {
                                 "ease-out",
                             )}
                             style={{
-                                width: `calc((100% - (${journey.length-1} * 8px)) / ${journey.length})`,
+                                width: `calc((100% - (${journey.length - 1} * 8px)) / ${journey.length})`,
                                 minWidth: "200px",
                                 transform: `translateX(calc((100% + 8px) * ${journey.findIndex(
                                     (f) => f.name === activeApp.name,
