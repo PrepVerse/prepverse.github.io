@@ -65,7 +65,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${followersAccessKey}`,
+                        // "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -77,7 +77,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${followersAccessKey}`,
+                        // "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -93,7 +93,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": `token ${followersAccessKey}`,
+                            // "Authorization": `token ${followersAccessKey}`,
                         },
                         signal,
                     },
@@ -115,7 +115,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                         method: "GET",
                         headers: {
                             "Content-Type": "application/json",
-                            "Authorization": `token ${followersAccessKey}`,
+                            // "Authorization": `token ${followersAccessKey}`,
                         },
                     });
                     const FollowersFullDetails = await fetchFollowersFullDetails.json();
@@ -134,7 +134,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${followersAccessKey}`,
+                        // "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -146,7 +146,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${followersAccessKey}`,
+                        // "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
@@ -158,7 +158,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     method: "GET",
                     headers: {
                         "Content-Type": "application/json",
-                        "Authorization": `token ${followersAccessKey}`,
+                        // "Authorization": `token ${followersAccessKey}`,
                     },
                     signal,
                 },
