@@ -28,9 +28,12 @@ jobs:
         run: |
           echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
-      - name: Install dependencies & Build website
+      - name: Install dependencies
         run: |
           npm ci
+
+      - name: Install dependencies & Build website
+        run: |
           cd documentation
           npm ci
           npm run build
