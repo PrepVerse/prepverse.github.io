@@ -2,7 +2,7 @@
 title: Introduction
 ---
 
-import { Sandpack } from "./sandpack.tsx";
+<!-- import { Sandpack } from "./sandpack.tsx";
 
 <Sandpack>
 
@@ -30,4 +30,4 @@ At our repository, learning is a never-ending journey fueled by curiosity, explo
 Whether you're a seasoned professional seeking to expand your skill set or a budding enthusiast eager to explore the frontiers of technology, our repository offers something for everyone. So, what are you waiting for? Dive into a world of endless possibilities and unlock the treasure trove of knowledge that awaits you. Together, let's embark on a journey of learning, growth, and transformation. 🚀🌐💡
 :::
 
-</Sandpack>
+</Sandpack> -->
