@@ -3,29 +3,21 @@ module.exports = {
         label: "Tutorial",
         path_prefix_segment: "tutorial",
         defaultParameters: {
-            routerSelection: "react-router",
-            uiSelection: "ant-design",
+            language: "cpp",
         },
         parameterOptions: {
-            routerSelection: [
+            language: [
                 {
-                    label: "React Router",
-                    value: "react-router",
+                    label: "C++",
+                    value: "cpp",
                 },
                 {
-                    label: "Next.js",
-                    value: "next-js",
-                    status: "coming-soon",
-                },
-            ],
-            uiSelection: [
-                {
-                    label: "Ant Design",
-                    value: "ant-design",
+                    label: "Python",
+                    value: "py",
                 },
                 {
-                    label: "Material UI",
-                    value: "material-ui",
+                    label: "Java",
+                    value: "java",
                     status: "coming-soon",
                 },
             ],
@@ -35,7 +27,7 @@ module.exports = {
                 title: "DSA",
                 id: "dsa",
                 items: [
-                    "dsa/index",
+                    "dsa/:language/index",
                 ],
             },
         ],

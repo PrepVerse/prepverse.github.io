@@ -27,6 +27,7 @@ interface ICommunityStatsContext {
     totalLCEasy: number;
     totalLCMedium: number;
     totalLCHard: number;
+    lcStreakCount: number;
     loading: boolean;
     refetch: () => Promise<void>;
 }
@@ -54,122 +55,75 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const [totalLCEasy, setTotalLCEasy] = useState(0);
     const [totalLCMedium, setTotalLCMedium] = useState(0);
     const [totalLCHard, setTotalLCHard] = useState(0);
+    const [lcStreakCount, setLCStreakCount] = useState(0);
 
-    const fetchGithubCount = useCallback(async (signal: AbortSignal) => {
+    const fetchData = useCallback(async () => {
         try {
             setLoading(true);
 
-            const fetchStarCounts = await fetch(
-                `https://api.github.com/repos/AkashSingh3031/The-Complete-FAANG-Preparation`,
-                {
-                    method: "GET",
+            // Fetch Github data
+            const [starCountsResponse, followerCountsResponse] = await Promise.all([
+                fetch(`https://api.github.com/repos/AkashSingh3031/The-Complete-FAANG-Preparation`, {
                     headers: {
-                        "Content-Type": "application/json",
-                        // "Authorization": `token ${followersAccessKey}`,
+                        Authorization: `token ${followersAccessKey}`,
                     },
-                    signal,
-                },
-            );
-
-            const fetchFollowerCounts = await fetch(
-                `https://api.github.com/users/AkashSingh3031`,
-                {
-                    method: "GET",
+                }),
+                fetch(`https://api.github.com/users/AkashSingh3031`, {
                     headers: {
-                        "Content-Type": "application/json",
-                        // "Authorization": `token ${followersAccessKey}`,
+                        Authorization: `token ${followersAccessKey}`,
                     },
-                    signal,
-                },
-            );
-            
-            let allFollowers = [];
-            let page = 1;
-            let totalPages = 1;
-            while (page <= totalPages) {
-                const fetchFollowerDetails = await fetch(
-                    `https://api.github.com/users/AkashSingh3031/followers?per_page=100&page=${page}`,
-                    {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/json",
-                            // "Authorization": `token ${followersAccessKey}`,
-                        },
-                        signal,
-                    },
-                );
-                const followers = await fetchFollowerDetails.json();
-                allFollowers = [...allFollowers, ...followers];
-                // Check if there are more pages
-                const linkHeader = fetchFollowerDetails.headers.get("Link");
-                const hasNextPage = linkHeader && linkHeader.includes('rel="next"');
-                if (hasNextPage) {
-                    totalPages++;
-                }
-                page++;
-            }
+                }),
+            ]);
 
-            const followersWithFullNames = await Promise.all(
-                allFollowers.map(async (follower) => {
-                    const fetchFollowersFullDetails = await fetch(follower.url, {
-                        method: "GET",
+            const [starCounts, followerCounts] = await Promise.all([
+                starCountsResponse.json(),
+                followerCountsResponse.json(),
+            ]);
+
+            setGithubStarCount(starCounts.stargazers_count);
+            setGithubFollowersCount(followerCounts.followers);
+
+            // Fetch Github followers
+            const fetchFollowers = async () => {
+                const allFollowers = [];
+                let page = 1;
+                let totalPages = 1;
+
+                while (page <= totalPages) {
+                    const response = await fetch(`https://api.github.com/users/AkashSingh3031/followers?per_page=100&page=${page}`, {
                         headers: {
-                            "Content-Type": "application/json",
-                            // "Authorization": `token ${followersAccessKey}`,
+                            Authorization: `token ${followersAccessKey}`,
                         },
                     });
-                    const FollowersFullDetails = await fetchFollowersFullDetails.json();
+                    const followers = await response.json();
+                    allFollowers.push(...followers);
+                    // Check if there are more pages
+                    const linkHeader = response.headers.get("Link");
+                    const hasNextPage = linkHeader && linkHeader.includes('rel="next"');
+                    if (hasNextPage) {
+                        totalPages++;
+                    }
+                    page++;
+                }
+                return allFollowers;
+            };
+
+            const followersWithFullNames = await Promise.all(
+                (await fetchFollowers()).map(async (follower: any) => {
+                    const response = await fetch(follower.url, {
+                        headers: {
+                            Authorization: `token ${followersAccessKey}`,
+                        },
+                    });
+                    const followerDetails = await response.json();
                     return {
-                        name: FollowersFullDetails.name || follower.login, // Use login if name is not available
+                        name: followerDetails.name || follower.login, // Use login if name is not available
                         avatarUrl: follower.avatar_url,
                         pageUrl: follower.html_url,
                     };
                 })
             );
-            
-            let allBadges = [];
-            const fetchBadgeDetails = await fetch(
-                `https://alfa-leetcode-api.onrender.com/akashsingh3031/badges`,
-                {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                        // "Authorization": `token ${followersAccessKey}`,
-                    },
-                    signal,
-                },
-            );
-            
-            const fetchSolvedProblemsDetails = await fetch(
-                `https://alfa-leetcode-api.onrender.com/akashsingh3031/solved`,
-                {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                        // "Authorization": `token ${followersAccessKey}`,
-                    },
-                    signal,
-                },
-            );
-            
-            const fetchTotalLCProblem = await fetch(
-                `https://alfa-leetcode-api.onrender.com/problems?limit=4000`,
-                {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                        // "Authorization": `token ${followersAccessKey}`,
-                    },
-                    signal,
-                },
-            );
 
-            const starCount = await fetchStarCounts.json();
-            setGithubStarCount(starCount.stargazers_count);
-
-            const followersCount = await fetchFollowerCounts.json();
-            setGithubFollowersCount(followersCount.followers);
-            
             followersWithFullNames.sort((a, b) => a.name.localeCompare(b.name));
             const sortedAvatarNames = followersWithFullNames.map((follower) => follower.name);
             const sortedAvatarUrls = followersWithFullNames.map((follower) => follower.avatarUrl);
@@ -178,7 +132,31 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             setGithubAvatarUrl(sortedAvatarUrls);
             setGithubAvatarPageUrl(sortedAvatarPageUrls);
 
-            const badgeDetails = await fetchBadgeDetails.json();
+            // Fetch LeetCode data
+            const [badgeDetailsResponse, solvedProblemsResponse, totalLCProblemResponse] = await Promise.all([
+                fetch(`https://alfa-leetcode-api.onrender.com/akashsingh3031/badges`, {
+                    headers: {
+                        Authorization: `token ${followersAccessKey}`,
+                    },
+                }),
+                fetch(`https://alfa-leetcode-api.onrender.com/akashsingh3031/solved`, {
+                    headers: {
+                        Authorization: `token ${followersAccessKey}`,
+                    },
+                }),
+                fetch(`https://alfa-leetcode-api.onrender.com/problems?limit=4000`, {
+                    headers: {
+                        Authorization: `token ${followersAccessKey}`,
+                    },
+                }),
+            ]);
+
+            const [badgeDetails, solvedProblems, totalLCProblem] = await Promise.all([
+                badgeDetailsResponse.json(),
+                solvedProblemsResponse.json(),
+                totalLCProblemResponse.json(),
+            ]);
+
             const badgesCount = badgeDetails.badgesCount;
             const badges = badgeDetails.badges.map(badge => {
                 const iconUrl = badge.icon.startsWith('https://') ? badge.icon : `https://leetcode.com${badge.icon}`;
@@ -186,51 +164,67 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                     id: badge.id,
                     displayName: badge.displayName,
                     icon: iconUrl,
-                    creationDate: badge.creationDate
+                    creationDate: badge.creationDate,
                 };
             });
-            allBadges = [...allBadges, ...badges];
-            setLeetcodeBadgeImg(allBadges);
             setLeetcodeBadgesCount(badgesCount);
-            
-            const solvedProblemsDetails = await fetchSolvedProblemsDetails.json();
-            setSolvedProblem(solvedProblemsDetails.solvedProblem);
-            setEasySolved(solvedProblemsDetails.easySolved);
-            setMediumSolved(solvedProblemsDetails.mediumSolved);
-            setHardSolved(solvedProblemsDetails.hardSolved);
+            setLeetcodeBadgeImg(badges);
 
-            const totalLCProblem = await fetchTotalLCProblem.json();
+            setSolvedProblem(solvedProblems.solvedProblem);
+            setEasySolved(solvedProblems.easySolved);
+            setMediumSolved(solvedProblems.mediumSolved);
+            setHardSolved(solvedProblems.hardSolved);
+
             setTotalLCProblem(totalLCProblem.totalQuestions);
             // Count easy, medium, and hard problems
             let easyCount = 0;
             let mediumCount = 0;
             let hardCount = 0;
-            totalLCProblem.problemsetQuestionList.forEach((problem) => {
-            if (problem.difficulty === 'Easy') {
-                easyCount++;
-            } else if (problem.difficulty === 'Medium') {
-                mediumCount++;
-            } else if (problem.difficulty === 'Hard') {
-                hardCount++;
-            }
+            totalLCProblem.problemsetQuestionList.forEach((problem: any) => {
+                if (problem.difficulty === 'Easy') {
+                    easyCount++;
+                } else if (problem.difficulty === 'Medium') {
+                    mediumCount++;
+                } else if (problem.difficulty === 'Hard') {
+                    hardCount++;
+                }
             });
             setTotalLCEasy(easyCount);
             setTotalLCMedium(mediumCount);
             setTotalLCHard(hardCount);
+            
+            // Fetch LeetCode streak count
+            const streakCountResponse = await fetch('https://leetcode.com/graphql', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    Authorization: `token ${followersAccessKey}`,
+                },
+                body: JSON.stringify({
+                    query: `
+                        query getStreakCounter {
+                            streakCounter {
+                                streakCount
+                                daysSkipped
+                                currentDayCompleted
+                            }
+                        }
+                    `,
+                }),
+            });
+
+            const responseData = await streakCountResponse.json();
+            const streakCount = responseData.data.streakCounter.streakCount || 970;
+            setLCStreakCount(streakCount);
         } catch (error) {
         } finally {
             setLoading(false);
         }
-    }, []);
+    }, [followersAccessKey]);
 
     useEffect(() => {
-        const abortController = new AbortController();
-        fetchGithubCount(abortController.signal);
-
-        return () => {
-            abortController.abort();
-        };
-    }, [fetchGithubCount]);
+        fetchData();
+    }, [fetchData]);
 
     const githubStarCountText = useMemo(() => {
         return convertStatToText(githubStarCount);
@@ -258,8 +252,9 @@ export const CommunityStatsProvider: FC = ({ children }) => {
         totalLCEasy,
         totalLCMedium,
         totalLCHard,
+        lcStreakCount,
         loading,
-        refetch: fetchGithubCount,
+        refetch: fetchData,
     };
 
     return (

@@ -33,13 +33,6 @@ import App from "./src/App";
 export default App;
 `.trim();
 
-const CppCode = /* ts */ `
-void Sum(int a, int b) {
-    cout << a+b;
-}
-Sum(2, 5);
-`.trim();
-
 const PyCode = /* ts */ `
 def Sum(a, b):
     print(a+b)
@@ -97,9 +90,6 @@ export const initialFiles = {
 
 export const files = {
     ...initialFiles,
-    "Code/C++/Sum.cpp": {
-        code: CppCode,
-    },
     "Code/Python/Sum.py": {
         code: PyCode,
     },
@@ -111,9 +101,6 @@ export const finalFiles = {
         code: UpdatedAppTsxCode,
         // active: true,
         hidden: true,
-    },
-    "Code/C++/Sum.cpp": {
-        code: CppCode,
     },
     "Code/Python/Sum.py": {
         code: PyCode,

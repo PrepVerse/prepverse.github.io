@@ -151,7 +151,7 @@ const LeecodeBadges = ({ className }: { className?: string }) => {
                 <Spinner
                     className={clsx("w-20 h-20")}
                     wrapperProps={{
-                        className: clsx("flex justify-center items-center h-full mt-4"),
+                        className: clsx("flex justify-center items-center mt-4"),
                     }}
                 />
             ) : (
@@ -166,7 +166,7 @@ const LeecodeBadges = ({ className }: { className?: string }) => {
 };
 
 const LeecodeSolved = ({ className }: { className?: string }) => {
-    const { totalLCProblem, totalLCEasy, totalLCMedium, totalLCHard, solvedProblem, easySolved, mediumSolved, hardSolved, loading } = useCommunityStatsContext();
+    const { lcStreakCount, totalLCProblem, totalLCEasy, totalLCMedium, totalLCHard, solvedProblem, easySolved, mediumSolved, hardSolved, loading } = useCommunityStatsContext();
     return (
         <div>
             <a
@@ -209,7 +209,7 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                 <Spinner
                     className={clsx("w-20 h-20")}
                     wrapperProps={{
-                        className: clsx("flex justify-center items-center h-full mt-4"),
+                        className: clsx("flex justify-center items-center mt-4"),
                     }}
                 />
             ) : (
@@ -274,15 +274,9 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                                         className={`sm:w-[280px] w-[200px] h-[8px] bg-borders mb-[16px] relative after:absolute hard-line after:h-[8px] after:rounded rounded after:bg-red-500`} style={{ backgroundColor: 'rgba(239, 68, 68, 0.2)' }}
                                     ></div>
                                     <style>
-                                        {`.easy-line::after { width: ${((easySolved) / (totalLCEasy)) *
-                                            100
-                                            }%; }`}
-                                        {`.medium-line::after { width: ${((mediumSolved) / (totalLCMedium)) *
-                                            100
-                                            }%; }`}
-                                        {`.hard-line::after { width: ${((hardSolved) / (totalLCHard)) *
-                                            100
-                                            }%; }`}
+                                        {`.easy-line::after { width: ${((easySolved) / (totalLCEasy)) * 100}%; }`}
+                                        {`.medium-line::after { width: ${((mediumSolved) / (totalLCMedium)) * 100}%; }`}
+                                        {`.hard-line::after { width: ${((hardSolved) / (totalLCHard)) * 100}%; }`}
                                     </style>
                                 </div>
                             </div>

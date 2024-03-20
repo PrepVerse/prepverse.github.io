@@ -264,14 +264,10 @@ const Header = () => {
                         "gap-2",
                     )}
                 >
-                    {/* <TutorialParameterDropdown
-                        label="Routing"
-                        parameter="routerSelection"
-                    />
                     <TutorialParameterDropdown
-                        label="UI Framework"
-                        parameter="uiSelection"
-                    /> */}
+                        label="Language"
+                        parameter="language"
+                    />
                 </div>
                 <div
                     className={clsx(
