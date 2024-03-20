@@ -40,22 +40,22 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const { siteConfig } = useDocusaurusContext();
     const followersAccessKey = siteConfig.customFields.REACT_APP_FOLLOWERS_ACCESS_KEY;
     const [loading, setLoading] = useState(true);
-    const [githubStarCount, setGithubStarCount] = useState(0);
-    const [githubFollowersCount, setGithubFollowersCount] = useState(0);
+    const [githubStarCount, setGithubStarCount] = useState(9940);
+    const [githubFollowersCount, setGithubFollowersCount] = useState(788);
     const [githubAvatarUrl, setGithubAvatarUrl] = useState<String[]>([]);
     const [githubAvatarPageUrl, setGithubAvatarPageUrl] = useState<String[]>([]);
     const [githubAvatarName, setGithubAvatarName] = useState<String[]>([]);
     const [leetcodeBadgeImg, setLeetcodeBadgeImg] = useState<String[]>([]);
-    const [leetcodeBadgeCount, setLeetcodeBadgesCount] = useState(0);
-    const [solvedProblem, setSolvedProblem] = useState(0);
-    const [easySolved, setEasySolved] = useState(0);
-    const [mediumSolved, setMediumSolved] = useState(0);
-    const [hardSolved, setHardSolved] = useState(0);
-    const [totalLCProblem, setTotalLCProblem] = useState(0);
-    const [totalLCEasy, setTotalLCEasy] = useState(0);
-    const [totalLCMedium, setTotalLCMedium] = useState(0);
-    const [totalLCHard, setTotalLCHard] = useState(0);
-    const [lcStreakCount, setLCStreakCount] = useState(0);
+    const [leetcodeBadgeCount, setLeetcodeBadgesCount] = useState(72);
+    const [solvedProblem, setSolvedProblem] = useState(3000);
+    const [easySolved, setEasySolved] = useState(765);
+    const [mediumSolved, setMediumSolved] = useState(1573);
+    const [hardSolved, setHardSolved] = useState(662);
+    const [totalLCProblem, setTotalLCProblem] = useState(3087);
+    const [totalLCEasy, setTotalLCEasy] = useState(782);
+    const [totalLCMedium, setTotalLCMedium] = useState(1620);
+    const [totalLCHard, setTotalLCHard] = useState(685);
+    const [lcStreakCount, setLCStreakCount] = useState(975);
 
     const fetchData = useCallback(async () => {
         try {
@@ -214,7 +214,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             });
 
             const responseData = await streakCountResponse.json();
-            const streakCount = responseData.data.streakCounter.streakCount || 970;
+            const streakCount = responseData.data.streakCounter.streakCount;
             setLCStreakCount(streakCount);
         } catch (error) {
         } finally {

@@ -388,9 +388,8 @@ export const EduExpJourney: React.FC = () => {
         <div
             className={clsx(
                 "flex flex-wrap",
-                "mt-6 lg:mt-10",
                 "border dark:border-gray-700 border-gray-200",
-                "bg-gray-50 dark:bg-gray-800",
+                "bg-gray-50 dark:bg-gray-900",
                 "w-full",
                 "rounded-2xl landing-sm:rounded-[32px]",
                 "gap-2 landing-sm:gap-4",

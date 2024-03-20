@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import { useCommunityStatsContext } from "@site/src/context/CommunityStats";
 import { CommonThemedImage } from "../common-themed-image";
 import { Spinner } from "../spinner";
+import { FireIcon } from "../icons/fire";
 
 const LeecodeBadges = ({ className }: { className?: string }) => {
     const { leetcodeBadgeImg, leetcodeBadgeCount, loading } = useCommunityStatsContext();
@@ -205,6 +206,40 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                     )}
                 </div>
             </a>
+            {/* <div
+                className={clsx(
+                    "text-sm",
+                    "text-gray-500 dark:text-gray-400",
+                    "rounded-[32px]",
+                    "border-2 border-solid border-gray-300 dark:border-gray-700",
+                    "flex gap-2 items-center justify-center",
+                    "py-2 pl-2.5 pr-4",
+                    "w-52",
+                    "font-semibold",
+                    "no-underline",
+                )}
+            >
+                <FireIcon />
+                <div className={clsx("flex flex-row items-center")}>
+                    Longest Streak:&nbsp;
+                    {loading ? (
+                        <Spinner
+                            className={clsx("w-5 h-5")}
+                            wrapperProps={{
+                                className: clsx("mx-auto"),
+                            }}
+                        />
+                    ) : (
+                        <span
+                            className={clsx(
+                                "tabular-nums text-gray-800 dark:text-gray-100",
+                            )}
+                        >
+                            {lcStreakCount}
+                        </span>
+                    )}
+                </div>
+            </div> */}
             {loading ? (
                 <Spinner
                     className={clsx("w-20 h-20")}
@@ -309,9 +344,8 @@ export const LeetCodeSection: React.FC = () => {
         <div
             className={clsx(
                 "flex flex-wrap",
-                "mt-6 lg:mt-10",
                 "border dark:border-gray-700 border-gray-200",
-                "bg-gray-50 dark:bg-gray-800",
+                "bg-gray-50 dark:bg-gray-900",
                 "w-full",
                 "rounded-2xl landing-sm:rounded-[32px]",
                 "gap-2 landing-sm:gap-4",
