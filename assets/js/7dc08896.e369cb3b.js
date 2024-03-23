@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkdocumentation=self.webpackChunkdocumentation||[]).push([[8228],{4976:r=>{r.exports=JSON.parse('{"title":"Array Tutorials","slug":"/array","permalink":"/docs/array","navigation":{"previous":{"title":"Overview","permalink":"/docs/"},"next":{"title":"Introductio to Array","permalink":"/docs/array/arrayIntro"}}}')}}]);
