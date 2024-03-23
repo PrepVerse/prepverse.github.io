@@ -40,7 +40,7 @@ function DocCategoryGeneratedIndexPageContent({ categoryGeneratedIndex }) {
                 )}
             >
                 <div className={clsx("max-w-screen-content w-full")}>
-                    <DocVersionBanner />
+                    {/* <DocVersionBanner /> */}
                     <div className={clsx("flex flex-col", "mb-8")}>
                         <DocBreadcrumbs />
                         <div className="flex">

@@ -67,7 +67,7 @@ export const DocItemLayout = ({ children }) => {
                 )}
             >
                 <div className={clsx("max-w-screen-content w-full")}>
-                    <DocVersionBanner />
+                    {/* <DocVersionBanner /> */}
                     <div className={clsx("flex flex-col", "mb-6 sm:mb-10")}>
                         {tutorial?.isTutorial ? null : <DocBreadcrumbs />}
                         <div

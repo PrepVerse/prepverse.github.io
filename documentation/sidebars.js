@@ -33,28 +33,37 @@ module.exports = {
         },
         {
             type: "category",
-            label: "Basic DSA",
+            label: "Basics of python",
             className: "category-as-header",
             items: [
                 {
                     type: "category",
-                    label: "Array",
-                    link: {
-                        type: "generated-index",
-                        title: "Array Tutorials",
-                        slug: "/array",
-                    },
+                    label: "Introduction to python",
+                    // link: {
+                    //     type: "generated-index",
+                    //     title: "Array Tutorials",
+                    //     slug: "/array",
+                    // },
                     items: [
-                        "array/arrayIntro",
-                        {
-                            type: "category",
-                            label: "Problems",
-                            items: [
-                                "array/quickstart",
-                            ],
-                        },
+                        "python/intro",
+                        "python/getting-started",
+                        "python/comments",
+                        // {
+                        //     type: "category",
+                        //     label: "Problems",
+                        //     items: [
+                        //         "array/quickstart",
+                        //     ],
+                        // },
                     ],
                 },
+                // {
+                //     type: "category",
+                //     label: "Variables and data types",
+                //     items: [
+                //         "array/quickstart",
+                //     ],
+                // },
             ],
         },
     ],
