@@ -66,8 +66,8 @@ export const LandingRainbowButton = ({
             </div>
             <div
                 className={clsx(
-                    "dark:bg-gray-0 bg-green-800",
-                    "rounded-lg",
+                    "dark:bg-cyan-200 bg-orange-800",
+                    "rounded-full",
                     "px-10 py-3",
                     buttonClassname,
                 )}

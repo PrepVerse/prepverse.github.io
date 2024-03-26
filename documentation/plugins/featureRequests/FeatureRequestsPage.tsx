@@ -50,7 +50,7 @@ export default function FeatureRequests({
         <CommonHeader hasSticky={true}/>
         <div
             className={clsx(
-                "bg-gray-50 dark:bg-gray-800",
+                "bg-gray-50 dark:bg-gray-900",
                 "w-full",
                 "rounded-xl landing-sm:rounded-[32px]",
                 "p-2 landing-sm:p-4",

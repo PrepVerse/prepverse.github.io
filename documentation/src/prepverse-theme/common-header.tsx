@@ -46,7 +46,7 @@ export const CommonHeader = ({
                         "backdrop-blur-[6px]",
                         "landing-md:backdrop-blur-[12px]",
                         "z-[-1]",
-                        "bg-gray-0 dark:bg-gray-900",
+                        "bg-gray-0 dark:bg-gray-800",
                         "bg-opacity-80 dark:bg-opacity-80",
                         "pointer-events-none",
                         className,

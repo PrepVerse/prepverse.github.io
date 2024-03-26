@@ -73,7 +73,7 @@ export const CommonLayout = (props: Props) => {
                     "main-wrapper",
                     "min-h-[100dvh]",
                     "flex flex-col",
-                    "dark:bg-gray-900 bg-gray-0",
+                    "dark:bg-gray-800 bg-gray-0",
                     className,
                 )}
             >

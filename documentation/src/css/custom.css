@@ -141,6 +141,16 @@
     @apply landing-xl:landing-wide-mask;
 }
 
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 10px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background: #667084;
+}
+
 /* You can override the default Infima variables here. */
 :root {
     /* --ifm-color-primary: rgb(24, 144, 255);

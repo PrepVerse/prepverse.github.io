@@ -23,7 +23,7 @@ export const LandingGhostButton = () => {
                     "-left-[1.5px]",
                     "-top-[1.5px]",
                     "overflow-hidden",
-                    "rounded-lg",
+                    "rounded-full",
                     "w-[calc(100%+2.5px)] h-[calc(100%+2.5px)]",
                     "z-[-1]",
                 )}
@@ -40,7 +40,7 @@ export const LandingGhostButton = () => {
                     )}
                 />
             </div>
-            <div className={clsx("bg-refine-bg", "rounded-lg", "px-10 py-3")}>
+            <div className={clsx("bg-refine-bg", "rounded-full", "px-10 py-3")}>
                 <div
                     className={clsx(
                         "gap-2",
