@@ -37,7 +37,7 @@ export const PrepVerseBlogLayout = (props: Props) => {
     return (
         <CommonLayout
             {...layoutProps}
-            className={clsx("bg-white dark:bg-gray-800")}
+            className={clsx("bg-white dark:!bg-gray-800")}
         >
             {/* If there's TOC, then we can say that this is a blog post page. */}
             {/* Then we can pass `trackProgress` prop to the header. */}
@@ -51,7 +51,6 @@ export const PrepVerseBlogLayout = (props: Props) => {
                 )}
             />
             {props.showHero && <BlogHero />}
-            {/* <CommonHeader hasSticky={true} trackProgress={!!toc} /> */}
             <div
                 className={clsx(
                     "flex",
