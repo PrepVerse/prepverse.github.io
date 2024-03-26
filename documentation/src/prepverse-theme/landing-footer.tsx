@@ -6,7 +6,11 @@ import { footerDescription, menuItems, secondaryMenuItems, socialLinks } from ".
 import { HeartOutlinedIcon } from "./icons/heart-outlined";
 import { PrepVerseLogoIcon } from "./icons/prepverse-logo";
 
-export const LandingFooter = () => {
+export type Props = {
+    variant?: "landing" | "blog";
+};
+
+export const LandingFooter = ({ variant = "landing" }: Props) => {
     const info = (
         <div
             className={clsx(
@@ -22,7 +26,8 @@ export const LandingFooter = () => {
                     "font-semibold",
                     "text-sm",
                     "leading-6",
-                    "text-gray-900 dark:text-gray-0",
+                    variant === "landing" && "text-gray-900 dark:text-gray-0",
+                    variant === "blog" && "text-refine-react-8 dark:text-refine-react-3",
                 )}
             >
                 Contacts
@@ -34,7 +39,8 @@ export const LandingFooter = () => {
                     "font-normal",
                     "text-sm",
                     "leading-5",
-                    "text-gray-600 dark:text-gray-400",
+                    variant === "landing" && "text-gray-600 dark:text-gray-400",
+                    variant === "blog" && "text-refine-react-5 dark:text-refine-react-4",
                     "hover:text-gray-800 dark:hover:text-gray-300",
                     "hover:no-underline",
                 )}
@@ -48,7 +54,8 @@ export const LandingFooter = () => {
                     "font-normal",
                     "text-sm",
                     "leading-5",
-                    "text-gray-600 dark:text-gray-400",
+                    variant === "landing" && "text-gray-600 dark:text-gray-400",
+                    variant === "blog" && "text-refine-react-5 dark:text-refine-react-4",
                     "hover:text-gray-800 dark:hover:text-gray-300",
                     "hover:no-underline",
                 )}
@@ -73,7 +80,8 @@ export const LandingFooter = () => {
                         "text-sm",
                         "leading-6",
                         "font-semibold",
-                        "text-gray-900 dark:text-gray-0",
+                        variant === "landing" && "text-gray-900 dark:text-gray-0",
+                        variant === "blog" && "text-refine-react-8 dark:text-refine-react-3",
                         "landing-lg:text-right",
                     )}
                 >
@@ -95,7 +103,8 @@ export const LandingFooter = () => {
                             target="_blank"
                             rel="noreferrer"
                             className={clsx(
-                                "text-gray-600 dark:text-gray-400",
+                                variant === "landing" && "text-gray-600 dark:text-gray-400",
+                                variant === "blog" && "text-refine-react-5 dark:text-refine-react-4",
                                 "hover:text-gray-800 dark:hover:text-gray-300",
                                 "hover:no-underline",
                             )}
@@ -118,8 +127,12 @@ export const LandingFooter = () => {
             <div
                 className={clsx(
                     "border-t border-t-solid",
-                    "border-t-gray-100 dark:border-t-gray-700",
-                    "dark:bg-footer-dark-bg",
+                    variant === "landing" && "border-t-gray-100 dark:border-t-gray-700",
+                    variant === "blog" &&
+                        "border-t-refine-react-3 dark:border-t-refine-react-7",
+                    variant === "landing" && "dark:bg-footer-landing-dark-bg",
+                    variant === "blog" &&
+                        "bg-footer-blog-light-bg dark:bg-footer-blog-dark-bg",
                 )}
             >
                 <div
@@ -145,7 +158,8 @@ export const LandingFooter = () => {
                             onContextMenu={openFigma}
                             className={clsx(
                                 "hover:no-underline",
-                                "text-gray-900 dark:text-gray-0",
+                                variant === "landing" && "text-gray-900 dark:text-gray-0",
+                                variant === "blog" && "text-refine-react-8 dark:text-refine-react-3",
                             )}
                         >
                             <PrepVerseLogoIcon />
@@ -209,7 +223,8 @@ export const LandingFooter = () => {
                                         "text-sm",
                                         "leading-6",
                                         "font-semibold",
-                                        "text-gray-900 dark:text-gray-0",
+                                        variant === "landing" && "text-gray-900 dark:text-gray-0",
+                                        variant === "blog" && "text-refine-react-8 dark:text-refine-react-3",
                                     )}
                                 >
                                     {menu.label}
@@ -235,7 +250,8 @@ export const LandingFooter = () => {
                                                 "text-sm",
                                                 "leading-5",
                                                 "hover:no-underline",
-                                                "text-gray-600 dark:text-gray-400",
+                                                variant === "landing" && "text-gray-600 dark:text-gray-400",
+                                                variant === "blog" && "text-refine-react-5 dark:text-refine-react-4",
                                                 "hover:text-gray-800 dark:hover:text-gray-300",
                                             )}
                                         >
@@ -282,8 +298,10 @@ export const LandingFooter = () => {
             <div
                 className={clsx(
                     "border-t border-t-solid",
-                    "border-t-gray-100 dark:border-t-gray-700",
-                    "bg-gray-50 dark:bg-gray-800",
+                    variant === "landing" && "border-t-gray-100 dark:border-t-gray-700",
+                    variant === "blog" && "border-t-gray-100 dark:border-t-gray-700",
+                    variant === "landing" && "bg-gray-50 dark:bg-gray-800",
+                    variant === "blog" && "bg-refine-react-1 dark:bg-refine-react-8",
                 )}
             >
                 <div
@@ -323,7 +341,8 @@ export const LandingFooter = () => {
                                     "text-sm",
                                     "leading-5",
                                     "font-normal",
-                                    "text-gray-600 dark:text-gray-400",
+                                    variant === "landing" && "text-gray-600 dark:text-gray-400",
+                                    variant === "blog" && "text-refine-react-5 dark:text-refine-react-4",
                                     "hover:no-underline",
                                     "hover:text-gray-800 dark:hover:text-gray-300",
                                 )}
@@ -339,7 +358,8 @@ export const LandingFooter = () => {
                             "text-sm",
                             "pr-6 landing-sm:pr-0",
                             "leading-5",
-                            "text-gray-900 dark:text-gray-0",
+                            variant === "landing" && "text-gray-900 dark:text-gray-0",
+                            variant === "blog" && "text-refine-react-8 dark:text-refine-react-3",
                             "font-normal",
                         )}
                     >

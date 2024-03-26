@@ -7,6 +7,8 @@ import BlogPostItems from "@theme/BlogPostItems";
 
 import { AuthorCardWithProps } from "@site/src/components/blog";
 import clsx from "clsx";
+import Link from "@docusaurus/Link";
+import { ChevronLeft } from "../../../components/blog/icons";
 
 const BlogListPageMetadata = () => {
     const {
@@ -30,21 +32,26 @@ const AuthorPage = (props) => {
             <BlogListPageMetadata />
             <BlogLayout showSidebarBanner={false}>
                 <div className="h-12" />
-                <AuthorCardWithProps author={author} />
-                <div
+                <Link
+                    to="/blog"
                     className={clsx(
+                        "text-gray-500 dark:text-gray-400",
+                        "text-sm no-underline",
+                        "flex",
+                        "items-center",
+                        "gap-2",
                         "px-4",
-                        "max-w-[512px]",
-                        "blog-md:px-7",
-                        "blog-md:max-w-screen-blog-md",
-                        "blog-2xl:px-0",
-                        "blog-2xl:max-w-screen-blog-md",
-                        "w-full",
-                        "mx-auto",
                     )}
                 >
-                    <h1 className="text-4xl !mb-0 px-0 lg:px-4">Posts</h1>
-                </div>
+                    <ChevronLeft /> Back to blog
+                </Link>
+                <AuthorCardWithProps author={author} />
+            <div className={clsx("pt-4 blog-md:pt-4", "px-4")}>
+                {/* <div className="text-gray-500 dark:text-gray-400">
+                    All Posts
+                </div> */}
+                <h1 className="!mb-0"> Posts </h1>
+            </div>
                 <div className={clsx("px-4", "blog-md:px-7", "blog-2xl:px-0")}>
                     <BlogPostItems
                         items={items}

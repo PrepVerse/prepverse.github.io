@@ -44,29 +44,9 @@ function BlogListPageContent(props) {
     );
 
     return (
-        <BlogLayout>
-            {/* <div
-                className={clsx(
-                    "px-4",
-                    "max-w-[512px]",
-                    "blog-md:px-7",
-                    "blog-md:max-w-screen-blog-md",
-                    "blog-2xl:px-0",
-                    "blog-2xl:max-w-screen-blog-md",
-                    "w-full",
-                    "mx-auto",
-                )}
-            >
-                <a
-                    href="https://github.com/AkashSingh3031/The-Complete-FAANG-Preparation"
-                    target="_blank"
-                    rel="noreferrer"
-                >
-                    <img src="https://github.com/AkashSingh3031.png" />
-                </a>
-            </div> */}
+        <BlogLayout showSidebarBanner={false} showHero>
             {isFirstPage && <FeaturedBlogPostItems items={featuredPosts} />}
-            <div
+            {/* <div
                 className={clsx(
                     "px-4",
                     "max-w-[512px]",
@@ -80,7 +60,7 @@ function BlogListPageContent(props) {
                 )}
             >
                 <div className="border-b border-gray-100 dark:border-gray-700"></div>
-            </div>
+            </div> */}
             <BlogPostItems
                 items={paginatedPosts}
                 tags={tags}
@@ -88,13 +68,14 @@ function BlogListPageContent(props) {
             />
             <div
                 className={clsx(
-                    "max-w-[512px]",
-                    "blog-md:max-w-screen-blog-md",
-                    "blog-2xl:max-w-screen-blog-md",
                     "w-full",
                     "mx-auto",
-                    "blog-md:border-t border-t-gray-200 dark:border-t-gray-700",
-                    "blog-sm:mb-16 blog-2xl:mb-20 mb-10",
+                    "blog-sm:max-w-[592px]",
+                    "blog-md:max-w-[656px]",
+                    "blog-lg:max-w-[896px]",
+                    "blog-max:max-w-[1200px]",
+                    "blog-max:border-t border-t-refine-react-3 dark:border-t-refine-react-7",
+                    "mb-12",
                 )}
             >
                 <BlogListPaginator metadata={metadata} />

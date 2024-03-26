@@ -13,6 +13,7 @@
     --color-gray-1000: 0 0 0;
 }
 
+html.blog-wrapper,
 html.docs-wrapper {
     --color-gray-0: 255 255 255;
     --color-gray-50: 246 247 249; /* mising */

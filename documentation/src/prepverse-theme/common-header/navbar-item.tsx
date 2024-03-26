@@ -7,12 +7,11 @@ import { TwoTonedCloudIcon } from "../icons/popover";
 
 type NavbarItemProps = {
     item: NavbarItemType;
-    isPermanentDark?: boolean;
+    variant?: "landing" | "blog";
 };
 
 export const NavbarItem: React.FC<NavbarItemProps> = ({
     item,
-    isPermanentDark,
 }) => {
     const [theme, setTheme] = useState(null);
 

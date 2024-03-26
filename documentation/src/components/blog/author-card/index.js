@@ -24,14 +24,16 @@ const AuthorCard = ({ author }) => {
     return (
         <div
             className={clsx(
+                "flex",
                 "px-4",
-                "blog-md:px-7",
-                "blog-2xl:px-0",
-                "max-w-[640px]",
-                "blog-md:max-w-screen-blog-md",
-                "blog-2xl:max-w-screen-blog-md",
+                "gap-6",
+                "flex-row blog-lg:flex-col",
+                "justify-between",
+                "blog-sm:max-w-[592px]",
+                "blog-md:max-w-[656px]",
+                "blog-lg:max-w-[896px]",
+                "blog-max:max-w-[1200px]",
                 "w-full",
-                "mx-auto",
             )}
         >
             <div className={clsx("flex", "justify-between", "items-center")}>

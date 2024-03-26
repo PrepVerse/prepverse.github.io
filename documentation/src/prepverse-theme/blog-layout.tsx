@@ -8,8 +8,14 @@ import { BannerSidebar } from "../components/banner/banner-sidebar";
 import { BannerModal } from "../components/banner/banner-modal";
 import { useLocation } from "@docusaurus/router";
 import useScrollTracker from "../hooks/use-scroll-tracker";
+import { BlogHero } from "./blog-hero";
 
-export const PrepVerseBlogLayout = (props: any) => {
+type Props = {
+    showSidebarBanner?: boolean;
+    showHero?: boolean;
+} & Record<string, any>;
+
+export const PrepVerseBlogLayout = (props: Props) => {
     const [shouldShowBanner, setShouldShowBanner] = useState(false);
     const { children, toc, ...layoutProps } = props;
     const { pathname } = useLocation();
@@ -29,26 +35,38 @@ export const PrepVerseBlogLayout = (props: any) => {
     }, [tracker.scrollY]);
 
     return (
-        <CommonLayout {...layoutProps}>
+        <CommonLayout
+            {...layoutProps}
+            className={clsx("bg-white dark:bg-gray-800")}
+        >
             {/* If there's TOC, then we can say that this is a blog post page. */}
             {/* Then we can pass `trackProgress` prop to the header. */}
-            <CommonHeader hasSticky={true} trackProgress={!!toc} />
+            <CommonHeader
+                hasSticky={true}
+                trackProgress={!!toc}
+                variant="blog"
+                className={clsx(
+                    "!bg-white dark:!bg-gray-800",
+                    "!bg-opacity-100 dark:!bg-opacity-100",
+                )}
+            />
+            {props.showHero && <BlogHero />}
+            {/* <CommonHeader hasSticky={true} trackProgress={!!toc} /> */}
             <div
                 className={clsx(
                     "flex",
+                    "gap-12",
                     "justify-center",
                     "mx-auto",
-                    "max-w-screen-blog-max",
                     "w-full",
+                    "relative",
                 )}
             >
                 <div
                     className={clsx(
                         "relative",
-                        "w-[264px]",
-                        "pl-4",
                         "py-10 blog-sm:py-12 blog-md:py-16",
-                        "hidden xl:block",
+                        "hidden blog-2xl:block",
                         shouldShowBanner && "opacity-100",
                         !shouldShowBanner && "opacity-0",
                         "transition-opacity duration-300 ease-in-out",
@@ -60,7 +78,7 @@ export const PrepVerseBlogLayout = (props: any) => {
                             "w-[264px]",
                             "z-[1]",
                             "top-32",
-                            "left-0",
+                            "ml-auto",
                         )}
                     >
                         {/* <BannerSidebar shouldShowBanner={shouldShowBanner} /> */}
@@ -69,9 +87,6 @@ export const PrepVerseBlogLayout = (props: any) => {
                 <div
                     className={clsx(
                         "refine-prose",
-                        "flex-1",
-                        "min-w-0",
-                        "xl:px-8",
                     )}
                 >
                     {children}
@@ -80,7 +95,7 @@ export const PrepVerseBlogLayout = (props: any) => {
                     <div
                         className={clsx(
                             "w-[280px]",
-                            "hidden blog-md:block",
+                            "hidden blog-max:block",
                             "flex-shrink-0",
                         )}
                     >
@@ -88,7 +103,7 @@ export const PrepVerseBlogLayout = (props: any) => {
                     </div>
                 )}
             </div>
-            <BlogFooter />
+            <BlogFooter variant="blog"/>
             <BannerModal />
             <BackToTopButton />
         </CommonLayout>
