@@ -150,7 +150,7 @@ const siteConfig = {
         "./plugins/examples.js",
         "./plugins/featureRequests/FeatureRequestsPlugin.js",
         "./plugins/intercom.js",
-        "./plugins/templates.js",
+        // "./plugins/templates.js",
         "./plugins/tutorial-navigation.js",
         [
             "@docusaurus/plugin-content-docs",
