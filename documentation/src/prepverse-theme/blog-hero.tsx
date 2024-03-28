@@ -12,7 +12,7 @@ export const BlogHero: FC<Props> = ({ className }) => {
                 "w-full",
                 "landing-md:mx-auto",
                 "w-full",
-                "pt-4 blog-md:pt-12 pb-16 px-6",
+                "pt-4 blog-md:pt-12 pb-6 px-6",
                 "bg-white dark:bg-gray-800",
                 className,
             )}

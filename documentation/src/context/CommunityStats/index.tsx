@@ -40,8 +40,8 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const { siteConfig } = useDocusaurusContext();
     const followersAccessKey = siteConfig.customFields.REACT_APP_FOLLOWERS_ACCESS_KEY;
     const [loading, setLoading] = useState(true);
-    const [githubStarCount, setGithubStarCount] = useState(9940);
-    const [githubFollowersCount, setGithubFollowersCount] = useState(788);
+    const [githubStarCount, setGithubStarCount] = useState(0);
+    const [githubFollowersCount, setGithubFollowersCount] = useState(0);
     const [githubAvatarUrl, setGithubAvatarUrl] = useState<String[]>([]);
     const [githubAvatarPageUrl, setGithubAvatarPageUrl] = useState<String[]>([]);
     const [githubAvatarName, setGithubAvatarName] = useState<String[]>([]);
@@ -65,12 +65,12 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             const [starCountsResponse, followerCountsResponse] = await Promise.all([
                 fetch(`https://api.github.com/repos/AkashSingh3031/The-Complete-FAANG-Preparation`, {
                     headers: {
-                        // Authorization: `token ${followersAccessKey}`,
+                        Authorization: `token ${followersAccessKey}`,
                     },
                 }),
                 fetch(`https://api.github.com/users/AkashSingh3031`, {
                     headers: {
-                        // Authorization: `token ${followersAccessKey}`,
+                        Authorization: `token ${followersAccessKey}`,
                     },
                 }),
             ]);
@@ -92,7 +92,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                 while (page <= totalPages) {
                     const response = await fetch(`https://api.github.com/users/AkashSingh3031/followers?per_page=100&page=${page}`, {
                         headers: {
-                            // Authorization: `token ${followersAccessKey}`,
+                            Authorization: `token ${followersAccessKey}`,
                         },
                     });
                     const followers = await response.json();
@@ -112,7 +112,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                 (await fetchFollowers()).map(async (follower: any) => {
                     const response = await fetch(follower.url, {
                         headers: {
-                            // Authorization: `token ${followersAccessKey}`,
+                            Authorization: `token ${followersAccessKey}`,
                         },
                     });
                     const followerDetails = await response.json();
@@ -136,17 +136,17 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             const [badgeDetailsResponse, solvedProblemsResponse, totalLCProblemResponse] = await Promise.all([
                 fetch(`https://alfa-leetcode-api.onrender.com/akashsingh3031/badges`, {
                     headers: {
-                        // Authorization: `token ${followersAccessKey}`,
+                        Authorization: `token ${followersAccessKey}`,
                     },
                 }),
                 fetch(`https://alfa-leetcode-api.onrender.com/akashsingh3031/solved`, {
                     headers: {
-                        // Authorization: `token ${followersAccessKey}`,
+                        Authorization: `token ${followersAccessKey}`,
                     },
                 }),
                 fetch(`https://alfa-leetcode-api.onrender.com/problems?limit=4000`, {
                     headers: {
-                        // Authorization: `token ${followersAccessKey}`,
+                        Authorization: `token ${followersAccessKey}`,
                     },
                 }),
             ]);
@@ -198,7 +198,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
-                    // Authorization: `token ${followersAccessKey}`,
+                    Authorization: `token ${followersAccessKey}`,
                 },
                 body: JSON.stringify({
                     query: `

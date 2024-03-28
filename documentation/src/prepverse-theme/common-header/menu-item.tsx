@@ -23,9 +23,9 @@ export const MenuItem: React.FC<MenuItemProps> = ({
                     "p-4",
                     "transition duration-150 ease-in-out",
                     "rounded-lg",
-                    "hover:bg-gray-50",
-                    variant === "landing" && "dark:hover:bg-gray-700",
-                    variant === "blog" && "dark:hover:bg-gray-700",
+                    "hover:bg-gray-100",
+                    variant === "landing" && "dark:hover:bg-gray-800",
+                    variant === "blog" && "dark:hover:bg-refine-react-8",
                 )}
             >
                 <div className="shrink-0">

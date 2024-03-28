@@ -9,7 +9,7 @@ require("dotenv").config();
 
 const redirectJson = require("./redirects.json");
 const tutorialData = require("./tutorial-units");
-const thumbsUpDownFeedbackWidget = require("./plugins/thumbs-up-down-feedback-widget");
+// const thumbsUpDownFeedbackWidget = require("./plugins/thumbs-up-down-feedback-widget");
 const math = require('remark-math');
 const katex = require('rehype-katex');
 
@@ -68,8 +68,6 @@ const siteConfig = {
                         sidebarPath: require.resolve("./sidebars.js"),
                         editUrl:
                             "https://github.com/PrepVerse/PrepVerse/tree/master/documentation",
-                        remarkPlugins: [math],
-                        rehypePlugins: [katex, {strict: false}],
                         showLastUpdateAuthor: true,
                         showLastUpdateTime: true,
                         disableVersioning:
@@ -97,6 +95,8 @@ const siteConfig = {
                         },
                         exclude: ["**/**/_*.md"],
                         // remarkPlugins: [thumbsUpDownFeedbackWidget.plugin],
+                        remarkPlugins: [math],
+                        rehypePlugins: [katex, {strict: false}],
                     },
                 blog: false,
                 theme: {
@@ -148,9 +148,9 @@ const siteConfig = {
         "./plugins/checklist.js",
         "./plugins/docgen.js",
         "./plugins/examples.js",
-        "./plugins/intercom.js",
         "./plugins/featureRequests/FeatureRequestsPlugin.js",
-        // "./plugins/templates.js",
+        "./plugins/intercom.js",
+        "./plugins/templates.js",
         "./plugins/tutorial-navigation.js",
         [
             "@docusaurus/plugin-content-docs",
@@ -159,8 +159,6 @@ const siteConfig = {
                 path: "tutorial",
                 routeBasePath: "tutorial",
                 sidebarPath: false,
-                remarkPlugins: [math],
-                rehypePlugins: [katex, {strict: false}],
                 docLayoutComponent: "@theme/TutorialPage",
                 docItemComponent: "@theme/TutorialItem",
                 include: ["**/index.md"],
@@ -179,6 +177,8 @@ const siteConfig = {
                         "simple",
                     ],
                 },
+                remarkPlugins: [math],
+                rehypePlugins: [katex, {strict: false}],
             },
         ],
         ...(process.env.DISABLE_BLOG
@@ -190,14 +190,12 @@ const siteConfig = {
                         blogTitle: "Blog",
                         blogDescription: "A Docusaurus powered blog!",
                         routeBasePath: "/blog",
-                        remarkPlugins: [math],
-                        rehypePlugins: [katex, {strict: false}],
                         postsPerPage: 12,
                         blogSidebarTitle: "All posts",
                         blogSidebarCount: 0,
                         feedOptions: {
                             type: "all",
-                            copyright: `Copyright © ${new Date().getFullYear()} Akash Singh.`,
+                            copyright: `Copyright © ${new Date().getFullYear()} PrepVerse`,
                         },
                         admonitions: {
                             tag: ":::",
@@ -214,6 +212,8 @@ const siteConfig = {
                                 "simple",
                             ],
                         },
+                        remarkPlugins: [math],
+                        rehypePlugins: [katex, {strict: false}],
                     },
                 ],
             ]

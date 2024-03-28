@@ -41,12 +41,12 @@ export const LandingRainbowButton = ({
             <div
                 className={clsx(
                     "absolute",
-                    "-left-0.5",
-                    "-top-0.5",
-                    "blur",
+                    "-left-1",
+                    "-top-1",
+                    // "blur",
                     "overflow-hidden",
-                    "rounded-lg",
-                    "w-[calc(100%+0.25rem)] h-[calc(100%+0.25rem)]",
+                    "rounded-full",
+                    "w-[calc(100%+0.5rem)] h-[calc(100%+0.5rem)]",
                     "z-[-1]",
                 )}
             >
@@ -59,14 +59,16 @@ export const LandingRainbowButton = ({
                         "bg-landing-rainbow",
                         "animate-spin-slow",
                         "animation-slower-speed",
-                        "animation-paused",
-                        "group-hover:animation-running",
+                        "animation-running",
+                        "group-hover:animation-paused",
+                        // "animation-paused",
+                        // "group-hover:animation-running",
                     )}
                 />
             </div>
             <div
                 className={clsx(
-                    "dark:bg-cyan-200 bg-orange-800",
+                    "dark:bg-green-400 bg-orange-600",
                     "rounded-full",
                     "px-10 py-3",
                     buttonClassname,
@@ -84,8 +86,8 @@ export const LandingRainbowButton = ({
                         children
                     ) : (
                         <>
-                            <AccountPin className="dark:text-black text-white font-semibold" />
-                            <span className="dark:text-black text-white font-semibold">
+                            <AccountPin className="dark:text-gray-800 text-white font-semibold" />
+                            <span className="dark:text-gray-800 text-white font-semibold">
                                 About Me
                             </span>
                         </>
