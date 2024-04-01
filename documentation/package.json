@@ -5,7 +5,7 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "dev:lean": "DISABLE_DOCGEN=true DISABLE_VERSIONING=true DISABLE_EXAMPLES=true DISABLE_CHECKLISTS=true npm run start",
+    "dev:lean": "DISABLE_DOCGEN=true DISABLE_VERSIONING=true DISABLE_EXAMPLES=true DISABLE_CHECKLISTS=true REACT_APP_FOLLOWERS_ACCESS_KEY=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 npm run start",
     "dev:docs": "DISABLE_BLOG=true npm run dev:lean",
     "dev:blog": "DISABLE_DOCS=true LIVE_PREVIEW_URL=https://next.live-previews.prepverse.github.io/preview npm run dev:lean",
     "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" docusaurus build",
