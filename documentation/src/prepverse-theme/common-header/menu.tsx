@@ -57,13 +57,10 @@ export const Menu: React.FC<Props> = ({ variant = "landing" }) => {
                                         <div
                                             className={clsx(
                                                 "border-t",
-                                                variant === "blog" &&
-                                                    "border-refine-react-3 dark:border-refine-react-6",
-                                                variant === "landing" &&
-                                                    "border-gray-300 dark:border-gray-700",
+                                                variant === "blog" && "border-refine-react-3 dark:border-refine-react-6",
+                                                variant === "landing" && "border-gray-300 dark:border-gray-700",
                                                 variant === "landing" && "bg-gray-100 dark:bg-gray-800",
-                                                variant === "blog" &&
-                                                    "bg-refine-react-1 dark:bg-refine-react-7",
+                                                variant === "blog" && "bg-refine-react-1 dark:bg-refine-react-7",
                                                 "flex items-center",
                                                 "py-4 px-7",
                                             )}
@@ -106,23 +103,18 @@ export const Menu: React.FC<Props> = ({ variant = "landing" }) => {
                                     <div
                                         className={clsx(
                                             "border-t",
-                                            variant === "blog" &&
-                                                "border-refine-react-3 dark:border-refine-react-6",
-                                            variant === "landing" &&
-                                                "border-gray-300 dark:border-gray-700",
+                                            variant === "blog" && "border-refine-react-3 dark:border-refine-react-6",
+                                            variant === "landing" && "border-gray-300 dark:border-gray-700",
                                             variant === "landing" && "bg-gray-100 dark:bg-gray-800",
-                                            variant === "blog" &&
-                                                "bg-refine-react-1 dark:bg-refine-react-7",
+                                            variant === "blog" && "bg-refine-react-1 dark:bg-refine-react-7",
                                             "flex justify-between items-center",
                                             "py-4 px-7",
                                         )}
                                     >
                                         <div
                                             className={clsx(
-                                                variant === "landing" &&
-                                                "text-gray-600 dark:text-gray-400 ",
-                                                variant === "blog" &&
-                                                "text-refine-react-5 dark:text-refine-react-4",
+                                                variant === "landing" && "text-gray-600 dark:text-gray-400 ",
+                                                variant === "blog" && "text-refine-react-5 dark:text-refine-react-4",
                                             )}
                                         >
                                             Join the party!

@@ -17,14 +17,14 @@ type Props = {
 
 export const PrepVerseBlogLayout = (props: Props) => {
     const [shouldShowBanner, setShouldShowBanner] = useState(false);
-    const { children, toc, ...layoutProps } = props;
-    const { pathname } = useLocation();
+    const { children, toc, showSidebarBanner = true, ...layoutProps } = props;
+    // const { pathname } = useLocation();
 
     const tracker = useScrollTracker();
 
     useEffect(() => {
         if (!shouldShowBanner) return;
-        if (pathname === "/blog/" || pathname === "/blog") return;
+        // if (pathname === "/blog/" || pathname === "/blog") return;
 
         if (tracker.scrollY > 20) {
             setShouldShowBanner(true);
@@ -32,7 +32,7 @@ export const PrepVerseBlogLayout = (props: Props) => {
         if (tracker.scrollY < 20) {
             setShouldShowBanner(false);
         }
-    }, [tracker.scrollY]);
+    }, [tracker.scrollY, showSidebarBanner]);
 
     return (
         <CommonLayout
@@ -61,35 +61,31 @@ export const PrepVerseBlogLayout = (props: Props) => {
                     "relative",
                 )}
             >
-                <div
-                    className={clsx(
-                        "relative",
-                        "py-10 blog-sm:py-12 blog-md:py-16",
-                        "hidden blog-2xl:block",
-                        shouldShowBanner && "opacity-100",
-                        !shouldShowBanner && "opacity-0",
-                        "transition-opacity duration-300 ease-in-out",
-                    )}
-                >
+                {showSidebarBanner && (
                     <div
                         className={clsx(
-                            "sticky",
-                            "w-[264px]",
-                            "z-[1]",
-                            "top-32",
-                            "ml-auto",
+                            "relative",
+                            "py-10 blog-sm:py-12 blog-md:py-16",
+                            "hidden blog-2xl:block",
+                            shouldShowBanner && "opacity-100",
+                            !shouldShowBanner && "opacity-0",
+                            "transition-opacity duration-300 ease-in-out",
                         )}
                     >
-                        {/* <BannerSidebar shouldShowBanner={shouldShowBanner} /> */}
+                        <div
+                            className={clsx(
+                                "sticky",
+                                "w-[264px]",
+                                "z-[1]",
+                                "top-32",
+                                "ml-auto",
+                            )}
+                        >
+                            {/* <BannerSidebar shouldShowBanner={shouldShowBanner} /> */}
+                        </div>
                     </div>
-                </div>
-                <div
-                    className={clsx(
-                        "refine-prose",
-                    )}
-                >
-                    {children}
-                </div>
+                )}
+                <div className={clsx("refine-prose")}> {children} </div>
                 {toc && (
                     <div
                         className={clsx(

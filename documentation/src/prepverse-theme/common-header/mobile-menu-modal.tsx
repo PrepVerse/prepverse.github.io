@@ -13,7 +13,6 @@ import {
     InstagramIcon,
     TwitterIcon,
 } from "../icons/popover";
-import { RefineLogoIcon } from "../icons/refine-logo";
 import { PrepVerseLogoIcon } from "../icons/prepverse-logo";
 import { MENU_ITEMS, NavbarItemType } from "./constants";
 import { MenuItem } from "./menu-item";
