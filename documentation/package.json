@@ -5,15 +5,15 @@
   "scripts": {
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "dev:lean": "dotenv -e .env DISABLE_DOCGEN=true DISABLE_VERSIONING=true DISABLE_EXAMPLES=true DISABLE_CHECKLISTS=true npm run start",
-    "dev:docs": "dotenv -e .env DISABLE_BLOG=true npm run dev:lean",
-    "dev:blog": "dotenv -e .env DISABLE_DOCS=true LIVE_PREVIEW_URL=https://next.live-previews.prepverse.github.io/preview npm run dev:lean",
-    "build": "dotenv -e .env NODE_OPTIONS=\"--max-old-space-size=8192\" docusaurus build",
-    "build:plugins": "dotenv -e .env sucrase ./plugins -d ./plugins --transforms typescript,imports && npx prettier --write ./plugins",
-    "swizzle": "dotenv -e .env docusaurus swizzle",
-    "deploy": "dotenv -e .env docusaurus deploy",
-    "serve": "dotenv -e .env docusaurus serve",
-    "clear": "dotenv -e .env docusaurus clear"
+    "dev:lean": "DISABLE_DOCGEN=true DISABLE_VERSIONING=true DISABLE_EXAMPLES=true DISABLE_CHECKLISTS=true npm run start",
+    "dev:docs": "DISABLE_BLOG=true npm run dev:lean",
+    "dev:blog": "DISABLE_DOCS=true LIVE_PREVIEW_URL=https://next.live-previews.prepverse.github.io/preview npm run dev:lean",
+    "build": "NODE_OPTIONS=\"--max-old-space-size=8192\" docusaurus build",
+    "build:plugins": "sucrase ./plugins -d ./plugins --transforms typescript,imports && npx prettier --write ./plugins",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "serve": "docusaurus serve",
+    "clear": "docusaurus clear"
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.12.1",
