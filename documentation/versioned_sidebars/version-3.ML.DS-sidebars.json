@@ -16,7 +16,7 @@
     },
     {
       "type": "category",
-      "label": "HTML",
+      "label": "Machine Learning",
       "className": "category-as-header",
       "items": [
         {
@@ -30,21 +30,7 @@
     },
     {
       "type": "category",
-      "label": "CSS",
-      "className": "category-as-header",
-      "items": [
-        {
-          "type": "category",
-          "label": "Introduction",
-          "items": [
-            "getting-started/overview"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "label": "JavaScript",
+      "label": "Data Science",
       "className": "category-as-header",
       "items": [
         {

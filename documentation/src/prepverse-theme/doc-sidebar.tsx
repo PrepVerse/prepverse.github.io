@@ -156,7 +156,7 @@ const SidebarCategory = ({
                     !isHeader && "hover:text-gray-600 dark:hover:text-gray-300",
                     "font-normal",
                     "flex items-center",
-                    isHeader ? "pt-2 pb-4" : "py-2",
+                    isHeader ? "pt-0 pb-2" : "py-2",
                     "pr-2",
                     isHeader && "pl-2",
                     !isHeader && "pl-0.5",

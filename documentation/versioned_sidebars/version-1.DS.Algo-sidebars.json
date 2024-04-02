@@ -16,42 +16,28 @@
     },
     {
       "type": "category",
-      "label": "HTML",
+      "label": "Data Structures",
       "className": "category-as-header",
       "items": [
         {
           "type": "category",
-          "label": "Introduction",
+          "label": "Array",
           "items": [
-            "getting-started/overview"
+            "data-structures/array/arrayIntro"
           ]
         }
       ]
     },
     {
       "type": "category",
-      "label": "CSS",
+      "label": "Algorithms",
       "className": "category-as-header",
       "items": [
         {
           "type": "category",
-          "label": "Introduction",
+          "label": "Analysis of Algorithms",
           "items": [
-            "getting-started/overview"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "category",
-      "label": "JavaScript",
-      "className": "category-as-header",
-      "items": [
-        {
-          "type": "category",
-          "label": "Introduction",
-          "items": [
-            "getting-started/overview"
+            "getting-started/quickstart"
           ]
         }
       ]
