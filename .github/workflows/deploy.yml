@@ -22,20 +22,22 @@ jobs:
           node-version: 18.x
           # cache: npm
 
-      - name: Set Variables Data
-        env:
-          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
-        run: |
-          echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+      # - name: Set Variables Data
+      #   env:
+      #     REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+      #   run: |
+      #     echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
-      - name: Install dependencies
+      # - name: Install dependencies
+      #   run: |
+      #     npm ci
+
+      - name: Set Variables Data, Install dependencies & Build website
         run: |
           npm ci
-
-      - name: Install dependencies & Build website
-        run: |
           cd documentation
           npm ci
+          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
           npm run build
 
       - name: Deploy to GitHub Pages
