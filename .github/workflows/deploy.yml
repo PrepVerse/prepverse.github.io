@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           # Needed for showLastUpdateTime to work
           fetch-depth: 0
@@ -29,10 +29,12 @@ jobs:
       #     echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
       - name: Set Variables Data
+        id: set-env-data
         env:
-          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ vars.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
         run: |
-          echo ${{ vars.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+          echo $REACT_APP_FOLLOWERS_ACCESS_KEY
+        timeout-minutes: 5
 
       - name: Install dependencies
         run: |
