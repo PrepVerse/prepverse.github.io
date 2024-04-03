@@ -22,11 +22,17 @@ jobs:
           node-version: 18.x
           # cache: npm
 
+      # - name: Set Variables Data
+      #   env:
+      #     REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+      #   run: |
+      #     echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+
       - name: Set Variables Data
         env:
-          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+          REACT_APP_FOLLOWERS_ACCESS_KEY: ${{ vars.REACT_APP_FOLLOWERS_ACCESS_KEY }}
         run: |
-          echo ${{ secrets.REACT_APP_FOLLOWERS_ACCESS_KEY }}
+          echo ${{ vars.REACT_APP_FOLLOWERS_ACCESS_KEY }}
 
       - name: Install dependencies
         run: |

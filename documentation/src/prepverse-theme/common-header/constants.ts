@@ -51,17 +51,29 @@ export const MENU_ITEMS: MenuItemType[] = [
         label: "Docs",
         items: [
             {
-                label: "DSA Docs",
-                description: "Learning DSA in C++, Python & Java",
+                label: "Foundation Docs",
+                description: "Learn C++, Python & Java",
                 link: "/docs",
-                icon: DocumentsIcon,
+                icon: UseCasesIcon,
             },
             {
-                label: "Web Tech Docs",
-                description: "Learn HTML, CSS, JavaScript",
-                link: "/docs/2.Web.Dev",
-                icon: ExamplesIcon,
+                label: "DSA Docs",
+                description: "Learning DSA in C++, Python & Java",
+                link: "/docs/1.DS.Algo",
+                icon: DocumentsIcon,
             },
+            // {
+            //     label: "Web Tech Docs",
+            //     description: "Learn HTML, CSS, JavaScript",
+            //     link: "/docs/2.Web.Dev",
+            //     icon: ExamplesIcon,
+            // },
+            // {
+            //     label: "ML & DS Docs",
+            //     description: "Learn Machne Learing & Data Science in Python",
+            //     link: "/docs/3.ML.DS",
+            //     icon: DocsIcon,
+            // },
         ],
     },
     {
