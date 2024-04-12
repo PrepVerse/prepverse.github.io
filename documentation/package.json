@@ -47,6 +47,7 @@
     "react-icons": "^4.2.0",
     "react-markdown": "^8.0.3",
     "react-popper": "^2.3.0",
+    "react-query": "^3.39.3",
     "react-rewards": "^2.0.4",
     "react-share": "^4.4.0",
     "react-twitter-embed": "^4.0.4",

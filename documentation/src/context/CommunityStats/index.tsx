@@ -7,7 +7,8 @@ import React, {
     useMemo,
     useState,
 } from "react";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+// import { useQuery } from "react-query";
+// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 interface ICommunityStatsContext {
     githubStarCount: number;
@@ -36,12 +37,14 @@ export const CommunityStatsContext = createContext<
     ICommunityStatsContext | undefined
 >(undefined);
 
-// const followersAccessKey = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
-// console.log(followersAccessKey);
+const followersAccessKey = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
+console.log(followersAccessKey);
+
+const EndPoint = "https://leetcode.com/graphql/";
 
 export const CommunityStatsProvider: FC = ({ children }) => {
-    const { siteConfig } = useDocusaurusContext();
-    const followersAccessKey = siteConfig.customFields.REACT_APP_FOLLOWERS_ACCESS_KEY;
+    // const { siteConfig } = useDocusaurusContext();
+    // const followersAccessKey = siteConfig.customFields.REACT_APP_FOLLOWERS_ACCESS_KEY;
     const [loading, setLoading] = useState(true);
     const [githubStarCount, setGithubStarCount] = useState(0);
     const [githubFollowersCount, setGithubFollowersCount] = useState(0);
@@ -197,7 +200,7 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             setTotalLCHard(hardCount);
             
             // Fetch LeetCode streak count
-            const streakCountResponse = await fetch('https://leetcode.com/graphql', {
+            const streakCountResponse = await fetch(EndPoint, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

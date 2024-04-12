@@ -181,13 +181,13 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                     "border-2 border-solid border-gray-300 dark:border-gray-700",
                     "flex gap-2 items-center justify-center",
                     "py-2 pl-2.5 pr-4",
-                    "w-72",
+                    "w-60",
                     "font-semibold",
                     "no-underline",
                 )}
             >
                 <div className={clsx("flex flex-row items-center")}>
-                    Total Solved Leetcode Problem:&nbsp;
+                    Total Solved Problem:&nbsp;
                     {loading ? (
                         <Spinner
                             className={clsx("w-5 h-5")}
@@ -214,7 +214,7 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                     "border-2 border-solid border-gray-300 dark:border-gray-700",
                     "flex gap-2 items-center justify-center",
                     "py-2 pl-2.5 pr-4",
-                    "w-52",
+                    "w-56",
                     "font-semibold",
                     "no-underline",
                 )}
