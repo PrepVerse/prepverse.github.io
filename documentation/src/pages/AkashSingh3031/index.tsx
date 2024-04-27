@@ -8,11 +8,8 @@ import { CommonHeader } from "@site/src/prepverse-theme/common-header";
 import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
 import { useColorMode } from "@docusaurus/theme-common";
 import { CommonThemedImage } from "@site/src/prepverse-theme/common-themed-image";
-import { EnterpriseHeroSection } from "@site/src/prepverse-theme/enterprise-hero-section";
 import { AboutMeProfile } from "@site/src/prepverse-theme/about-me-profile";
 import BackToTopButton from '@theme/BackToTopButton';
-import { EnterpriseFaq } from "@site/src/prepverse-theme/enterprise-faq";
-import ProjectList from "@site/src/components/project-list";
 
 const About: React.FC = () => {
     const { colorMode } = useColorMode();
@@ -41,13 +38,6 @@ const About: React.FC = () => {
                                 "landing-lg:pr-12",
                             )}
                         />
-                        {/* <ProjectList /> */}
-                        {/* <EnterpriseFaq
-                            className={clsx(
-                                "px-4 landing-sm:px-10 landing-lg:px-0",
-                                "w-full landing-lg:max-w-[792px] mx-auto",
-                            )}
-                        /> */}
                     </div>
                     <CommonFooter />
                 </div>

@@ -5,21 +5,21 @@ type Props = {
     svgId?: string;
     className?: string;
     selected: {
-        uiFramework: string[];
-        backend: string[];
+        topicFilters: string[];
+        languageFilters: string[];
     };
     data: {
-        uiFrameworks: {
+        topicFilters: {
             label: string;
             icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
         }[];
-        backends: {
+        languageFilters: {
             label: string;
             icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
         }[];
     };
-    onBackendChange: (backend: string) => void;
-    onUIFrameworkChange: (framework: string) => void;
+    onLanguageFiltersChange: (languageFilters: string) => void;
+    onTopicFiltersChange: (topicFilters: string) => void;
 };
 
 export const TemplatesFilters: FC<Props> = ({
@@ -27,8 +27,8 @@ export const TemplatesFilters: FC<Props> = ({
     className,
     data,
     selected,
-    onBackendChange,
-    onUIFrameworkChange,
+    onLanguageFiltersChange,
+    onTopicFiltersChange,
 }) => {
     return (
         <div className={clsx("flex", "flex-col", "not-prose", className)}>
@@ -36,30 +36,29 @@ export const TemplatesFilters: FC<Props> = ({
                 className={clsx(
                     "pl-4",
                     "text-sm",
-                    "dark:text-gray-500 text-gray-700",
+                    "font-semibold",
+                    "dark:text-gray-400 text-gray-700",
                 )}
             >
-                UI Frameworks
+                Languages
             </h4>
             <div
                 className={clsx(
                     "flex",
                     "flex-col",
                     "items-start",
-                    "gap-3",
-                    "mt-4",
+                    "gap-4",
+                    "mt-3",
                 )}
             >
-                {data.uiFrameworks.map((item) => {
-                    const isSelected = selected.uiFramework.includes(
-                        item.label,
-                    );
+                {data.languageFilters.map((item) => {
+                    const isSelected = selected.languageFilters.includes(item.label);
                     const Icon = item.icon;
 
                     return (
                         <div
                             key={item.label}
-                            onClick={() => onUIFrameworkChange(item.label)}
+                            onClick={() => onLanguageFiltersChange(item.label)}
                             role="button"
                             className={clsx(
                                 "flex",
@@ -93,29 +92,32 @@ export const TemplatesFilters: FC<Props> = ({
                 className={clsx(
                     "pl-4",
                     "text-sm",
-                    "dark:text-gray-500 text-gray-700",
+                    "font-semibold",
+                    "dark:text-gray-400 text-gray-700",
                     "mt-10",
                 )}
             >
-                Backends
+                Topics
             </h4>
             <div
                 className={clsx(
                     "flex",
                     "flex-col",
                     "items-start",
-                    "gap-4",
-                    "mt-3",
+                    "gap-3",
+                    "mt-4",
                 )}
             >
-                {data.backends.map((item) => {
-                    const isSelected = selected.backend.includes(item.label);
+                {data.topicFilters.map((item) => {
+                    const isSelected = selected.topicFilters.includes(
+                        item.label,
+                    );
                     const Icon = item.icon;
 
                     return (
                         <div
                             key={item.label}
-                            onClick={() => onBackendChange(item.label)}
+                            onClick={() => onTopicFiltersChange(item.label)}
                             role="button"
                             className={clsx(
                                 "flex",
@@ -126,6 +128,7 @@ export const TemplatesFilters: FC<Props> = ({
                                 "cursor-pointer",
                                 "border dark:border-gray-700 border-gray-200",
                                 isSelected && "dark:bg-gray-700 bg-gray-50",
+                                // "transition-colors duration-200 ease-in-out",
                             )}
                         >
                             <Icon id={svgId} />

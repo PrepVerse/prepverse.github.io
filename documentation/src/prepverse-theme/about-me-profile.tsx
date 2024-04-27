@@ -151,7 +151,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                 "dark:text-gray-400 text-gray-600",
                             )}
                         >
-                            👨‍💻 Software Developer Engineer🔸||🔸TA at Coding Ninjas🔸||🔸6354 Rating 📈 Points on Coding Ninjas Studio
+                            👨‍💻 Software Developer Engineer🔸||🔸TA at Coding Ninjas🔸||🔸6306 Rating 📈 Points on Coding Ninjas Studio
                         </p>
                         <LandingSectionCtaButton to="https://github.com/AkashSingh3031"
                             className={clsx(

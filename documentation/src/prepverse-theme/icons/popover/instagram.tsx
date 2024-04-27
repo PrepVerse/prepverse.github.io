@@ -15,9 +15,9 @@ export const InstagramIcon = (props: SVGProps<SVGSVGElement>) => (
         />
 
         <linearGradient id={`myGradient${props.id}`} gradientTransform="rotate(90)">
-            <stop offset="0%" stop-color="#f9ce34" />
+            <stop offset="0%" stop-color="#6228d7" />
             <stop offset="50%" stop-color="#ee2a7b" />
-            <stop offset="100%" stop-color="#6228d7" />
+            <stop offset="100%" stop-color="#f9ce34" />
         </linearGradient>
     </svg>
 );

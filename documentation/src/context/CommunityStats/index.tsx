@@ -52,16 +52,16 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const [githubAvatarPageUrl, setGithubAvatarPageUrl] = useState<String[]>([]);
     const [githubAvatarName, setGithubAvatarName] = useState<String[]>([]);
     const [leetcodeBadgeImg, setLeetcodeBadgeImg] = useState<String[]>([]);
-    const [leetcodeBadgeCount, setLeetcodeBadgesCount] = useState(73);
-    const [solvedProblem, setSolvedProblem] = useState(3031);
-    const [easySolved, setEasySolved] = useState(772);
-    const [mediumSolved, setMediumSolved] = useState(1589);
-    const [hardSolved, setHardSolved] = useState(670);
-    const [totalLCProblem, setTotalLCProblem] = useState(3103);
-    const [totalLCEasy, setTotalLCEasy] = useState(785);
-    const [totalLCMedium, setTotalLCMedium] = useState(1628);
-    const [totalLCHard, setTotalLCHard] = useState(690);
-    const [lcStreakCount, setLCStreakCount] = useState(1000);
+    const [leetcodeBadgeCount, setLeetcodeBadgesCount] = useState(74);
+    const [solvedProblem, setSolvedProblem] = useState(3047);
+    const [easySolved, setEasySolved] = useState(776);
+    const [mediumSolved, setMediumSolved] = useState(1596);
+    const [hardSolved, setHardSolved] = useState(675);
+    const [totalLCProblem, setTotalLCProblem] = useState(3125);
+    const [totalLCEasy, setTotalLCEasy] = useState(788);
+    const [totalLCMedium, setTotalLCMedium] = useState(1641);
+    const [totalLCHard, setTotalLCHard] = useState(696);
+    const [lcStreakCount, setLCStreakCount] = useState(1010);
 
     const fetchData = useCallback(async () => {
         try {

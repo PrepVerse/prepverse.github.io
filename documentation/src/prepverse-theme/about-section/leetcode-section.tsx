@@ -170,76 +170,83 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
     const { lcStreakCount, totalLCProblem, totalLCEasy, totalLCMedium, totalLCHard, solvedProblem, easySolved, mediumSolved, hardSolved, loading } = useCommunityStatsContext();
     return (
         <div>
-            <a
-                href="https://leetcode.com/akashsingh3031"
-                target="_blank"
-                rel="noreferrer"
+            <div
                 className={clsx(
-                    "text-sm",
-                    "text-gray-500 dark:text-gray-400",
-                    "rounded-[32px]",
-                    "border-2 border-solid border-gray-300 dark:border-gray-700",
-                    "flex gap-2 items-center justify-center",
-                    "py-2 pl-2.5 pr-4",
-                    "w-60",
-                    "font-semibold",
-                    "no-underline",
+                    "flex flex-row",
+                    "gap-2",
                 )}
             >
-                <div className={clsx("flex flex-row items-center")}>
-                    Total Solved Problem:&nbsp;
-                    {loading ? (
-                        <Spinner
-                            className={clsx("w-5 h-5")}
-                            wrapperProps={{
-                                className: clsx("mx-auto"),
-                            }}
-                        />
-                    ) : (
-                        <span
-                            className={clsx(
-                                "tabular-nums text-gray-800 dark:text-gray-100",
-                            )}
-                        >
-                            {solvedProblem}
-                        </span>
+                <a
+                    href="https://leetcode.com/akashsingh3031"
+                    target="_blank"
+                    rel="noreferrer"
+                    className={clsx(
+                        "text-sm",
+                        "text-gray-500 dark:text-gray-400",
+                        "rounded-[32px]",
+                        "border-2 border-solid border-gray-300 dark:border-gray-700",
+                        "flex gap-2 items-center justify-center",
+                        "py-2 pl-2.5 pr-4",
+                        "w-60",
+                        "font-semibold",
+                        "no-underline",
                     )}
-                </div>
-            </a>
-            {/* <div
-                className={clsx(
-                    "text-sm",
-                    "text-gray-500 dark:text-gray-400",
-                    "rounded-[32px]",
-                    "border-2 border-solid border-gray-300 dark:border-gray-700",
-                    "flex gap-2 items-center justify-center",
-                    "py-2 pl-2.5 pr-4",
-                    "w-56",
-                    "font-semibold",
-                    "no-underline",
-                )}
-            >
-                <FireIcon />
-                <div className={clsx("flex flex-row items-center")}>
-                    Longest Streak:&nbsp;
-                    {loading ? (
-                        <Spinner
-                            className={clsx("w-5 h-5")}
-                            wrapperProps={{
-                                className: clsx("mx-auto"),
-                            }}
-                        />
-                    ) : (
-                        <span
-                            className={clsx(
-                                "tabular-nums text-gray-800 dark:text-gray-100",
-                            )}
-                        >
-                            {lcStreakCount}
-                        </span>
+                >
+                    <div className={clsx("flex flex-row items-center")}>
+                        Total Solved Problem:&nbsp;
+                        {loading ? (
+                            <Spinner
+                                className={clsx("w-5 h-5")}
+                                wrapperProps={{
+                                    className: clsx("mx-auto"),
+                                }}
+                            />
+                        ) : (
+                            <span
+                                className={clsx(
+                                    "tabular-nums text-gray-800 dark:text-gray-100",
+                                )}
+                            >
+                                {solvedProblem}
+                            </span>
+                        )}
+                    </div>
+                </a>
+                {/* <div
+                    className={clsx(
+                        "text-sm",
+                        "text-gray-500 dark:text-gray-400",
+                        "rounded-[32px]",
+                        "border-2 border-solid border-gray-300 dark:border-gray-700",
+                        "flex gap-2 items-center justify-center",
+                        "py-2 pl-2.5 pr-4",
+                        "w-56",
+                        "font-semibold",
+                        "no-underline",
                     )}
-                </div>
-            </div> */}
+                >
+                    <FireIcon />
+                    <div className={clsx("flex flex-row items-center")}>
+                        Longest Streak:&nbsp;
+                        {loading ? (
+                            <Spinner
+                                className={clsx("w-5 h-5")}
+                                wrapperProps={{
+                                    className: clsx("mx-auto"),
+                                }}
+                            />
+                        ) : (
+                            <span
+                                className={clsx(
+                                    "tabular-nums text-gray-800 dark:text-gray-100",
+                                )}
+                            >
+                                {lcStreakCount}
+                            </span>
+                        )}
+                    </div>
+                </div> */}
+            </div>
             {loading ? (
                 <Spinner
                     className={clsx("w-20 h-20")}

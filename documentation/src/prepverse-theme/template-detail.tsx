@@ -5,14 +5,10 @@ import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
 import { CommonHeader } from "@site/src/prepverse-theme/common-header";
 import { LandingFooter } from "@site/src/prepverse-theme/landing-footer";
 import { CommonCircleChevronLeft } from "./common-circle-chevron-left";
-import { ShareIcon } from "./icons/share";
 import * as Icons from "@site/src/assets/integration-icons";
-import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import remarkRehype from "remark-rehype";
-import { CommonRunLocalPrompt } from "./common-run-local-prompt";
-import { GithubIcon } from "./icons/github";
-import { TutorialIcon } from "./icons/tutorial";
+import { ProblemsTable } from "./codeverse/dsa";
+import { DSATopics } from "./codeverse/dsa/dsa-topics";
+import ProjectList from "@site/src/components/project-list";
 
 type Props = {
     data: {
@@ -43,14 +39,14 @@ export const TemplatesDetail: FC<Props> = ({ data }) => {
                         "mx-auto",
                         "flex flex-col",
                         "not-prose",
-                        "mt-8 landing-lg:mt-20",
+                        "mt-8 landing-lg:mt-10",
                         "px-6 landing-sm:px-0",
-                        "pb-8 landing-sm:pb-12 landing-md:pb-16 landing-lg:pb-40",
+                        "pb-8 landing-sm:pb-12 landing-md:pb-16 landing-lg:pb-20",
                     )}
                 >
                     <div>
                         <Link
-                            to="/templates"
+                            to="/CodeVerse"
                             className={clsx(
                                 "text-base",
                                 "font-semibold",
@@ -65,8 +61,10 @@ export const TemplatesDetail: FC<Props> = ({ data }) => {
                             )}
                         >
                             <CommonCircleChevronLeft />
-                            Back to templates
+                            Back to CodeVerse
                         </Link>
+                        {data.slug === "dsa" && <DSATopics />}
+                        {data.slug === "cp" && <DSATopics />}
                         <h1
                             className={clsx(
                                 "dark:text-gray-0 text-gray-900",
@@ -82,158 +80,15 @@ export const TemplatesDetail: FC<Props> = ({ data }) => {
                     <div
                         className={clsx(
                             "flex",
-                            "mt-8 landing-sm:mt-12 landing-md:mt-16",
+                            "mt-8",
                             "rounded-lg landing-md:rounded-xl landing-lg:rounded-3xl",
                             "-mx-4 landing-sm:-mx-0",
                             "landing-sm:px-4",
-                            "aspect-[1168/736]",
+                            // "aspect-[1168/736]",
                         )}
                     >
-                        <img
-                            className={clsx(
-                                "rounded-lg landing-md:rounded-xl landing-lg:rounded-3xl",
-                                "block",
-                                "aspect-[1168/736]",
-                            )}
-                            src={data.images[0]}
-                            alt={data.title}
-                        />
-                    </div>
-
-                    <div
-                        className={clsx(
-                            "flex",
-                            "items-start",
-                            "gap-6",
-                            "mt-8 landing-sm:mt-12 landing-md:mt-16",
-                            "px-0 landing-sm:pl-10 landing-md:pl-14 landing-lg:pl-10",
-                            "px-0 landing-sm:pr-10 landing-md:pr-10 landing-lg:pr-10",
-                            "not-prose",
-                        )}
-                    >
-                        <div
-                            className={clsx(
-                                "max-w-full",
-                                "flex",
-                                "flex-col",
-                                "gap-8 landing-sm:gap-10",
-                            )}
-                        >
-                            <div
-                                className={clsx(
-                                    "flex",
-                                    "flex-wrap",
-                                    "items-center",
-                                    "gap-4 landing-md:gap-6",
-                                    "landing-lg:pl-4",
-                                )}
-                            >
-                                {data.liveDemo && (
-                                    <ProjectLink to={data.liveDemo}>
-                                        <ShareIcon width={16} height={16} />
-                                        <span
-                                            className={clsx(
-                                                "font-semibold",
-                                                "text-xs landing-md:text-base",
-                                            )}
-                                        >
-                                            Live demo
-                                        </span>
-                                    </ProjectLink>
-                                )}
-                                {data.tutorial && (
-                                    <ProjectLink to={data.tutorial}>
-                                        <TutorialIcon width={16} height={16} />
-                                        <span
-                                            className={clsx(
-                                                "font-semibold",
-                                                "text-xs landing-md:text-base",
-                                            )}
-                                        >
-                                            Tutorial
-                                        </span>
-                                    </ProjectLink>
-                                )}
-                                {data.github && (
-                                    <ProjectLink to={data.github}>
-                                        <GithubIcon width={16} height={16} />
-                                        <span
-                                            className={clsx(
-                                                "font-semibold",
-                                                "text-xs landing-md:text-base",
-                                            )}
-                                        >
-                                            Source code
-                                        </span>
-                                    </ProjectLink>
-                                )}
-                            </div>
-                            <Integrations
-                                svgId="mobile"
-                                className={clsx(
-                                    "grid landing-md:hidden",
-                                    "grid-cols-2 sm:grid-cols-4",
-                                    "gap-6",
-                                    "flex-shrink-0",
-                                )}
-                                reactPlatform={data.reactPlatform}
-                                uiFramework={data.uiFramework}
-                                dataProvider={data.dataProvider}
-                                authProvider={data.authProvider}
-                            />
-                            <div
-                                className={clsx(
-                                    "flex",
-                                    "flex-col",
-                                    "landing-lg:pl-4 landing-lg:pr-6",
-                                )}
-                            >
-                                <div className={clsx("mb-2 landing-sm:mb-4")}>
-                                    <CommonRunLocalPrompt
-                                        path={data.runOnYourLocalPath}
-                                    />
-                                </div>
-                                <div className={clsx("not-prose")}>
-                                    <h2
-                                        className={clsx(
-                                            "text-xl landing-sm:text-2xl",
-                                            "dark:text-gray-0 text-gray-900",
-                                            "font-semibold",
-                                        )}
-                                    >
-                                        Description
-                                    </h2>
-                                </div>
-                                <ReactMarkdown
-                                    className={clsx(
-                                        "mt-4 landing-sm:gap-6",
-                                        "whitespace-pre-wrap",
-                                        "not-prose",
-                                        "dark:!text-gray-200 !text-gray-900",
-                                        "template-detail-markdown",
-                                    )}
-                                    // remarkPlugins={[remarkGfm, remarkRehype]}
-                                >
-                                    {data.description}
-                                </ReactMarkdown>
-                            </div>
-                        </div>
-                        <Integrations
-                            svgId="desktop"
-                            className={clsx(
-                                "hidden landing-md:grid",
-                                "grid-cols-1 landing-lg:grid-cols-2",
-                                "landing-md:gap-10",
-                                "pl-0 landing-lg:pl-10",
-                                "landing-md:ml-6 landing-lg:ml-0",
-                                "flex-shrink-0",
-                                "justify-self-end",
-                            )}
-                            reactPlatform={data.reactPlatform}
-                            uiFramework={data.uiFramework}
-                            dataProvider={data.dataProvider}
-                            authProvider={data.authProvider}
-                        />
+                        {data.slug === "dsa" && <ProblemsTable />}
+                        {data.slug === "cp" && <ProblemsTable />}
                     </div>
                 </div>
             </div>

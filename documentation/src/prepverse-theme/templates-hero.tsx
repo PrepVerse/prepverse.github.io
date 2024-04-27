@@ -30,7 +30,7 @@ export const TemplatesHero: FC<Props> = ({ className }) => {
                 )}
                 srcDark="https://refine.ams3.cdn.digitaloceanspaces.com/templates/templates-hero-dark.png"
                 srcLight="https://refine.ams3.cdn.digitaloceanspaces.com/templates/templates-hero-light.png"
-                alt="Refine Templates"
+                alt="CodeVerse"
             />
             <h2
                 className={clsx(
@@ -42,7 +42,7 @@ export const TemplatesHero: FC<Props> = ({ className }) => {
                 )}
             >
                 <span className={clsx("dark:text-gray-0 text-gray-900")}>
-                    Refine{" "}
+                    Practice{" "}
                 </span>
                 <span
                     className={clsx(
@@ -51,7 +51,7 @@ export const TemplatesHero: FC<Props> = ({ className }) => {
                         "text-refine-blue drop-shadow-[0_0_30px_rgba(51,51,255,0.3)]",
                     )}
                 >
-                    Templates
+                    DSA & CP
                 </span>
             </h2>
             <p
@@ -61,10 +61,7 @@ export const TemplatesHero: FC<Props> = ({ className }) => {
                     "dark:text-gray-400 text-gray-600",
                 )}
             >
-                Explore a range of pre-designed Refine templates, perfect for
-                everything from admin panels to dashboards and CRMs. Easily
-                integrate these templates with your data sources and begin
-                customizing to jumpstart your projects.
+                Practice Data-Structures and Algorithms & Competitive Programming Problems with LeetCode
             </p>
         </div>
     );
