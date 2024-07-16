@@ -20,7 +20,7 @@ export const PrepVerseLogo = ({ title, className }: Props) => {
                     "gap-3",
                     "no-underline",
                 )}
-                onContextMenu={openFigma}
+                // onContextMenu={openFigma}
             >
                 <PrepVerseLogoIcon
                     className={clsx(

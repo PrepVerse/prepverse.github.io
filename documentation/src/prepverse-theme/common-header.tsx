@@ -85,7 +85,10 @@ export const CommonHeader = ({
                                 "landing-lg:w-[200px]",
                             )}
                         >
-                            <Link to="/" onContextMenu={openFigma}>
+                            <Link 
+                                to="/" 
+                                // onContextMenu={openFigma}
+                            >
                                 <PrepVerseLogoIcon className="text-gray-900 dark:text-gray-0" />
                             </Link>
                         </div>

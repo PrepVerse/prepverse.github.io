@@ -4,6 +4,7 @@ import Link from "@docusaurus/Link";
 import { openFigma } from "../utils/open-figma";
 import { footerDescription, menuItems, secondaryMenuItems, socialLinks } from "./footer-data";
 import { HeartOutlinedIcon } from "./icons/heart-outlined";
+import { GHBadgeIcon } from "./icons/gh-sposor-badge";
 import { PrepVerseLogoIcon } from "./icons/prepverse-logo";
 
 export type Props = {
@@ -155,7 +156,7 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
                     >
                         <Link
                             to="/"
-                            onContextMenu={openFigma}
+                            // onContextMenu={openFigma}
                             className={clsx(
                                 "hover:no-underline",
                                 variant === "landing" && "text-gray-900 dark:text-gray-0",
@@ -172,7 +173,8 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
                                 "hover:no-underline",
                             )}
                         >
-                            <iframe src="https://github.com/sponsors/AkashSingh3031/button" title="Sponsor AkashSingh3031" height="32" width="114"></iframe>
+                            <GHBadgeIcon />
+                            {/* <iframe src="https://github.com/sponsors/AkashSingh3031/button" title="Sponsor AkashSingh3031" height="32" width="114"></iframe> */}
                         </a>
                     </div>
                     <div

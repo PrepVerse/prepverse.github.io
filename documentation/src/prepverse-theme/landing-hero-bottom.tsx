@@ -81,19 +81,20 @@ export const LandingHeroBottom = () => {
                         "text-gray-0 text-2xl pt-9",
                     )}
                 >
-                    <div
+                    <h2
                         className={clsx(
                             "text-base",
                             "landing-md:text-2xl",
                             "font-normal",
                             "bg-landing-text-bg bg-clip-text",
-                            "text-transparent",
+                            // "text-transparent",
+                            "dark:text-gray-300 text-orange-700",
                             "mb-2",
                             "landing-md:mb-0",
                         )}
                     >
                         Resources for Computer Science Preparations
-                    </div>
+                    </h2>
                     <div className="relative w-[300px]">
                         <LandingSlidingHighlights />
                     </div>

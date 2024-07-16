@@ -21,7 +21,7 @@ export const DocPrepVerseLogo = ({ className }: Props) => {
             <Link
                 to="/"
                 className={clsx("no-underline", "flex items-center gap-2")}
-                onContextMenu={openFigma}
+                // onContextMenu={openFigma}
             >
                 <span
                     className={clsx(

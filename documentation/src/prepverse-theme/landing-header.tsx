@@ -67,7 +67,10 @@ export const LandingHeader = () => {
                 <div className={clsx("max-w-[1264px]", "mx-auto")}>
                     <div className={clsx("flex items-center")}>
                         <div className={clsx("flex items-center", "w-[240px]")}>
-                            <Link to="/" onContextMenu={openFigma}>
+                            <Link 
+                                to="/" 
+                                // onContextMenu={openFigma}
+                            >
                                 {/* <RefineLogoIcon className="dark:text-gray-0 text-gray-900" /> */}
                                 {/* <RefineLogoIcon className="dark:text-gray-0 text-gray-0" /> */}
                                 <PrepVerseLogoIcon className="dark:text-gray-0 text-gray-900" />

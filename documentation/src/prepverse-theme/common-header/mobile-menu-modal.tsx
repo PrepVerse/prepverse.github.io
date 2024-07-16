@@ -97,7 +97,7 @@ const Modal: FC<PropsWithChildren<MobileMenuModalProps>> = ({
                         >
                             <PrepVerseLogoIcon
                                 className="dark:text-gray-0 text-gray-900"
-                                onContextMenu={openFigma}
+                                // onContextMenu={openFigma}
                             />
                             <button
                                 type="button"

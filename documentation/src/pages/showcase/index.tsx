@@ -1,12 +1,12 @@
-import React, {useState, useMemo, useEffect} from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import clsx from 'clsx';
 import { BlogFooter } from "@site/src/prepverse-theme/blog-footer";
 import { CommonHeader } from "@site/src/prepverse-theme/common-header";
 import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import Translate, {translate} from '@docusaurus/Translate';
-import {useHistory, useLocation} from '@docusaurus/router';
-import {usePluralForm} from '@docusaurus/theme-common';
+import Translate, { translate } from '@docusaurus/Translate';
+import { useHistory, useLocation } from '@docusaurus/router';
+import { usePluralForm } from '@docusaurus/theme-common';
 import Link from '@docusaurus/Link';
 import BackToTopButton from '@theme/BackToTopButton';
 import Layout from '@theme/Layout';
@@ -32,7 +32,7 @@ import styles from './styles.module.css';
 import CodeBlock from '@theme/CodeBlock'
 import { motion } from 'framer-motion';
 
-const TITLE = translate({message: 'Open Source Projects Showcase'});
+const TITLE = translate({ message: 'Open Source Projects Showcase' });
 const DESCRIPTION = translate({
   message: 'List of Open Source projects in web-devlopments, app-devlopments, machine-learning, data-science',
 });
@@ -52,13 +52,13 @@ type UserState = {
 };
 
 function restoreUserState(userState: UserState | null) {
-  const {scrollTopPosition, focusedElementId} = userState ?? {
+  const { scrollTopPosition, focusedElementId } = userState ?? {
     scrollTopPosition: 0,
     focusedElementId: undefined,
   };
   // @ts-expect-error: if focusedElementId is undefined it returns null
   document.getElementById(focusedElementId)?.focus();
-  window.scrollTo({top: scrollTopPosition});
+  window.scrollTo({ top: scrollTopPosition });
 }
 
 export function prepareUserState(): UserState | undefined {
@@ -140,7 +140,7 @@ function ShowcaseHeader() {
 }
 
 function useSiteCountPlural() {
-  const {selectMessage} = usePluralForm();
+  const { selectMessage } = usePluralForm();
   return (sitesCount: number) =>
     selectMessage(
       sitesCount,
@@ -151,7 +151,7 @@ function useSiteCountPlural() {
             'Pluralized label for the number of sites found on the showcase. Use as much plural forms (separated by "|") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)',
           message: '1 site|{sitesCount} sites',
         },
-        {sitesCount},
+        { sitesCount },
       ),
     );
 }
@@ -172,7 +172,7 @@ function ShowcaseFilters() {
       </div>
       <ul className={clsx('clean-list', styles.checkboxList)}>
         {TagList.map((tag, i) => {
-          const {label, description, color} = Tags[tag];
+          const { label, description, color } = Tags[tag];
           const id = `showcase_checkbox_id_${tag}`;
 
           return (
@@ -302,6 +302,7 @@ function ShowcaseCardsInfo() {
     </motion.div>
   );
 }
+
 function ShowcaseCards() {
   const filteredUsers = useFilteredUsers();
 
@@ -348,7 +349,7 @@ function ShowcaseCards() {
             </div>
           </div>
           <div className="container margin-top--lg">
-            <h2  className={clsx('text-xl', 'font-bold')}>
+            <h2 className={clsx('text-xl', 'font-bold')}>
               <Translate id="showcase.usersList.allUsers">All Projects</Translate>
             </h2>
             <ul className={clsx('clean-list', styles.showcaseList)}>
@@ -380,21 +381,21 @@ export default function Showcase(): JSX.Element {
     <CommonLayout>
       <CommonHeader /><div
         className={clsx(
-            "w-full",
-            "mx-auto",
-            "landing-lg:max-w-[1300px]",
+          "w-full",
+          "mx-auto",
+          "landing-lg:max-w-[1300px]",
         )}
       >
-          <ShowcaseHeader />
-          <ShowcaseFilters />
-          <div
-            style={{display: 'flex', marginLeft: 'auto'}}
-            className="container"
-          >
-            <SearchBar />
-          </div>
-          <ShowcaseCards />
-          {/* <ShowcaseCardsInfo /> */}
+        <ShowcaseHeader />
+        <ShowcaseFilters />
+        <div
+          style={{ display: 'flex', marginLeft: 'auto' }}
+          className="container"
+        >
+          <SearchBar />
+        </div>
+        <ShowcaseCards />
+        {/* <ShowcaseCardsInfo /> */}
       </div>
       <BlogFooter />
       <BackToTopButton />
