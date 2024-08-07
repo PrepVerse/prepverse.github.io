@@ -9,8 +9,9 @@ import {
     Clerk,
     Expo,
     Google,
+    Headless,
     Okta,
-} from "../../../assets/integration-icons";
+} from "@site/src/assets/integration-icons";
 import { useInView } from "framer-motion";
 
 export const DSATopics: React.FC = () => {
@@ -129,12 +130,12 @@ const PackageItem = (props: {
                 "justify-center",
                 "gap-3",
                 "pl-4 pt-4 pb-4 pr-6",
-                "dark:bg-green-900 bg-gray-200",
+                "dark:bg-gray-900 bg-gray-200",
                 "rounded-full",
                 "cursor-pointer",
             )}
         >
-            {/* <div>{icon}</div> */}
+            <div>{icon}</div>
             <div
                 className={clsx(
                     "text-sm",
@@ -205,19 +206,17 @@ const PackageItem = (props: {
 
 const list = [
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <AwsCognito {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
         label: "Array",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Auth0 {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Linked List",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => (
-            <AzureActiveDirectory {...props} />
-        ),
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Stack",
         tooltip: null,
     },
@@ -227,22 +226,22 @@ const list = [
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Clerk {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Tree",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Atlassian {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <AzureActiveDirectory {...props} />,
         label: "Graph",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Google {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Time Complexity",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <AuthJs {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Space Complexity",
         tooltip: null,
     },
@@ -250,52 +249,52 @@ const list = [
 
 const algolist = [
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Google {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Time Complexity",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <AuthJs {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Space Complexity",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Searching",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Sorting",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Mathematical Algorithms",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Bitwise Algorithms",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Dynamic Programming",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Recursion",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Backtracking Algorithm",
         tooltip: null,
     },
     {
-        icon: (props: SVGProps<SVGSVGElement>) => <Expo {...props} />,
+        icon: (props: SVGProps<SVGSVGElement>) => <Headless {...props} />,
         label: "Greedy Algorithms",
         tooltip: null,
     },

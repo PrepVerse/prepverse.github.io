@@ -6,22 +6,22 @@ module.exports = {
             label: "Getting Started",
             className: "category-as-header",
             items: [
-                {
-                    type: "link",
-                    href: "https://prepverse.github.io/LeetVerse",
-                    label: "LeetVerse",
-                    customProps: {
-                        external: true,
-                    },
-                },
-                {
-                    type: "link",
-                    href: "https://prepverse.github.io/CodePoint",
-                    label: "CodePoint",
-                    customProps: {
-                        external: true,
-                    },
-                },
+                // {
+                //     type: "link",
+                //     href: "https://prepverse.github.io/LeetVerse",
+                //     label: "LeetVerse",
+                //     customProps: {
+                //         external: true,
+                //     },
+                // },
+                // {
+                //     type: "link",
+                //     href: "https://prepverse.github.io/CodePoint",
+                //     label: "CodePoint",
+                //     customProps: {
+                //         external: true,
+                //     },
+                // },
                 "getting-started/overview",
             ],
         },
@@ -33,35 +33,56 @@ module.exports = {
         },
         {
             type: "category",
-            label: "Basics of python",
+            label: "Python",
             className: "category-as-header",
             items: [
                 {
                     type: "category",
-                    label: "Introduction to python",
-                    // link: {
-                    //     type: "generated-index",
-                    //     title: "Array Tutorials",
-                    //     slug: "/array",
-                    // },
+                    label: "Python Foundation",
+                    link: {
+                        type: "generated-index",
+                        title: "Python Foundation",
+                        slug: "/python-foundation",
+                    },
                     items: [
-                        "python/intro",
-                        "python/getting-started",
-                        "python/comments",
+                        "python-foundation/introduction-to-python",
+                        {
+                            type: "category",
+                            label: "Python Basics",
+                            link: {
+                                type: "generated-index",
+                                title: "Python Basics",
+                                slug: "/python-foundation/python-basics",
+                            },
+                            items: [
+                                "python-foundation/print",
+                                "python-foundation/comments",
+                            ],
+                        },
                         // {
                         //     type: "category",
-                        //     label: "Problems",
+                        //     label: "Python Data Types",
+                        //     link: {
+                        //         type: "generated-index",
+                        //         title: "Python Data Types",
+                        //         slug: "/python-foundation/python-data-types",
+                        //     },
                         //     items: [
-                        //         "array/quickstart",
+                        //         "python-foundation/data-types",
                         //     ],
                         // },
                     ],
                 },
                 // {
                 //     type: "category",
-                //     label: "Variables and data types",
+                //     label: "Python OOPs",
+                //     link: {
+                //         type: "generated-index",
+                //         title: "Python Foundation",
+                //         slug: "/python-oop",
+                //     },
                 //     items: [
-                //         "array/quickstart",
+                //         "python-foundation/data-types",
                 //     ],
                 // },
             ],

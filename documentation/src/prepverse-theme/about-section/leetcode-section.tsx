@@ -212,7 +212,7 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                         )}
                     </div>
                 </a>
-                {/* <div
+                <div
                     className={clsx(
                         "text-sm",
                         "text-gray-500 dark:text-gray-400",
@@ -238,14 +238,14 @@ const LeecodeSolved = ({ className }: { className?: string }) => {
                         ) : (
                             <span
                                 className={clsx(
-                                    "tabular-nums text-gray-800 dark:text-gray-100",
+                                    "tabular-nums text-orange-700 dark:text-orange-500",
                                 )}
                             >
                                 {lcStreakCount}
                             </span>
                         )}
                     </div>
-                </div> */}
+                </div>
             </div>
             {loading ? (
                 <Spinner
@@ -346,7 +346,6 @@ export const LeetCodeSection: React.FC = () => {
     const ShowcaseComponent = React.useMemo(() => {
         return activeApp.showcase;
     }, [activeApp.name]);
-
     return (
         <div
             className={clsx(

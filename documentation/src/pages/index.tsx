@@ -13,29 +13,26 @@ import { useColorMode } from "@docusaurus/theme-common";
 
 function Home() {
     const title = "PrepVerse | Comprehensive Computer Science Resources";
-    const metaDescription = "Explore PrepVerse for a wide range of computer science resources. Access study guides, tutorials, and practice tests to enhance your knowledge and skills.";
     return (
         <>
             <Head>
                 <html data-active-page="index" />
                 <title>{title}</title>
-                <meta name="description" content={metaDescription} />
                 <meta property="og:title" content={title} />
-                <meta property="og:description" content={metaDescription} />
                 <link
                     rel="preload"
                     href="https://prepverse.github.io"
                     as="document"
                 />
             </Head>
-            <CommonLayout description="">
+            <CommonLayout description="Explore PrepVerse for a wide range of computer science resources. Access study guides, tutorials, and practice tests to enhance your knowledge and skills.">
                 {/* <div className={clsx("bg-refine-bg")}> */}
-                <div className={clsx()}>
-                    <CommonHeader />
+                <div className={clsx("dark:bg-refine-bg")}>
+                    <CommonHeader className={clsx("dark:bg-landing-stars")}/>
                     <div
                         className={clsx(
                             "top-section",
-                            // "bg-landing-stars",
+                            "dark:bg-landing-stars",
                             "mb-12 -mt-[100px] md:-mt-[110px] lg:-mt-[90px] xl:-mt-[110px]",
                             "pt-[100px] lg:pt-[90px] xl:-pt-[110px]",
                             "landing-mask-image-hero-wide",
@@ -165,7 +162,7 @@ const About: React.FC = () => {
                     </a>
                     <a
                         target="_blank"
-                        href="https://twitter.com/akashsingh3031"
+                        href="https://x.com/akashsingh3031"
                         rel="noreferrer"
                         className={clsx(
                             "flex  h-max flex-row justify-start gap-3",

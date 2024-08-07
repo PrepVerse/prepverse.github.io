@@ -61,7 +61,17 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
                     "hover:no-underline",
                 )}
             >
-                codewithsky@gmail.com
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={180}
+                    height={40}
+                    viewBox="0 0 180 40"
+                    fill="none"
+                >
+                    <text x="1" y="15" fontFamily="Arial, sans-serif" fontSize="16" fill="currentColor">
+                        codewithsky@gmail.com
+                    </text>
+                </svg>
             </a>
         </div>
     );

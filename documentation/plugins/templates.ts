@@ -46,7 +46,7 @@ const templates = [
         uiFramework: "Ant Design",
         dataProvider: "Nestjs-query",
         authProvider: "Custom",
-        description: ``,
+        description: `Data Structure and Algorithm`,
     },
     {
         slug: "cp",
@@ -61,6 +61,6 @@ const templates = [
         uiFramework: "Headless",
         dataProvider: "Rest API",
         authProvider: "Custom",
-        description: ``,
+        description: `Competitive Programming`,
     },
 ];

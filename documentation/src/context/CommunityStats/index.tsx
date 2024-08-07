@@ -8,7 +8,7 @@ import React, {
     useState,
 } from "react";
 // import { useQuery } from "react-query";
-// import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 interface ICommunityStatsContext {
     githubStarCount: number;
@@ -37,14 +37,20 @@ export const CommunityStatsContext = createContext<
     ICommunityStatsContext | undefined
 >(undefined);
 
-const followersAccessKey = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
-console.log(followersAccessKey);
-
+// const followersAccessKey = process.env.REACT_APP_FOLLOWERS_ACCESS_KEY;
+const calculateStreak = (): number => {
+    const today = new Date();
+    const startDate = new Date(2021, 6, 21); // 0-based month & day, so 6 is July
+    const differenceInTime = today.getTime() - startDate.getTime();
+    const differenceInDays = Math.floor(differenceInTime / (1000 * 3600 * 24));
+    return differenceInDays;
+};
+const streak = calculateStreak();
 const EndPoint = "https://leetcode.com/graphql/";
 
 export const CommunityStatsProvider: FC = ({ children }) => {
-    // const { siteConfig } = useDocusaurusContext();
-    // const followersAccessKey = siteConfig.customFields.REACT_APP_FOLLOWERS_ACCESS_KEY;
+    const { siteConfig } = useDocusaurusContext();
+    const followersAccessKey = siteConfig.customFields.REACT_APP_FOLLOWERS_ACCESS_KEY;
     const [loading, setLoading] = useState(true);
     const [githubStarCount, setGithubStarCount] = useState(0);
     const [githubFollowersCount, setGithubFollowersCount] = useState(0);
@@ -52,21 +58,20 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     const [githubAvatarPageUrl, setGithubAvatarPageUrl] = useState<String[]>([]);
     const [githubAvatarName, setGithubAvatarName] = useState<String[]>([]);
     const [leetcodeBadgeImg, setLeetcodeBadgeImg] = useState<String[]>([]);
-    const [leetcodeBadgeCount, setLeetcodeBadgesCount] = useState(74);
-    const [solvedProblem, setSolvedProblem] = useState(3047);
-    const [easySolved, setEasySolved] = useState(776);
-    const [mediumSolved, setMediumSolved] = useState(1596);
-    const [hardSolved, setHardSolved] = useState(675);
-    const [totalLCProblem, setTotalLCProblem] = useState(3125);
-    const [totalLCEasy, setTotalLCEasy] = useState(788);
-    const [totalLCMedium, setTotalLCMedium] = useState(1641);
-    const [totalLCHard, setTotalLCHard] = useState(696);
-    const [lcStreakCount, setLCStreakCount] = useState(1010);
+    const [leetcodeBadgeCount, setLeetcodeBadgesCount] = useState(79);
+    const [totalLCProblem, setTotalLCProblem] = useState(3146);
+    const [solvedProblem, setSolvedProblem] = useState(3141);
+    const [totalLCEasy, setTotalLCEasy] = useState(817);
+    const [easySolved, setEasySolved] = useState(799);
+    const [totalLCMedium, setTotalLCMedium] = useState(1703);
+    const [mediumSolved, setMediumSolved] = useState(1643);
+    const [totalLCHard, setTotalLCHard] = useState(726);
+    const [hardSolved, setHardSolved] = useState(699);
+    const [lcStreakCount, setLCStreakCount] = useState(streak);
 
     const fetchData = useCallback(async () => {
         try {
             setLoading(true);
-
             // Fetch Github data
             const [starCountsResponse, followerCountsResponse] = await Promise.all([
                 fetch(`https://api.github.com/repos/AkashSingh3031/The-Complete-FAANG-Preparation`, {
@@ -141,19 +146,19 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             // Fetch LeetCode data
             const [badgeDetailsResponse, solvedProblemsResponse, totalLCProblemResponse] = await Promise.all([
                 fetch(`https://alfa-leetcode-api.onrender.com/akashsingh3031/badges`, {
-                    headers: {
-                        Authorization: `token ${followersAccessKey}`,
-                    },
+                    // headers: {
+                    //     Authorization: `token ${followersAccessKey}`,
+                    // },
                 }),
                 fetch(`https://alfa-leetcode-api.onrender.com/akashsingh3031/solved`, {
-                    headers: {
-                        Authorization: `token ${followersAccessKey}`,
-                    },
+                    // headers: {
+                    //     Authorization: `token ${followersAccessKey}`,
+                    // },
                 }),
                 fetch(`https://alfa-leetcode-api.onrender.com/problems?limit=4000`, {
-                    headers: {
-                        Authorization: `token ${followersAccessKey}`,
-                    },
+                    // headers: {
+                    //     Authorization: `token ${followersAccessKey}`,
+                    // },
                 }),
             ]);
 
@@ -202,10 +207,10 @@ export const CommunityStatsProvider: FC = ({ children }) => {
             // Fetch LeetCode streak count
             const streakCountResponse = await fetch(EndPoint, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    Authorization: `token ${followersAccessKey}`,
-                },
+                // headers: {
+                //     'Content-Type': 'application/json',
+                //     Authorization: `token ${followersAccessKey}`,
+                // },
                 body: JSON.stringify({
                     query: `
                         query getStreakCounter {
@@ -229,7 +234,11 @@ export const CommunityStatsProvider: FC = ({ children }) => {
     }, [followersAccessKey]);
 
     useEffect(() => {
+        const interval = setInterval(() => {
+            setLCStreakCount(calculateStreak());
+        }, 86400000); // Update every 24 hours
         fetchData();
+        return () => clearInterval(interval);
     }, [fetchData]);
 
     const githubStarCountText = useMemo(() => {

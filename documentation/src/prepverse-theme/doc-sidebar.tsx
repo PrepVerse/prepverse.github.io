@@ -1,3 +1,5 @@
+import clsx from "clsx";
+import React from "react";
 import Link from "@docusaurus/Link";
 import { useLocation } from "@docusaurus/router";
 import {
@@ -5,8 +7,6 @@ import {
     isSamePath,
     useDocsSidebar,
 } from "@docusaurus/theme-common/internal";
-import clsx from "clsx";
-import React from "react";
 import { HEADER_HEIGHT } from "./doc-header";
 import { ChevronDownIcon } from "./icons/chevron-down";
 import { DashIcon } from "./icons/dash";
@@ -71,17 +71,12 @@ const SidebarCategory = ({
     const location = useLocation();
     const isHeader = item.className?.includes("category-as-header");
     const isActive = isActiveSidebarItem(item, path);
-
     const isSame = isSamePath(item.href, path);
-
     const { collapsible } = item;
-
     const defaultCollapsed = isHeader || isActive ? false : item.collapsed;
-
     const [collapsed, setCollapsed] = React.useState(
         collapsible === false ? false : defaultCollapsed,
     );
-
     const [settled, setSettled] = React.useState(false);
 
     React.useEffect(() => {
@@ -101,11 +96,10 @@ const SidebarCategory = ({
         }
     };
 
-    // biome-ignore lint/correctness/useExhaustiveDependencies: we don't want to re-run this effect when the location changes
     React.useEffect(() => {
         // find <a> elements with href attribute value equal to the current path
         const activeLink = document.querySelector(
-        `#prepverse-docs-sidebar a[href="${location.pathname}"]`,
+            `#prepverse-docs-sidebar a[href="${location.pathname}"]`,
         );
         if (!activeLink) return;
 
@@ -115,8 +109,8 @@ const SidebarCategory = ({
 
         // scroll to active link in the sidebar
         sidebar.scrollTo({
-        top: activeLink.getBoundingClientRect().top - 200,
-        behavior: "smooth",
+            top: activeLink.getBoundingClientRect().top - 200,
+            behavior: "smooth",
         });
     }, []);
 
@@ -150,11 +144,11 @@ const SidebarCategory = ({
                     "border-0",
                     "appearance-none",
                     "focus:outline-none",
-                    !isHeader && "text-gray-400 dark:text-gray-300",
-                    isHeader && "text-gray-500 dark:text-gray-400",
+                    !isHeader && "text-gray-500 dark:text-gray-300",
+                    isHeader && "text-green-500 dark:text-red-400",
                     isHeader && "font-semibold",
                     !isHeader && "hover:text-gray-600 dark:hover:text-gray-300",
-                    "font-normal",
+                    // "font-normal",
                     "flex items-center",
                     isHeader ? "pt-0 pb-2" : "py-2",
                     "pr-2",

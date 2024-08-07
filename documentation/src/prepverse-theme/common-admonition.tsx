@@ -6,73 +6,73 @@ import { InfoIcon } from "./icons/info";
 import { TipIcon } from "./icons/tip";
 import { NoteIcon } from "./icons/note";
 import { GithubIcon } from "./icons/github";
+import { SourceCodeIcon } from "./icons/source-code";
 
 type Props = {
     type:
+        | "additional"
         | "caution"
         | "command-line"
-        | "sourcecode"
-        | "info"
-        | "tip"
-        | "note"
-        | "additional"
         | "danger"
+        | "info"
         | "info-tip"
-        | "simple";
+        | "note"
+        | "simple"
+        | "sourcecode"
+        | "tip";
     title?: React.ReactNode;
     children: React.ReactNode;
 };
 
 const icons = {
-    danger: CautionIcon,
+    additional: NoteIcon,
     caution: CautionIcon,
     "command-line": CommandLineIcon,
-    sourcecode: GithubIcon,
+    danger: CautionIcon,
     info: InfoIcon,
-    tip: TipIcon,
-    note: NoteIcon,
-    additional: NoteIcon,
     "info-tip": TipIcon,
+    note: NoteIcon,
+    sourcecode: SourceCodeIcon,
+    tip: TipIcon,
 };
 
 const colorTextClasses = {
-    caution:
-        "text-refine-react-light-orange dark:text-refine-react-dark-orange",
-    info: "text-refine-react-light-purple dark:text-refine-react-dark-purple",
-    tip: "text-refine-react-light-green-alt dark:text-refine-react-dark-green-alt",
-    note: "text-refine-react-light-green dark:text-refine-react-dark-green",
-    "info-tip": "text-refine-blue dark:text-[#6EB3F7]",
-    danger: "text-refine-red",
-    "command-line": "text-refine-purple",
-    sourcecode: "text-refine-pink",
     additional: "text-refine-cyan",
+    caution: "text-refine-react-light-orange dark:text-refine-react-dark-orange",
+    "command-line": "text-refine-purple",
+    danger: "text-refine-red",
+    info: "text-refine-react-light-purple dark:text-refine-react-dark-purple",
+    "info-tip": "text-refine-blue dark:text-[#6EB3F7]",
+    note: "text-refine-react-light-green dark:text-refine-react-dark-green",
     simple: "text-gray-700 dark:text-gray-100",
+    sourcecode: "text-refine-pink",
+    tip: "text-refine-react-light-green-alt dark:text-refine-react-dark-green-alt",
 };
 
 const colorWrapperClasses = {
+    additional: "bg-refine-cyan bg-opacity-10 border-l-refine-cyan",
     caution: "bg-refine-react-light-orange bg-opacity-[0.15] dark:bg-refine-react-dark-orange/15 dark:bg-opacity-[0.15] border-l-refine-react-light-orange dark:border-l-refine-dark-orange",
-    info: "bg-refine-react-light-purple bg-opacity-[0.15] dark:bg-refine-react-dark-purple/15 dark:bg-opacity-[0.15] border-l-refine-react-light-purple dark:border-l-refine-react-dark-purple",
-    tip: "bg-refine-react-light-green-alt bg-opacity-[0.05] dark:bg-refine-react-dark-green-alt/5 dark:bg-opacity-[0.05] border-l-refine-react-light-green-alt dark:border-l-refine-react-dark-green-alt",
-    note: "bg-refine-react-light-green-bg dark:bg-refine-react-light-green/20 dark:bg-opacity-[0.2] border-l-refine-react-light-green dark:border-l-refine-react-dark-green",
-    "info-tip": "bg-refine-blue/10 dark:bg-[#6EB3F7]/10 bg-opacity-10  dark:bg-opacity-10 border-l-refine-blue",
     "command-line": "bg-refine-purple bg-opacity-10 border-l-refine-purple",
     danger: "bg-refine-red bg-opacity-10 border-l-refine-red",
-    sourcecode: "bg-refine-pink bg-opacity-10 border-l-refine-pink",
-    additional: "bg-refine-cyan bg-opacity-10 border-l-refine-cyan",
+    info: "bg-refine-react-light-purple bg-opacity-[0.15] dark:bg-refine-react-dark-purple/15 dark:bg-opacity-[0.15] border-l-refine-react-light-purple dark:border-l-refine-react-dark-purple",
+    "info-tip": "bg-refine-blue/10 dark:bg-[#6EB3F7]/10 bg-opacity-10  dark:bg-opacity-10 border-l-refine-blue",
+    note: "bg-refine-react-light-green-bg dark:bg-refine-react-light-green/20 dark:bg-opacity-[0.2] border-l-refine-react-light-green dark:border-l-refine-react-dark-green",
     simple: "border dark:border-gray-700 border-gray-300",
+    sourcecode: "bg-refine-pink bg-opacity-10 border-l-refine-pink",
+    tip: "bg-refine-react-light-green-alt bg-opacity-[0.05] dark:bg-refine-react-dark-green-alt/5 dark:bg-opacity-[0.05] border-l-refine-react-light-green-alt dark:border-l-refine-react-dark-green-alt",
 };
 
 const titles = {
-    danger: "DANGER",
+    additional: "ADDITIONAL INFO",
     caution: "CAUTION",
     "command-line": "COMMAND LINE",
-    sourcecode: "SOURCE CODE",
+    danger: "DANGER",
     info: "INFORMATION",
-    tip: "TIP",
-    note: "NOTE",
-    additional: "ADDITIONAL INFO",
     "info-tip": "INFORMATION",
+    note: "NOTE",
     simple: "Good to know",
+    sourcecode: "SOURCE CODE",
+    tip: "TIP",
 };
 
 export const Admonition = ({ type, title, children }: Props) => {

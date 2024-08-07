@@ -67,7 +67,7 @@ export const Twitter = (props: React.SVGProps<SVGSVGElement>): JSX.Element => (
         {...props}
         className={clsx("text-black dark:text-white")}
     >
-        <title>Twitter</title>
+        <title>X</title>
         <rect
             width={24}
             height={24}

@@ -135,7 +135,7 @@ export const Menu: React.FC<Props> = ({ variant = "landing" }) => {
                                             <Link to="https://instagram.com/akash.singh3031">
                                                 <InstagramIcon/>
                                             </Link>
-                                            <Link to="https://twitter.com/akashsingh3031">
+                                            <Link to="https://x.com/akashsingh3031">
                                                 <TwitterIcon />
                                             </Link>
                                         </div>

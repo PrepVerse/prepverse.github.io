@@ -2,9 +2,9 @@ import React, { DetailedHTMLProps, ReactNode, SVGProps, useRef } from "react";
 import clsx from "clsx";
 import { useInView } from "framer-motion";
 import { CommonThemedImage } from "./common-themed-image";
-import { GithubIcon } from "@site/src/prepverse-theme/icons/github";
 import { BlueTickIcon } from "@site/src/prepverse-theme/icons/blue-tick";
-import { TwitterIcon, LinkedInIcon, InstagramIcon } from "@site/src/prepverse-theme/icons/popover";
+import { GithubIcon } from "@site/src/prepverse-theme/icons/github";
+import { TwitterIcon, TwitterXIcon, LinkedInIcon, InstagramIcon } from "@site/src/prepverse-theme/icons/popover";
 import { LandingSectionCtaButton } from "./landing-section-cta-button";
 import { GitHubFollowers } from "./about-section/github-followers";
 import { GithubFollowersAvatar } from "./about-section/github-followers-avatar";
@@ -64,11 +64,9 @@ const apps = [
 
 export const AboutMeProfile = ({ className }: { className?: string }) => {
     const [activeApp, setActiveApp] = React.useState(apps[0]);
-
     const ShowcaseComponent = React.useMemo(() => {
         return activeApp.showcase;
     }, [activeApp.name]);
-
     return (
         <div
             className={clsx(
@@ -89,7 +87,6 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                     "border dark:border-gray-700 border-gray-200",
                 )}
             >
-
                 <div className={clsx(
                     "flex flex-col gap-4",
                 )}>
@@ -151,7 +148,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                                 "dark:text-gray-400 text-gray-600",
                             )}
                         >
-                            👨‍💻 Software Developer Engineer🔸||🔸TA at Coding Ninjas🔸||🔸6306 Rating 📈 Points on Coding Ninjas Studio
+                            👨‍💻 Software Developer Engineer🔸||🔸TA at Coding Ninjas🔸||🔸6086 Rating Points (Grand Master) on Code360 by Coding Ninjas Studio
                         </p>
                         <LandingSectionCtaButton to="https://github.com/AkashSingh3031"
                             className={clsx(
@@ -235,7 +232,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                         </a>
                         <a
                             target="_blank"
-                            href="https://twitter.com/akashsingh3031"
+                            href="https://x.com/akashsingh3031"
                             rel="noreferrer"
                             className={clsx(
                                 "flex  h-max flex-row justify-start gap-3",
@@ -245,7 +242,7 @@ export const AboutMeProfile = ({ className }: { className?: string }) => {
                             )}
                         >
                             <div>
-                                <TwitterIcon
+                                <TwitterXIcon
                                     className="text-2xl"
                                     width="20px"
                                     height="20px"

@@ -1,9 +1,9 @@
-import Head from "@docusaurus/Head";
+import clsx from "clsx";
 import React, { SVGProps } from "react";
+import Head from "@docusaurus/Head";
 import { CommonHeader } from "@site/src/prepverse-theme/common-header";
 import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
 import { LandingFooter } from "@site/src/prepverse-theme/landing-footer";
-import clsx from "clsx";
 import { TemplatesHero } from "@site/src/prepverse-theme/templates-hero";
 import {
     Headless,
@@ -21,9 +21,7 @@ import { CommonDrawer } from "@site/src/prepverse-theme/common-drawer";
 
 const Templates: React.FC = () => {
     const title = "PrepVerse | DSA+CP Practice";
-
     const [isFilterDrawerOpen, setIsFilterDrawerOpen] = React.useState(false);
-
     const [filters, setFilters] = React.useState<{
         topicFilters: string[];
         languageFilters: string[];
@@ -31,12 +29,10 @@ const Templates: React.FC = () => {
         topicFilters: [],
         languageFilters: [],
     });
-
     const dataFiltered = React.useMemo(() => {
         if (!filters.topicFilters.length && !filters.languageFilters.length) {
             return dataTemplates;
         }
-
         return dataTemplates.filter((item) => {
             return item.integrations.some((integration) => {
                 return (
@@ -63,7 +59,6 @@ const Templates: React.FC = () => {
             };
         });
     };
-
     return (
         <>
             <Head>
@@ -72,7 +67,7 @@ const Templates: React.FC = () => {
                 <meta property="og:title" content={title} />
                 <link
                     rel="preload"
-                    href="https://refine.new/embed-form"
+                    href="https://prepverse.github.io"
                     as="document"
                 />
             </Head>

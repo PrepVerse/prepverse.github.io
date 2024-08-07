@@ -89,7 +89,8 @@ export default function AdmonitionWrapper(props) {
                         rel="noreferrer"
                         style={{ marginLeft: "4px" }}
                     >
-                        VIEW SOURCE CODE &#8594;
+                        {/* VIEW SOURCE CODE &#8594; */}
+                        SOURCE CODE
                     </a>
                 }
                 titleProps={{ style: { marginBottom: "-4px" } }}

@@ -125,27 +125,27 @@ module.exports = {
                 },
             },
             fontFamily: {
-                sans: [
-                    "var(--primary-font-sans)",
-                    ...defaultTheme.fontFamily.sans,
-                ],
+                sans: ["var(--primary-font-sans)", ...defaultTheme.fontFamily.sans],
                 mono: ["Source Code Pro", ...defaultTheme.fontFamily.mono],
                 montserrat: ["Montserrat", ...defaultTheme.fontFamily.serif],
                 disket: ["Disket Mono", ...defaultTheme.fontFamily.mono],
                 inter: ["Inter", ...defaultTheme.fontFamily.serif],
                 "jetBrains-mono": [
                     "JetBrains Mono",
-                    ...defaultTheme.fontFamily.mono,
+                    "SFMono-Regular",
+                    "Menlo",
+                    "Monaco",
+                    "Consolas",
+                    '"Liberation Mono"',
+                    '"Courier New"',
+                    "monospace",
                 ],
             },
             dropShadow: {
                 "showcase-highlight": [
                     "0px 3px 7px rgba(108, 119, 147, 0.141)",
-
                     "0px 13px 13px rgba(108, 119, 147, 0.141)",
-
                     "0px 20px 18px rgba(108, 119, 147, 0.18)",
-
                     "0px 34px 21px rgba(108, 119, 147, 0.2)",
                     "0px 54px 23px rgba(108, 119, 147, 0)",
                 ],

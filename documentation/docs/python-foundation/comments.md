@@ -1,6 +1,6 @@
 ---
 id: comments
-title: Python Comments
+title: Comments in Python
 ---
 
 In Python, comments play a crucial role in making your code understandable and maintainable. Let's explore how comments can be utilized effectively in your Python scripts:

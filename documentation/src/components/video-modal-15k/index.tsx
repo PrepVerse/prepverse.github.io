@@ -186,9 +186,9 @@ export const Video = () => {
                             windowWidth={750}
                             windowHeight={800}
                             url={
-                                "https://youtu.be/w_3c7_szYuU?si=DSDqz3q1VzyrAHKE"
+                                "https://youtu.be/zjcvntHUpQI"
                             }
-                            title={`Take a look at @refine_dev's fun journey to 15K GitHub stars 🌟`}
+                            title={`Take a look at fun journey to 10.5K GitHub stars 🌟`}
                             className="flex"
                         >
                             <Twitter
@@ -214,9 +214,9 @@ export const Video = () => {
                             windowWidth={750}
                             windowHeight={600}
                             url={
-                                "https://youtu.be/w_3c7_szYuU?si=DSDqz3q1VzyrAHKE"
+                                "https://youtu.be/zjcvntHUpQI"
                             }
-                            title={`Take a look at @refine_dev's fun journey to 15K GitHub stars 🌟`}
+                            title={`Take a look at fun journey to 10.5K GitHub stars 🌟`}
                         >
                             <div
                                 className={clsx(
@@ -238,14 +238,14 @@ export const Video = () => {
                         </RedditShareButton>
                         <LinkedinShareButton
                             url={
-                                "https://youtu.be/w_3c7_szYuU?si=DSDqz3q1VzyrAHKE"
+                                "https://youtu.be/zjcvntHUpQI"
                             }
                             source={
-                                "https://youtu.be/w_3c7_szYuU?si=DSDqz3q1VzyrAHKE"
+                                "https://youtu.be/zjcvntHUpQI"
                             }
                             className="flex"
-                            summary={`Take a look at @refine_dev's fun journey to 15K GitHub stars 🌟`}
-                            title={`Take a look at @refine_dev's fun journey to 15K GitHub stars 🌟`}
+                            summary={`Take a look at fun journey to 10.5K GitHub stars 🌟`}
+                            title={`Take a look at fun journey to 10.5K GitHub stars 🌟`}
                         >
                             <div
                                 className={clsx(

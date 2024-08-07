@@ -47,7 +47,7 @@ export const TemplatesHero: FC<Props> = ({ className }) => {
                 <span
                     className={clsx(
                         "font-semibold",
-                        "dark:text-refine-cyan-alt dark:drop-shadow-[0_0_30px_rgba(71,235,235,0.25)]",
+                        "dark:text-refine-green-alt dark:drop-shadow-[0_0_30px_rgba(71,235,235,0.25)]",
                         "text-refine-blue drop-shadow-[0_0_30px_rgba(51,51,255,0.3)]",
                     )}
                 >
@@ -57,6 +57,7 @@ export const TemplatesHero: FC<Props> = ({ className }) => {
             <p
                 className={clsx(
                     "text-base",
+                    "text-start landing-md:text-center",
                     "max-w-[588px]",
                     "dark:text-gray-400 text-gray-600",
                 )}

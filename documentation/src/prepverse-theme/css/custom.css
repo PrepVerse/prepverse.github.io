@@ -11,7 +11,8 @@
 
 /* Chrome, Edge, and Safari */
 .scrollbar-slim::-webkit-scrollbar {
-    width: 12px;
+    width: 10px;
+    height: 10px;
 }
 
 .scrollbar-slim::-webkit-scrollbar-track {
@@ -55,14 +56,14 @@
     @apply prose-h4:text-base;
     @apply prose-h4:mb-4 sm:prose-h4:mb-6;
 
-    @apply prose-p:dark:text-gray-100 prose-p:text-gray-800 prose-p:mb-5 prose-p:mt-0;
+    @apply prose-p:dark:text-gray-400 prose-p:text-gray-600 prose-p:mb-5 prose-p:mt-0;
     @apply prose-p:text-base sm:prose-p:leading-7;
 
     @apply prose-li:text-sm sm:prose-li:text-base;
     @apply prose-li:my-0 2xl:prose-li:text-base;
     @apply prose-li:pl-0;
-    @apply prose-ul:pl-[18px] prose-ul:ml-0 prose-ul:dark:text-gray-100 prose-ul:text-gray-800;
-    @apply prose-ol:pl-[18px] prose-ol:ml-0 prose-ol:dark:text-gray-100 prose-ol:text-gray-800;
+    @apply prose-ul:pl-[18px] prose-ul:ml-0 prose-ul:dark:text-gray-400 prose-ul:text-gray-600;
+    @apply prose-ol:pl-[18px] prose-ol:ml-0 prose-ol:dark:text-gray-400 prose-ol:text-gray-600;
 
     @apply prose-pre:font-jetBrains-mono;
 

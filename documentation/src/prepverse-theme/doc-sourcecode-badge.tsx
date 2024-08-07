@@ -6,8 +6,8 @@ export const SourceCodeBadge = ({ path }: { path?: string }) => {
     const sourcePath = path.startsWith("https://")
         ? path
         : `https://github.com/PrepVerse/PrepVerse/blob/master${
-              path.startsWith("/") ? "" : "/"
-          }${path}`;
+            path.startsWith("/") ? "" : "/"
+        }${path}`;
 
     return (
         <a

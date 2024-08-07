@@ -60,7 +60,7 @@
     <td align="center"><a href="https://t.me/akashsingh3031"><img src="https://readme-components.vercel.app/api?component=logo&fill=1ca0f1&logo=telegram&svgfill=white"></a></td>
     <td align="center"><a href="https://www.facebook.com/akashsingh3031"><img src="https://readme-components.vercel.app/api?component=logo&fill=4267B2&logo=facebook&svgfill=white"></a></td>
     <td align="center"><a href="https://www.instagram.com/akash.singh3031"><img src="https://readme-components.vercel.app/api?component=logo&fill=E1306C&logo=instagram&svgfill=white"></a></td>
-    <td align="center"><a href="https://twitter.com/akashsingh3031"><img src="https://readme-components.vercel.app/api?component=logo&fill=1DA1F2&logo=twitter&svgfill=white"></a></td>
+    <td align="center"><a href="https://x.com/akashsingh3031"><img src="https://readme-components.vercel.app/api?component=logo&fill=1DA1F2&logo=twitter&svgfill=white"></a></td>
   </table>
 </details>
 

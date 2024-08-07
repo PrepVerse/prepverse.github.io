@@ -1,14 +1,14 @@
+import clsx from "clsx";
 import React, { useEffect, useState } from "react";
+import { BlogHero } from "./blog-hero";
+import { BlogFooter } from "./blog-footer";
 import { CommonLayout } from "./common-layout";
 import { CommonHeader } from "./common-header";
-import { BlogFooter } from "./blog-footer";
-import BackToTopButton from '@theme/BackToTopButton'
-import clsx from "clsx";
 import { BannerSidebar } from "../components/banner/banner-sidebar";
 import { BannerModal } from "../components/banner/banner-modal";
-import { useLocation } from "@docusaurus/router";
 import useScrollTracker from "../hooks/use-scroll-tracker";
-import { BlogHero } from "./blog-hero";
+import { useLocation } from "@docusaurus/router";
+import BackToTopButton from "@theme/BackToTopButton";
 
 type Props = {
     showSidebarBanner?: boolean;
@@ -47,7 +47,7 @@ export const PrepVerseBlogLayout = (props: Props) => {
                 variant="blog"
                 className={clsx(
                     "!bg-white dark:!bg-gray-800",
-                    "!bg-opacity-100 dark:!bg-opacity-100",
+                    "!bg-opacity-80 dark:!bg-opacity-80",
                 )}
             />
             {props.showHero && <BlogHero />}

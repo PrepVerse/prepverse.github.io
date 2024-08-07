@@ -89,7 +89,7 @@ export const socialLinks = [
     },
     {
         icon: FooterTwitterXIcon,
-        href: "https://twitter.com/akashsingh3031",
+        href: "https://x.com/akashsingh3031",
     },
     {
         icon: WhatsAppIconColor,
