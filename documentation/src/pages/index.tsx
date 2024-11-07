@@ -1,6 +1,6 @@
 import Head from "@docusaurus/Head";
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect } from "react";
 
 import { CommonLayout } from "../prepverse-theme/common-layout";
 import { CommonHeader } from "../prepverse-theme/common-header";
@@ -13,12 +13,16 @@ import { useColorMode } from "@docusaurus/theme-common";
 
 function Home() {
     const title = "PrepVerse | Comprehensive Computer Science Resources";
+    useEffect(() => {
+        window.location.href = "https://prepverse.vercel.app/";
+    }, []);
     return (
         <>
             <Head>
                 <html data-active-page="index" />
                 <title>{title}</title>
                 <meta property="og:title" content={title} />
+                <link rel="canonical" href="https://prepverse.vercel.app" />
                 <link
                     rel="preload"
                     href="https://prepverse.vercel.app"

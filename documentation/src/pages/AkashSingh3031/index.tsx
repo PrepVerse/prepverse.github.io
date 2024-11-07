@@ -1,7 +1,7 @@
 import Head from "@docusaurus/Head";
 import Link from "@docusaurus/Link";
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect } from "react";
 import { Fireworks } from "fireworks-js";
 import { CommonFooter } from "@site/src/prepverse-theme/common-footer";
 import { CommonHeader } from "@site/src/prepverse-theme/common-header";
@@ -13,6 +13,9 @@ import BackToTopButton from '@theme/BackToTopButton';
 
 const About: React.FC = () => {
     const { colorMode } = useColorMode();
+    useEffect(() => {
+        window.location.href = "https://prepverse.vercel.app/AkashSingh3031";
+    }, []);
 
     return (
         <>
