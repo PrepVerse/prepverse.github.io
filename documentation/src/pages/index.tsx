@@ -21,7 +21,7 @@ function Home() {
                 <meta property="og:title" content={title} />
                 <link
                     rel="preload"
-                    href="https://prepverse.github.io"
+                    href="https://prepverse.vercel.app"
                     as="document"
                 />
             </Head>

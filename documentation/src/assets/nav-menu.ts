@@ -21,7 +21,7 @@ export const POPOVERMENUS: NavMenu[] = [
             {
                 label: "Documents",
                 description: "Everything you need to get started",
-                link: "/docs/",
+                link: "https://prepverse.vercel.app/docs/",
                 icon: DocumentsIcon,
             },
             {
@@ -103,7 +103,7 @@ export const POPOVERMENUS: NavMenu[] = [
             {
                 label: "About Us",
                 description: "My information",
-                link: "/AkashSingh3031",
+                link: "https://prepverse.vercel.app/AkashSingh3031/",
                 icon: AboutUsIcon,
             },
             // {

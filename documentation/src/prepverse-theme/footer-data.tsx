@@ -16,21 +16,21 @@ export const menuItems = [
         items: [
             {
                 label: "Getting Started",
-                href: "/docs",
+                href: "https://prepverse.vercel.app/docs",
             },
             {
                 label: "Blog",
-                href: "/blog",
+                href: "https://prepverse.vercel.app/blog",
             },
             {
                 label: "Project Showcase",
                 icon: <NewBadgeIcon />,
-                href: "/showcase",
+                href: "https://prepverse.vercel.app/showcase",
             },
             {
                 label: "Community",
                 icon: <NewBadgeIcon />,
-                href: "/prepverse-community",
+                href: "https://prepverse.vercel.app/prepverse-community",
             },
         ],
     },
@@ -54,7 +54,7 @@ export const menuItems = [
         items: [
             {
                 label: "About Me",
-                href: "/AkashSingh3031",
+                href: "https://prepverse.vercel.app/AkashSingh3031",
             },
             {
                 label: "Portfolio",

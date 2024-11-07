@@ -165,7 +165,7 @@ export const LandingFooter = ({ variant = "landing" }: Props) => {
                         )}
                     >
                         <Link
-                            to="/"
+                            to="https://prepverse.vercel.app"
                             // onContextMenu={openFigma}
                             className={clsx(
                                 "hover:no-underline",

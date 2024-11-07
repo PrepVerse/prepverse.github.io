@@ -27,7 +27,7 @@ module.exports = {
         },
         {
             type: "link",
-            href: "/prepverse-community",
+            href: "https://prepverse.vercel.app/prepverse-community",
             label: "Prepverse Community",
             className: "enterprise-badge",
         },

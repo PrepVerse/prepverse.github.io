@@ -86,7 +86,7 @@ export const CommonHeader = ({
                             )}
                         >
                             <Link 
-                                to="/" 
+                                to="https://prepverse.vercel.app" 
                                 // onContextMenu={openFigma}
                             >
                                 <PrepVerseLogoIcon className="text-gray-900 dark:text-gray-0" />

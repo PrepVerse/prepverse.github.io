@@ -83,7 +83,7 @@ export const LandingHeroSection = ({ className }: { className?: string }) => {
                         )}
                     >
                         <Link
-                            to="docs"
+                            to="https://prepverse.vercel.app/docs"
                             className={clsx(
                                 "self-start",
                                 "rounded-3xl",

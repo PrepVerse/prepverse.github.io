@@ -17,7 +17,7 @@ const list = [
         description:
             "Master Data Structures and Algorithms with our comprehensive guides, tutorials, and practice problems.",
         view: <LandingSectionCtaButtonAlt />,
-        source: "https://prepverse.github.io/docs/1.DS.Algo",
+        source: "https://prepverse.vercel.app/docs/1.DS.Algo",
     },
     {
         icon: <IdentityIcon />,
@@ -25,7 +25,7 @@ const list = [
         description:
             "Master web development with our tutorials and resources. Learn HTML, CSS, JavaScript, and more to build stunning websites.",
         view: <LandingSectionCtaButtonAlt />,
-        source: "https://prepverse.github.io/showcase",
+        source: "https://prepverse.vercel.app/showcase",
     },
     {
         icon: <SupportIcon />,
@@ -33,7 +33,7 @@ const list = [
         description:
             "Discover cutting-edge resources in AI, ML, and Data Science. Enhance your skills with tutorials, guides, and practice tests.",
         view: <LandingSectionCtaButtonAlt />,
-        source: "https://prepverse.github.io/",
+        source: "https://prepverse.vercel.app",
     },
     {
         icon: <AccessControlIcon />,
@@ -41,7 +41,7 @@ const list = [
         description:
             "Discover a diverse array of programming languages tailored for every project and proficiency level.",
         view: <LandingSectionCtaButtonAlt />,
-        source: "https://prepverse.github.io/docs",
+        source: "https://prepverse.vercel.app/docs",
     },
     {
         icon: <BlackBoxIcon />,
@@ -49,7 +49,7 @@ const list = [
         description:
             "Explore essential Computer Science subjects: OS, DBMS, CN, OOPs - learn key concepts and applications in just one click",
         view: <LandingSectionCtaButtonAlt />,
-        source: "https://prepverse.github.io/",
+        source: "https://prepverse.vercel.app",
     },
     {
         icon: <MonitorIcon />,
@@ -57,7 +57,7 @@ const list = [
         description:
             "Discover the backbone of data management with Databases—efficiently store, retrieve, and manage structured information for applications.",
         view: <LandingSectionCtaButtonAlt />,
-        source: "https://prepverse.github.io/",
+        source: "https://prepverse.vercel.app",
     },
 ];
 
@@ -185,7 +185,7 @@ export const LandingExplorePrepVerse: FC<Props> = ({ className }) => {
                     );
                 })}
             </div>
-            <LandingSectionCtaButtonAlt to="/blog">
+            <LandingSectionCtaButtonAlt to="https://prepverse.vercel.app/blog">
                 Explore More
             </LandingSectionCtaButtonAlt>
         </div>

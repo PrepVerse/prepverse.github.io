@@ -83,7 +83,7 @@ export const LandingHeroTop = () => {
                 )}
             >
                 <LandingGhostButton />
-                <LandingRainbowButton href="/AkashSingh3031" />
+                <LandingRainbowButton href="https://prepverse.vercel.app/AkashSingh3031" />
                 {/* <EnterpriseGetInTouchButton /> */}
             </div>
         </div>

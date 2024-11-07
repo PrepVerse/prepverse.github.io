@@ -111,7 +111,7 @@ export const TopAnnouncement = () => {
 const Text = () => {
     return (
         <a
-            href="https://github.com/AkashSingh3031"
+            href="https://prepverse.vercel.app/AkashSingh3031"
             target="_blank"
             rel="noreferrer"
             className={clsx(

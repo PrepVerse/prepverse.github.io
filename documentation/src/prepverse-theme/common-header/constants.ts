@@ -53,13 +53,13 @@ export const MENU_ITEMS: MenuItemType[] = [
             {
                 label: "Foundation Docs",
                 description: "Learn C++, Python & Java",
-                link: "/docs",
+                link: "https://prepverse.vercel.app/docs",
                 icon: UseCasesIcon,
             },
             {
                 label: "DSA Docs",
                 description: "Learning DSA in C++, Python & Java",
-                link: "/docs/1.DS.Algo",
+                link: "https://prepverse.vercel.app/docs/1.DS.Algo",
                 icon: DocumentsIcon,
             },
             // {
@@ -107,13 +107,13 @@ export const MENU_ITEMS: MenuItemType[] = [
             {
                 label: "About Me",
                 description: "My information.",
-                link: "/AkashSingh3031",
+                link: "https://prepverse.vercel.app/AkashSingh3031",
                 icon: ContributeIcon,
             },
             {
                 label: "Project Showcase",
                 description: "PrepVerse open-source projects",
-                link: "/showcase",
+                link: "https://prepverse.vercel.app/showcase",
                 icon: TutorialIcon,
             },
             {
@@ -127,13 +127,13 @@ export const MENU_ITEMS: MenuItemType[] = [
     {
         isPopover: false,
         label: "Blog",
-        href: "/blog",
+        href: "https://prepverse.vercel.app/blog",
         icon: BlogIcon,
     },
     {
         isPopover: false,
         label: "PrepVerse Community",
-        href: "/prepverse-community",
+        href: "https://prepverse.vercel.app/prepverse-community",
         icon: CommunityIcon,
     },
 ];

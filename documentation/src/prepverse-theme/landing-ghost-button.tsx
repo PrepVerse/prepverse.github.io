@@ -7,7 +7,7 @@ import { DocItemOutlined } from "./icons/doc-item-outlined";
 export const LandingGhostButton = () => {
     return (
         <Link
-            href="/docs"
+            href="https://prepverse.vercel.app/docs"
             className={clsx(
                 "relative",
                 "text-gray-0",

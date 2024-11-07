@@ -210,7 +210,64 @@ const Experience = ({ className }: { className?: string }) => {
                         "font-semibold",
                     )}
                 >
-                    Feb 2023 — Present (1 year)
+                    Feb 2023 — Present
+                </h2>
+                <div
+                    className={clsx(
+                        "flex flex-ṛow gap-5",
+                    )}
+                >
+                    <div className="relative">
+                        <img
+                            className={clsx(
+                                "h-[50px]",
+                                "rounded-full",
+                            )}
+                            src="https://www.enatyam.com/public/images/logos.webp"
+                            alt="Enatyam India"
+                        />
+                    </div>
+                    <div className="text-xs md:text-base">
+                        <h2
+                            className={clsx(
+                                "text-base landing-sm:text-xl",
+                                "dark:text-gray-300 text-gray-900",
+                                "font-semibold",
+                            )}
+                        >
+                            Enatyam India
+                        </h2>
+                        <p
+                            className={clsx(
+                                "text-base",
+                                "dark:text-gray-400 text-gray-600",
+                            )}
+                        >
+                            Web Developer | SEO Specialist
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div
+                className={clsx(
+                    "flex flex-col gap-5",
+                    "dark:bg-enterprise-data-source-dark dark:bg-gray-800 bg-gray-0",
+                    "bg-blend-overlay",
+                    "bg-no-repeat",
+                    "rounded-2xl landing-sm:rounded-3xl",
+                    "dark:bg-gray-900",
+                    "rounded-xl p-4",
+                    "border border-b-4 dark:border-gray-700 border-gray-200",
+                )}
+            >
+                <h2
+                    className={clsx(
+                        "text-base",
+                        "dark:text-gray-400 text-gray-600",
+                        "font-semibold",
+                    )}
+                >
+                    Feb 2023 — July 2024 (1.5 years)
                 </h2>
                 <div
                     className={clsx(
@@ -248,7 +305,7 @@ const Experience = ({ className }: { className?: string }) => {
                     </div>
                 </div>
             </div>
-            <div
+            {/* <div
                 className={clsx(
                     "flex flex-col gap-5",
                     "dark:bg-enterprise-data-source-dark dark:bg-gray-800 bg-gray-0",
@@ -304,7 +361,7 @@ const Experience = ({ className }: { className?: string }) => {
                         </p>
                     </div>
                 </div>
-            </div>
+            </div> */}
             <div
                 className={clsx(
                     "flex flex-col gap-5",

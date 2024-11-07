@@ -13,7 +13,7 @@ export const PrepVerseLogo = ({ title, className }: Props) => {
     return (
         <div className={clsx("flex", "items-center", className)}>
             <Link
-                to="/docs"
+                to="https://prepverse.vercel.app/docs"
                 className={clsx(
                     "flex",
                     "items-center justify-center",

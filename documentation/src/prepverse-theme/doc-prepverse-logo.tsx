@@ -19,7 +19,7 @@ export const DocPrepVerseLogo = ({ className }: Props) => {
             )}
         >
             <Link
-                to="/"
+                to="https://prepverse.vercel.app"
                 className={clsx("no-underline", "flex items-center gap-2")}
                 // onContextMenu={openFigma}
             >
@@ -42,7 +42,7 @@ export const DocPrepVerseLogo = ({ className }: Props) => {
                     "bg-gray-300 dark:bg-gray-600",
                 )}
             />
-            <Link to="/docs" className={clsx("no-underline")}>
+            <Link to="https://prepverse.vercel.app/docs" className={clsx("no-underline")}>
                 <span
                     className={clsx(
                         "text-gray-1000 dark:text-gray-0",

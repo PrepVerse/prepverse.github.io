@@ -73,7 +73,7 @@ export const DocBreadcrumbs = () => {
                         itemProp="itemListElement"
                         itemType="https://schema.org/ListItem"
                     >
-                        <Link href="/docs" itemProp="item">
+                        <Link href="https://prepverse.vercel.app/docs" itemProp="item">
                             <HomeIcon className="text-gray-400 dark:text-gray-500" />
                             <span className="sr-only" itemProp="name">
                                 Documentation
