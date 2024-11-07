@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import React, { SVGProps } from "react";
+import React, { useEffect, SVGProps } from "react";
 import Head from "@docusaurus/Head";
 import { CommonHeader } from "@site/src/prepverse-theme/common-header";
 import { CommonLayout } from "@site/src/prepverse-theme/common-layout";
@@ -59,12 +59,16 @@ const Templates: React.FC = () => {
             };
         });
     };
+    useEffect(() => {
+        window.location.href = "https://prepverse.vercel.app/CodeVerse";
+    }, []);
     return (
         <>
             <Head>
                 <html data-active-page="index" />
                 <title>{title}</title>
                 <meta property="og:title" content={title} />
+                <link rel="canonical" href="https://prepverse.vercel.app/CodeVerse" />
                 <link
                     rel="preload"
                     href="https://prepverse.github.io"

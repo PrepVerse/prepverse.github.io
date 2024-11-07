@@ -1,4 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import Head from "@docusaurus/Head";
 import clsx from 'clsx';
 import { BlogFooter } from "@site/src/prepverse-theme/blog-footer";
 import { CommonHeader } from "@site/src/prepverse-theme/common-header";
@@ -377,28 +378,36 @@ function ShowcaseCards() {
 
 export default function Showcase(): JSX.Element {
   const ref = React.useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    window.location.href = "https://prepverse.vercel.app/showcase";
+  }, []);
   return (
-    <CommonLayout>
-      <CommonHeader /><div
-        className={clsx(
-          "w-full",
-          "mx-auto",
-          "landing-lg:max-w-[1300px]",
-        )}
-      >
-        <ShowcaseHeader />
-        <ShowcaseFilters />
-        <div
-          style={{ display: 'flex', marginLeft: 'auto' }}
-          className="container"
+    <>
+      <Head>
+        <link rel="canonical" href="https://prepverse.vercel.app" />
+      </Head>
+      <CommonLayout>
+        <CommonHeader /><div
+          className={clsx(
+            "w-full",
+            "mx-auto",
+            "landing-lg:max-w-[1300px]",
+          )}
         >
-          <SearchBar />
+          <ShowcaseHeader />
+          <ShowcaseFilters />
+          <div
+            style={{ display: 'flex', marginLeft: 'auto' }}
+            className="container"
+          >
+            <SearchBar />
+          </div>
+          <ShowcaseCards />
+          {/* <ShowcaseCardsInfo /> */}
         </div>
-        <ShowcaseCards />
-        {/* <ShowcaseCardsInfo /> */}
-      </div>
-      <BlogFooter />
-      <BackToTopButton />
-    </CommonLayout>
+        <BlogFooter />
+        <BackToTopButton />
+      </CommonLayout>
+    </>
   );
 }

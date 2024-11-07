@@ -17,7 +17,7 @@ const katex = require('rehype-katex');
 const siteConfig = {
     title: "PrepVerse",
     tagline: "Computer Science Preparation",
-    url: "https://prepverse.github.io",
+    url: "https://prepverse.vercel.app",
     baseUrl: "/",
     projectName: "prepverse",
     organizationName: "PrepVerse",
