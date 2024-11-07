@@ -4,8 +4,8 @@
   <ShortName>PrepVerse</ShortName>
   <Description>Search PrepVerse</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://prepverse.github.io/img/prepverse_favicon.jpg</Image>
-  <Url type="text/html" method="get" template="https://prepverse.github.io/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://prepverse.github.io/opensearch.xml" />
-  <moz:SearchForm>https://prepverse.github.io/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://prepverse.vercel.app/img/prepverse_favicon.jpg</Image>
+  <Url type="text/html" method="get" template="https://prepverse.vercel.app/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://prepverse.vercel.app/opensearch.xml" />
+  <moz:SearchForm>https://prepverse.vercel.app/</moz:SearchForm>
 </OpenSearchDescription>
